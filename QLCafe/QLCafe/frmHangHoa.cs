@@ -1,0 +1,189 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using QLCafe.BUS;
+using QLCafe.DAO;
+using QLCafe.DTO;
+using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid.Localization;
+using DevExpress.XtraGrid;
+
+namespace QLCafe
+{
+    public partial class frmHangHoa : DevExpress.XtraEditors.XtraForm
+    {
+        public frmHangHoa()
+        {
+            InitializeComponent();
+            //Chạy việt sub
+            GridLocalizer.Active = new MyGridLocalizer();
+            Localizer.Active = new MyLocalizer();
+
+        }
+
+        #region (Viet-sub he thong )
+
+        public class MyGridLocalizer : GridLocalizer
+        {
+            public override string GetLocalizedString(GridStringId id)
+            {
+                switch (id)
+                {
+                    case GridStringId.FindControlFindButton:
+                        return "Tìm Kiếm";
+                    case GridStringId.FindControlClearButton:
+                        return "Hủy Tìm";
+                    case GridStringId.FilterPanelCustomizeButton:
+                        return "Tùy Chọn Kích Cở";
+                    case GridStringId.EditFormCancelButton:
+                        return "Hủy";
+                    case GridStringId.EditFormUpdateButton:
+                        return "Cập Nhật";
+                    case GridStringId.EditFormSaveMessage:
+                        return "Dữ liệu đã thay đổi, bạn có muốn lưu không?";
+                    case GridStringId.WindowWarningCaption:
+                        return "CHÚ Ý";
+                    case GridStringId.GridGroupPanelText:
+                        return "Kéo một trường của hàng đầu tiên trong bảng vào đây";
+                    default:
+                        return base.GetLocalizedString(id);
+                }
+            }
+        }
+
+        public class MyLocalizer : Localizer
+        {
+            public override string GetLocalizedString(StringId id)
+            {
+                switch (id)
+                {
+                    case StringId.InvalidValueText:
+                        return @"Giá trị không hợp lệ";
+                    case StringId.XtraMessageBoxYesButtonText:
+                        return "Đồng ý";
+                    case StringId.XtraMessageBoxCancelButtonText:
+                        return "Trở lại";
+                    case StringId.XtraMessageBoxNoButtonText:
+                        return "Hủy";
+                    case StringId.NavigatorTextStringFormat:
+                        return "no ne " + StringId.NavigatorTextStringFormat;
+                    case StringId.ContainerAccessibleEditName:
+                        return "no ne " + StringId.ContainerAccessibleEditName;
+                    default:
+                        return base.GetLocalizedString(id);
+                }
+            }
+        }
+
+
+        #endregion
+
+        #region load dữ liệu
+
+        private void frmHangHoa_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'quanlycafeDataSet.CF_HangHoa' table. You can move, or remove it, as needed.
+            this.cF_HangHoaTableAdapter.Fill (this.quanlycafeDataSet.CF_HangHoa);
+            // TODO: This line of code loads data into the 'quanlycafeDataSet.CF_NhomHangHoa' table. You can move, or remove it, as needed.
+            this.cF_NhomHangHoaTableAdapter.FillBycbChonNhomHangHoa(this.quanlycafeDataSet.CF_NhomHangHoa);
+            // TODO: This line of code loads data into the 'quanlycafeDataSet.CF_DonViTinh' table. You can move, or remove it, as needed.
+            this.cF_DonViTinhTableAdapter.FillBycbChonDonViTinh(this.quanlycafeDataSet.CF_DonViTinh);
+        }
+        #endregion
+    
+        #region các chức năng thêm sửa xóa
+        private void gvBan_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+
+            try
+            {
+                int id = int.Parse(gvHangHoa.GetRowCellValue(e.RowHandle, colID).ToString());
+                string MaHangHoa = gvHangHoa.GetRowCellValue(e.RowHandle, colMaHangHoa).ToString();
+                string TenHangHoa = gvHangHoa.GetRowCellValue(e.RowHandle, colTenHangHoa).ToString();
+                string GiaBan = gvHangHoa.GetRowCellValue(e.RowHandle, colGiaBan).ToString();
+                string IDDonViTinh = gvHangHoa.GetRowCellValue(e.RowHandle, colIDDonViTinh).ToString();
+                string IDNhomHang = gvHangHoa.GetRowCellValue(e.RowHandle, colIDNhomHang).ToString();
+                string GhiChu = gvHangHoa.GetRowCellValue(e.RowHandle, colGhiChu).ToString();
+                int IDNguoiDung = 8;//NGUOI QUANTRI //frmDangNhap.NguoiDung.Id;
+                int checkUp = DataProvider.Instance.ExecuteNoneQuery("rp_UpInHangHoa @id , @MaHangHoa , @TenHangHoa , @GiaBan , @IDDonViTinh , @IDNhomHang , @GhiChu , @IDNguoiDung", new object[] { id, MaHangHoa, TenHangHoa, GiaBan, IDDonViTinh, IDNhomHang, GhiChu, IDNguoiDung });
+                if (checkUp > 0)
+                {
+                    XtraMessageBox.Show("Cập nhật thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else if (checkUp == -1) { XtraMessageBox.Show("Không thể thêm vì tên bị trùng!","THÔNG BÁO",MessageBoxButtons.OK,MessageBoxIcon.Error); }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Xuất hiện lỗi hệ thống xin vui lòng thông báo bên chăm sóc khách hàng để có bản cập nhật sửa lỗi!\nMã Lỗi: " + ex.Message,"THÔNG BÁO",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            cF_HangHoaTableAdapter.Fill(quanlycafeDataSet.CF_HangHoa);
+        }
+
+        private void gvBan_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(gvHangHoa.GetRowCellValue(gvHangHoa.FocusedRowHandle, colID).ToString());
+                string name = gvHangHoa.GetRowCellValue(gvHangHoa.FocusedRowHandle, colTenHangHoa).ToString();
+
+                if (e.Column.FieldName.Equals("")) //Kiểm tra click đúng nút Xóa và Active
+                    switch (e.Column.ColumnEdit.Name) //Thực hiện các chức năng các nút Xóa và Active
+                    {
+                        case "btXoa":
+                            if (XtraMessageBox.Show("Bạn có muốn xóa " + name + " không?", "THÔNG BÁO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                            {
+                                if (DataProvider.Instance.ExecuteNoneQuery("DELETE dbo.CF_HangHoa WHERE id =" + id) > 0)
+                                { XtraMessageBox.Show("Xóa thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); gvHangHoa.DeleteRow(gvHangHoa.FocusedRowHandle); }
+                                else XtraMessageBox.Show("Xóa thất bại!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            break;
+                        case "btActive":
+                            if (XtraMessageBox.Show("Bạn có muốn Hủy/Kích hoạt " + name + " không?", "THÔNG BÁO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                            {
+                                if (DataProvider.Instance.ExecuteNoneQuery("rp_ActiveHangHoa @id", new object[] { id }) > 0)
+                                {
+                                    XtraMessageBox.Show("Hủy/Kích hoạt thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                    cF_HangHoaTableAdapter.Fill(quanlycafeDataSet.CF_HangHoa); 
+                                }
+                                else XtraMessageBox.Show("Hủy/Kích hoạt thất bại!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            break;
+
+                    }
+
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Xuất hiện lỗi hệ thống xin vui lòng thông báo bên chăm sóc khách hàng để có bản cập nhật sửa lỗi!\nMã Lỗi: " + ex.Message, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        //load ma tu dong cho khach hang
+        private void gvHangHoa_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+            try{
+                DataTable tb = DataProvider.Instance.ExecuteQuery("SELECT * FROM CF_HangHoa order by MaHangHoa");
+                DataTable tb2 = DataProvider.Instance.ExecuteQuery("SELECT MAX(MaHangHoa) FROM CF_HangHoa");
+                int check = tb.Rows.Count;
+                int MaHangHoa = 0;
+                if (tb2.Rows.Count > 0)
+                {
+                    MaHangHoa = DataProvider.Instance.CreateKey(tb, 1, int.Parse(tb2.Rows[0][0].ToString()));
+                }
+                gvHangHoa.SetRowCellValue(e.RowHandle, colMaHangHoa, MaHangHoa);
+            }catch(Exception ex){
+                XtraMessageBox.Show("Xuất hiện lỗi hệ thống!\n Mã Lỗi:"+ex.Message);
+            }
+           
+            
+        }
+    }
+}

@@ -1,0 +1,8 @@
+D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\bin\Debug\AnGiang.exe
+D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\bin\Debug\AnGiang.pdb
+D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.csprojResolveAssemblyReference.cache
+D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.frmDangNhap.resources
+D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.Properties.Resources.resources
+D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.csproj.GenerateResource.Cache
+D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.exe
+D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.pdb
