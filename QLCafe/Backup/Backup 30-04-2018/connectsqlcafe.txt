@@ -1,8 +1,0 @@
-<add name="._gpm_codeCaFeMienPhi_Connection" connectionString="XpoProvider=MSSqlServer;data source=.;integrated security=SSPI;initial catalog=gpm_codeCaFeMienPhi" />
-        <add name="QLCafe.Properties.Settings.gpm_codeCaFeMienPhiConnectionString"
-            connectionString="Data Source=.;Initial Catalog=gpm_codeCaFeMienPhi;Integrated Security=True"
-            providerName="System.Data.SqlClient" />
-        <add name="BanHangConnectionString" connectionString="Data Source=.;Initial Catalog=gpm_codeCaFeMienPhi;Integrated Security=True"
-            providerName="System.Data.SqlClient" />
-      <add name="connectString" connectionString="Data Source=.;Initial Catalog=gpm_codeCaFeMienPhi;Integrated Security=True"
-            providerName="System.Data.SqlClient" /> 
