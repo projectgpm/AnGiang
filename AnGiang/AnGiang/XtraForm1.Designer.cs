@@ -1,6 +1,6 @@
 ﻿namespace AnGiang
 {
-    partial class frmDangNhap
+    partial class XtraForm1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // frmDangNhap
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 229);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "frmDangNhap";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MÀN HÌNH ĐĂNG NHẬP";
-            this.ResumeLayout(false);
-
+            this.Text = "XtraForm1";
         }
 
         #endregion
-
-
     }
 }
-
