@@ -9,3 +9,4 @@ D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.frmMain.resources
 D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.exe.licenses
 D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\bin\Debug\GPMLibrary.dll
 D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\bin\Debug\AnGiang.exe.config
+D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.Layout.NhanVien.frmDanhSachNV.resources

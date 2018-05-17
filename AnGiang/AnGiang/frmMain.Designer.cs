@@ -41,7 +41,10 @@
             this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
+            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
+            this.barXemNgay = new DevExpress.XtraBars.BarStaticItem();
+            this.barXemGio = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -54,14 +57,11 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navKyHieu = new DevExpress.XtraNavBar.NavBarItem();
             this.navBangChamCong = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navDinhMuc = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
-            this.barXemGio = new DevExpress.XtraBars.BarStaticItem();
-            this.barXemNgay = new DevExpress.XtraBars.BarStaticItem();
+            this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControlLeft)).BeginInit();
             this.SuspendLayout();
@@ -91,7 +91,7 @@
             this.barXemNgay,
             this.skinBarSubItem1});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 13;
+            this.barManager1.MaxItemId = 14;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -107,6 +107,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem5),
             new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem1)});
+            this.bar2.OptionsBar.DrawBorder = false;
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -170,6 +171,12 @@
             this.barSubItem5.Id = 5;
             this.barSubItem5.Name = "barSubItem5";
             // 
+            // skinBarSubItem1
+            // 
+            this.skinBarSubItem1.Caption = "Giao diện";
+            this.skinBarSubItem1.Id = 12;
+            this.skinBarSubItem1.Name = "skinBarSubItem1";
+            // 
             // bar3
             // 
             this.bar3.BarName = "Status bar";
@@ -185,12 +192,34 @@
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
             // 
+            // barXemNgay
+            // 
+            this.barXemNgay.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barXemNgay.Caption = "Xem ngày";
+            this.barXemNgay.Glyph = ((System.Drawing.Image)(resources.GetObject("barXemNgay.Glyph")));
+            this.barXemNgay.Id = 11;
+            this.barXemNgay.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barXemNgay.LargeGlyph")));
+            this.barXemNgay.Name = "barXemNgay";
+            this.barXemNgay.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barXemNgay.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barXemGio
+            // 
+            this.barXemGio.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barXemGio.Caption = "Xem giờ";
+            this.barXemGio.Glyph = ((System.Drawing.Image)(resources.GetObject("barXemGio.Glyph")));
+            this.barXemGio.Id = 10;
+            this.barXemGio.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barXemGio.LargeGlyph")));
+            this.barXemGio.Name = "barXemGio";
+            this.barXemGio.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barXemGio.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1367, 22);
+            this.barDockControlTop.Size = new System.Drawing.Size(1367, 20);
             // 
             // barDockControlBottom
             // 
@@ -203,22 +232,20 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 480);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 482);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1367, 22);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 480);
+            this.barDockControlRight.Location = new System.Drawing.Point(1367, 20);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 482);
             // 
             // barButtonItem1
             // 
-            //this.barButtonItem1.Caption = "barButtonItem1";
-            //this.barButtonItem1.Id = 0;
-            //this.barButtonItem1.Name = "barButtonItem1";
-            //this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            this.barButtonItem1.Id = 13;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // navBarControlLeft
             // 
@@ -238,10 +265,10 @@
             this.navBangChamCong,
             this.navDinhMuc,
             this.navBarItem1});
-            this.navBarControlLeft.Location = new System.Drawing.Point(0, 22);
+            this.navBarControlLeft.Location = new System.Drawing.Point(0, 20);
             this.navBarControlLeft.Name = "navBarControlLeft";
             this.navBarControlLeft.OptionsNavPane.ExpandedWidth = 242;
-            this.navBarControlLeft.Size = new System.Drawing.Size(242, 480);
+            this.navBarControlLeft.Size = new System.Drawing.Size(242, 482);
             this.navBarControlLeft.TabIndex = 4;
             this.navBarControlLeft.Text = "navBarControl1";
             // 
@@ -259,12 +286,14 @@
             this.navDanhSachNhanVien.Caption = "Danh sách nhân viên";
             this.navDanhSachNhanVien.ImageUri.Uri = "ListBullets";
             this.navDanhSachNhanVien.Name = "navDanhSachNhanVien";
+            this.navDanhSachNhanVien.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navDanhSachNhanVien_LinkClicked);
             // 
             // navAddNhanVien
             // 
             this.navAddNhanVien.Caption = "Thêm nhân viên";
             this.navAddNhanVien.ImageUri.Uri = "Add";
             this.navAddNhanVien.Name = "navAddNhanVien";
+            this.navAddNhanVien.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navAddNhanVien_LinkClicked);
             // 
             // navBarGroup2
             // 
@@ -288,6 +317,12 @@
             this.navBangChamCong.ImageUri.Uri = "Today";
             this.navBangChamCong.Name = "navBangChamCong";
             // 
+            // navDinhMuc
+            // 
+            this.navDinhMuc.Caption = "Thiết lập định mức";
+            this.navDinhMuc.ImageUri.Uri = "CustomizeGrid";
+            this.navDinhMuc.Name = "navDinhMuc";
+            // 
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Tính lương";
@@ -296,55 +331,21 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
-            // navBarGroup4
-            // 
-            this.navBarGroup4.Caption = "Lập báo cáo nhân sự";
-            this.navBarGroup4.Name = "navBarGroup4";
-            // 
-            // navDinhMuc
-            // 
-            this.navDinhMuc.Caption = "Thiết lập định mức";
-            this.navDinhMuc.ImageUri.Uri = "CustomizeGrid";
-            this.navDinhMuc.Name = "navDinhMuc";
-            // 
             // navBarItem1
             // 
             this.navBarItem1.Caption = "navBarItem1";
             this.navBarItem1.Name = "navBarItem1";
             // 
-            // barXemGio
+            // navBarGroup4
             // 
-            this.barXemGio.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barXemGio.Caption = "Xem giờ";
-            this.barXemGio.Glyph = ((System.Drawing.Image)(resources.GetObject("barXemGio.Glyph")));
-            this.barXemGio.Id = 10;
-            this.barXemGio.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barXemGio.LargeGlyph")));
-            this.barXemGio.Name = "barXemGio";
-            this.barXemGio.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.barXemGio.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
-            // barXemNgay
-            // 
-            this.barXemNgay.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barXemNgay.Caption = "Xem ngày";
-            this.barXemNgay.Glyph = ((System.Drawing.Image)(resources.GetObject("barXemNgay.Glyph")));
-            this.barXemNgay.Id = 11;
-            this.barXemNgay.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barXemNgay.LargeGlyph")));
-            this.barXemNgay.Name = "barXemNgay";
-            this.barXemNgay.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.barXemNgay.TextAlignment = System.Drawing.StringAlignment.Near;
+            this.navBarGroup4.Caption = "Lập báo cáo nhân sự";
+            this.navBarGroup4.Name = "navBarGroup4";
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // skinBarSubItem1
-            // 
-            this.skinBarSubItem1.Caption = "Giao diện";
-            this.skinBarSubItem1.Id = 12;
-            this.skinBarSubItem1.Name = "skinBarSubItem1";
             // 
             // frmMain
             // 
@@ -363,6 +364,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " GPM Việt Nam :: Phần mềm quản lý chấm công nhân viên v1.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControlLeft)).EndInit();
