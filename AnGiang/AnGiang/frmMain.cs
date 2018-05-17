@@ -18,19 +18,25 @@ namespace AnGiang
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-           
+
+            barXemNgay.Caption = "Ngày: " + DateTime.Now.ToString("dd/MM/yyyy");
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-             XtraForm1 fr = new XtraForm1();
+        //private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        //{
+        //     XtraForm1 fr = new XtraForm1();
             
-            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
-            {
-                fr.MdiParent = this;
-                fr.WindowState = FormWindowState.Maximized;
-                fr.Show();
-            }
+        //    if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+        //    {
+        //        fr.MdiParent = this;
+        //        fr.WindowState = FormWindowState.Maximized;
+        //        fr.Show();
+        //    }
+        //}
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            barXemGio.Caption = "Giờ: " + DateTime.Now.ToLongTimeString();
         }
     }
 }
