@@ -33,10 +33,10 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.C = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barPhongBan = new DevExpress.XtraBars.BarButtonItem();
+            this.barChucDanh = new DevExpress.XtraBars.BarButtonItem();
+            this.barChucVu = new DevExpress.XtraBars.BarButtonItem();
+            this.barChuyenMon = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
@@ -83,15 +83,15 @@
             this.barSubItem3,
             this.barSubItem4,
             this.barSubItem5,
-            this.barButtonItem2,
-            this.C,
-            this.barButtonItem3,
-            this.barButtonItem4,
+            this.barPhongBan,
+            this.barChucDanh,
+            this.barChucVu,
+            this.barChuyenMon,
             this.barXemGio,
             this.barXemNgay,
             this.skinBarSubItem1});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 14;
+            this.barManager1.MaxItemId = 15;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -117,35 +117,39 @@
             this.barSubItem1.Caption = "Danh mục";
             this.barSubItem1.Id = 1;
             this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.C),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barPhongBan),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barChucDanh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barChucVu),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barChuyenMon)});
             this.barSubItem1.Name = "barSubItem1";
             // 
-            // barButtonItem2
+            // barPhongBan
             // 
-            this.barButtonItem2.Caption = "Phòng ban";
-            this.barButtonItem2.Id = 6;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.barPhongBan.Caption = "Phòng ban";
+            this.barPhongBan.Id = 6;
+            this.barPhongBan.Name = "barPhongBan";
+            this.barPhongBan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barPhongBan_ItemClick);
             // 
-            // C
+            // barChucDanh
             // 
-            this.C.Caption = "Chức danh";
-            this.C.Id = 7;
-            this.C.Name = "C";
+            this.barChucDanh.Caption = "Chức danh";
+            this.barChucDanh.Id = 14;
+            this.barChucDanh.Name = "barChucDanh";
+            this.barChucDanh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barChucDanh_ItemClick);
             // 
-            // barButtonItem3
+            // barChucVu
             // 
-            this.barButtonItem3.Caption = "Chức vụ";
-            this.barButtonItem3.Id = 8;
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.barChucVu.Caption = "Chức vụ";
+            this.barChucVu.Id = 8;
+            this.barChucVu.Name = "barChucVu";
+            this.barChucVu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barChucVu_ItemClick);
             // 
-            // barButtonItem4
+            // barChuyenMon
             // 
-            this.barButtonItem4.Caption = "Chuyên môn";
-            this.barButtonItem4.Id = 9;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.barChuyenMon.Caption = "Chuyên môn";
+            this.barChuyenMon.Id = 9;
+            this.barChuyenMon.Name = "barChuyenMon";
+            this.barChuyenMon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barChuyenMon_ItemClick);
             // 
             // barSubItem2
             // 
@@ -390,10 +394,10 @@
         private DevExpress.XtraBars.BarSubItem barSubItem3;
         private DevExpress.XtraBars.BarSubItem barSubItem4;
         private DevExpress.XtraBars.BarSubItem barSubItem5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem C;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barPhongBan;
+        private DevExpress.XtraBars.BarButtonItem barChucDanh;
+        private DevExpress.XtraBars.BarButtonItem barChucVu;
+        private DevExpress.XtraBars.BarButtonItem barChuyenMon;
         private DevExpress.XtraNavBar.NavBarItem navDanhSachNhanVien;
         private DevExpress.XtraNavBar.NavBarItem navAddNhanVien;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;

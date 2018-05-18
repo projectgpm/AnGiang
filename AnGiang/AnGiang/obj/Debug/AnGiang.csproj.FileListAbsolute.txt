@@ -10,3 +10,7 @@ D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.exe.licenses
 D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\bin\Debug\GPMLibrary.dll
 D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\bin\Debug\AnGiang.exe.config
 D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.Layout.NhanVien.frmDanhSachNV.resources
+D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.Layout.DanhMuc.frmPhongBan.resources
+D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.Layout.DanhMuc.frmChucDanh.resources
+D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.Layout.DanhMuc.frmChucVu.resources
+D:\GPMVIETNAM\AnGiang\AnGiang\AnGiang\obj\Debug\AnGiang.Layout.DanhMuc.frmChuyenMon.resources

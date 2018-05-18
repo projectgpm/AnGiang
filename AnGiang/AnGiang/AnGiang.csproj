@@ -65,12 +65,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AnGiang.dbml</DependentUpon>
     </Compile>
+    <Compile Include="AnGiangDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnGiangDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Controller\oObject.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\DanhMuc\frmChucDanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\DanhMuc\frmChucDanh.Designer.cs">
+      <DependentUpon>frmChucDanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\DanhMuc\frmChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\DanhMuc\frmChucVu.Designer.cs">
+      <DependentUpon>frmChucVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\DanhMuc\frmChuyenMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\DanhMuc\frmChuyenMon.Designer.cs">
+      <DependentUpon>frmChuyenMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\DanhMuc\frmPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\DanhMuc\frmPhongBan.Designer.cs">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
     </Compile>
     <Compile Include="Layout\NhanVien\frmDanhSachNV.cs">
       <SubType>Form</SubType>
@@ -92,6 +121,18 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Layout\DanhMuc\frmChucDanh.resx">
+      <DependentUpon>frmChucDanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\DanhMuc\frmChucVu.resx">
+      <DependentUpon>frmChucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\DanhMuc\frmChuyenMon.resx">
+      <DependentUpon>frmChuyenMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\DanhMuc\frmPhongBan.resx">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Layout\NhanVien\frmDanhSachNV.resx">
       <DependentUpon>frmDanhSachNV.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +151,17 @@
       <LastGenOutput>AnGiang.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="AnGiangDataSet.xsc">
+      <DependentUpon>AnGiangDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AnGiangDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnGiangDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AnGiangDataSet.xss">
+      <DependentUpon>AnGiangDataSet.xsd</DependentUpon>
+    </None>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -126,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+    <Folder Include="Layout\Luong\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

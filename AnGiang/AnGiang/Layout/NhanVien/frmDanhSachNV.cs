@@ -23,6 +23,8 @@ namespace AnGiang.Layout.NhanVien
 
         private void frmDanhSachNV_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'anGiangDataSet.nvNhanVien' table. You can move, or remove it, as needed.
+            this.nvNhanVienTableAdapter.Fill(this.anGiangDataSet.nvNhanVien);
         }
 
       

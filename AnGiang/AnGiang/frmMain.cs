@@ -9,6 +9,8 @@ using System.Text;
 using System.Windows.Forms;
 using AnGiang.Layout.NhanVien;
 using AnGiang.Controller;
+using AnGiang.Layout.DanhMuc;
+//using AnGiang.Layout.Luong;
 
 namespace AnGiang
 {
@@ -70,5 +72,48 @@ namespace AnGiang
             Application.Exit();
             //GPMLibrary.Validation.Vals.CloseAllForm(this);
         }
+
+        private void barPhongBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmPhongBan fr = new frmPhongBan();
+            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+            {
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
+        private void barChucDanh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmChucDanh fr = new frmChucDanh();
+            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+            {
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
+        private void barChucVu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmChucVu fr = new frmChucVu();
+            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+            {
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        
+        }
+
+        private void barChuyenMon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmChuyenMon fr = new frmChuyenMon();
+            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+            {
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
+       
     }
 }
