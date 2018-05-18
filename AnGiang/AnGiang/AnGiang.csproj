@@ -44,12 +44,23 @@
     <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="GPMLibrary">
       <HintPath>.\GPMLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,6 +88,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layout\ChamCong\frmChamCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\ChamCong\frmChamCong.Designer.cs">
+      <DependentUpon>frmChamCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layout\DanhMuc\frmChucDanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +118,12 @@
     <Compile Include="Layout\DanhMuc\frmPhongBan.Designer.cs">
       <DependentUpon>frmPhongBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layout\GPMController\XUC_ChamCong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\GPMController\XUC_ChamCong.Designer.cs">
+      <DependentUpon>XUC_ChamCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layout\NhanVien\frmDanhSachNV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,13 +136,83 @@
     <Compile Include="Layout\NhanVien\frmThemNhanVien.Designer.cs">
       <DependentUpon>frmThemNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\BacLuong.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ccChamCong.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ccKyHieu.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataProvider.cs" />
+    <Compile Include="Model\dvChuyenMon.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dvDonVi.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dvPhongBan.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\lskLoaiSuKien.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\lskSuKien.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\nvChucDanh.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\nvChucVu.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\nvNhanVien.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PhaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PhaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PhaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tlDinhMuc.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TrinhDo.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XtraForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraForm1.Designer.cs">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="XtraForm1.resx">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="AnGiang.dbml.layout">
       <DependentUpon>AnGiang.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\ChamCong\frmChamCong.resx">
+      <DependentUpon>frmChamCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\DanhMuc\frmChucDanh.resx">
       <DependentUpon>frmChucDanh.cs</DependentUpon>
@@ -132,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\DanhMuc\frmPhongBan.resx">
       <DependentUpon>frmPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\GPMController\XUC_ChamCong.resx">
+      <DependentUpon>XUC_ChamCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\NhanVien\frmDanhSachNV.resx">
       <DependentUpon>frmDanhSachNV.cs</DependentUpon>
@@ -163,6 +259,14 @@
       <DependentUpon>AnGiangDataSet.xsd</DependentUpon>
     </None>
     <None Include="app.config" />
+    <EntityDeploy Include="Model\PhaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PhaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\PhaModel.edmx.diagram">
+      <DependentUpon>PhaModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -175,10 +279,23 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
     <Folder Include="Layout\Luong\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\PhaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PhaModel.edmx</DependentUpon>
+      <LastGenOutput>PhaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\PhaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PhaModel.edmx</DependentUpon>
+      <LastGenOutput>PhaModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
