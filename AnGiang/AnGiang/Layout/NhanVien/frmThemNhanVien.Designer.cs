@@ -28,11 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(929, 115);
+            this.panelControl1.TabIndex = 0;
+            // 
+            // frmThemNhanVien
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmThemNhanVien";
+            this.ClientSize = new System.Drawing.Size(929, 594);
+            this.Controls.Add(this.panelControl1);
+            this.Name = "frmThemNhanVien";
+            this.Text = "Thêm nhân viên";
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }
