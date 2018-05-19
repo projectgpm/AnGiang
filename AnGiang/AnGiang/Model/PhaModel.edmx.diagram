@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6c932fa7d4404584851554748a7e10cf" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="AnGiangModel.BacLuong" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AnGiangModel.ccChamCong" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="AnGiangModel.ccChiTiet" Width="1.5" PointX="5.25" PointY="1.625" />
+        <EntityTypeShape EntityType="AnGiangModel.dvChuyenMon" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AnGiangModel.dvDonVi" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="AnGiangModel.dvPhongBan" Width="1.5" PointX="7.75" PointY="8.75" />
+        <EntityTypeShape EntityType="AnGiangModel.lskLoaiSuKien" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AnGiangModel.lskSuKien" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="AnGiangModel.nvChucDanh" Width="1.5" PointX="9.75" PointY="8.75" />
+        <EntityTypeShape EntityType="AnGiangModel.nvChucVu" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AnGiangModel.nvNhanVien" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="AnGiangModel.sysdiagram" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="AnGiangModel.tlDinhMuc" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="AnGiangModel.TrinhDo" Width="1.5" PointX="11.75" PointY="4.75" />
+        <AssociationConnector Association="AnGiangModel.FK_ccChamCong_nvNhanVien" />
+        <AssociationConnector Association="AnGiangModel.FK_ccChiTiet_ccChamCong" />
+        <EntityTypeShape EntityType="AnGiangModel.ccKyHieu" Width="1.5" PointX="0.75" PointY="7" />
+        <AssociationConnector Association="AnGiangModel.FK_ccChiTiet_ccKyHieu" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
