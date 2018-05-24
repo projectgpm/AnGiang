@@ -54,10 +54,12 @@
             // 
             this.gridControlPhongBan.DataSource = this.dvPhongBanBindingSource;
             this.gridControlPhongBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlPhongBan.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControlPhongBan.Location = new System.Drawing.Point(0, 0);
             this.gridControlPhongBan.MainView = this.gridViewPhongBan;
+            this.gridControlPhongBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControlPhongBan.Name = "gridControlPhongBan";
-            this.gridControlPhongBan.Size = new System.Drawing.Size(911, 576);
+            this.gridControlPhongBan.Size = new System.Drawing.Size(1063, 709);
             this.gridControlPhongBan.TabIndex = 0;
             this.gridControlPhongBan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewPhongBan});
@@ -90,63 +92,75 @@
             this.colDonViID});
             this.gridViewPhongBan.GridControl = this.gridControlPhongBan;
             this.gridViewPhongBan.Name = "gridViewPhongBan";
+            this.gridViewPhongBan.NewItemRowText = "Nhấn vào đây để thêm mới";
+            this.gridViewPhongBan.OptionsBehavior.AutoUpdateTotalSummary = false;
+            this.gridViewPhongBan.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplace;
+            this.gridViewPhongBan.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gridViewPhongBan.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridViewPhongBan.OptionsEditForm.ActionOnModifiedRowChange = DevExpress.XtraGrid.Views.Grid.EditFormModifiedAction.Save;
+            this.gridViewPhongBan.OptionsNavigation.AutoFocusNewRow = true;
+            this.gridViewPhongBan.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridViewPhongBan.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridViewPhongBan_ValidateRow);
             // 
             // colIDPhongBan
             // 
             this.colIDPhongBan.FieldName = "IDPhongBan";
             this.colIDPhongBan.Name = "colIDPhongBan";
-            this.colIDPhongBan.Visible = true;
-            this.colIDPhongBan.VisibleIndex = 0;
+            this.colIDPhongBan.OptionsColumn.AllowEdit = false;
             // 
             // colMaPhongBan
             // 
+            this.colMaPhongBan.Caption = "Mã phòng ban";
             this.colMaPhongBan.FieldName = "MaPhongBan";
             this.colMaPhongBan.Name = "colMaPhongBan";
+            this.colMaPhongBan.OptionsColumn.AllowEdit = false;
             this.colMaPhongBan.Visible = true;
-            this.colMaPhongBan.VisibleIndex = 1;
+            this.colMaPhongBan.VisibleIndex = 0;
+            this.colMaPhongBan.Width = 149;
             // 
             // colTenPhongBan
             // 
+            this.colTenPhongBan.Caption = "Tên phòng ban";
             this.colTenPhongBan.FieldName = "TenPhongBan";
             this.colTenPhongBan.Name = "colTenPhongBan";
+            this.colTenPhongBan.OptionsColumn.AllowEdit = false;
             this.colTenPhongBan.Visible = true;
-            this.colTenPhongBan.VisibleIndex = 2;
+            this.colTenPhongBan.VisibleIndex = 1;
+            this.colTenPhongBan.Width = 437;
             // 
             // colGhiChu
             // 
+            this.colGhiChu.Caption = "Ghi chú";
             this.colGhiChu.FieldName = "GhiChu";
             this.colGhiChu.Name = "colGhiChu";
+            this.colGhiChu.OptionsColumn.AllowEdit = false;
             this.colGhiChu.Visible = true;
-            this.colGhiChu.VisibleIndex = 3;
+            this.colGhiChu.VisibleIndex = 2;
+            this.colGhiChu.Width = 457;
             // 
             // colNgayTao
             // 
             this.colNgayTao.FieldName = "NgayTao";
             this.colNgayTao.Name = "colNgayTao";
-            this.colNgayTao.Visible = true;
-            this.colNgayTao.VisibleIndex = 4;
+            this.colNgayTao.OptionsColumn.AllowEdit = false;
             // 
             // colNgayCapNhat
             // 
             this.colNgayCapNhat.FieldName = "NgayCapNhat";
             this.colNgayCapNhat.Name = "colNgayCapNhat";
-            this.colNgayCapNhat.Visible = true;
-            this.colNgayCapNhat.VisibleIndex = 5;
+            this.colNgayCapNhat.OptionsColumn.AllowEdit = false;
             // 
             // colDaXoa
             // 
             this.colDaXoa.FieldName = "DaXoa";
             this.colDaXoa.Name = "colDaXoa";
-            this.colDaXoa.Visible = true;
-            this.colDaXoa.VisibleIndex = 6;
+            this.colDaXoa.OptionsColumn.AllowEdit = false;
             // 
             // colDonViID
             // 
             this.colDonViID.FieldName = "DonViID";
             this.colDonViID.Name = "colDonViID";
-            this.colDonViID.Visible = true;
-            this.colDonViID.VisibleIndex = 7;
+            this.colDonViID.OptionsColumn.AllowEdit = false;
             // 
             // dvPhongBanTableAdapter
             // 
@@ -154,11 +168,12 @@
             // 
             // frmPhongBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 576);
+            this.ClientSize = new System.Drawing.Size(1063, 709);
             this.Controls.Add(this.gridControlPhongBan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmPhongBan";
             this.Text = "frmPhongBan";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

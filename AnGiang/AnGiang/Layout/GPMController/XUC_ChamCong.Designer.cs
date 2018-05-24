@@ -29,46 +29,102 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dateThangNam = new DevExpress.XtraEditors.DateEdit();
-            this.ckBatDauSua = new DevExpress.XtraEditors.CheckEdit();
+            this.ckChamTungO = new DevExpress.XtraEditors.CheckEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.cbLoaiChamCong = new DevExpress.XtraEditors.LookUpEdit();
             this.ccKyHieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anGiangDataSet1 = new AnGiang.AnGiangDataSet();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.ck_ChamMotCot = new DevExpress.XtraEditors.CheckEdit();
-            this.ck_ChamMotHang = new DevExpress.XtraEditors.CheckEdit();
-            this.ck_DaCham = new DevExpress.XtraEditors.CheckEdit();
+            this.ckChamMotCot = new DevExpress.XtraEditors.CheckEdit();
+            this.ckChamMotHang = new DevExpress.XtraEditors.CheckEdit();
+            this.ckDaCham = new DevExpress.XtraEditors.CheckEdit();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.txtNgayKetThuc = new DevExpress.XtraEditors.SpinEdit();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.txtBatDau = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.ckChamTheoNgay = new DevExpress.XtraEditors.CheckEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.ccXemChamCongBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.nvNhanVienPhongBanTableAdapter1 = new AnGiang.AnGiangDataSetTableAdapters.nvNhanVienPhongBanTableAdapter();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIDChamCong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIDNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHoTen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col21 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col24 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col25 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col28 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col31 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHuongLuong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAnTrua = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPhepNam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNgayPhep = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenPhongBan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ccKyHieuTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.ccKyHieuTableAdapter();
+            this.ccXemChamCongTableAdapter1 = new AnGiang.AnGiangDataSetTableAdapters.ccXemChamCongTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateThangNam.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateThangNam.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ckBatDauSua.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckChamTungO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbLoaiChamCong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ccKyHieuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ck_ChamMotCot.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ck_ChamMotHang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ck_DaCham.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckChamMotCot.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckChamMotHang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckDaCham.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayKetThuc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBatDau.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckChamTheoNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ccXemChamCongBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,9 +138,9 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(818, 340);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1072, 433);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -94,24 +150,29 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 147F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263F));
             this.tableLayoutPanel2.Controls.Add(this.labelControl1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panelControl1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.ckBatDauSua, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.ckChamTungO, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.panelControl2, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.labelControl2, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.ck_ChamMotCot, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.ck_ChamMotHang, 4, 1);
-            this.tableLayoutPanel2.Controls.Add(this.ck_DaCham, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.ckChamMotCot, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.ckChamMotHang, 4, 1);
+            this.tableLayoutPanel2.Controls.Add(this.ckDaCham, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panelControl3, 3, 2);
+            this.tableLayoutPanel2.Controls.Add(this.panelControl4, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.labelControl3, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.ckChamTheoNgay, 4, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(818, 67);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1072, 101);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // labelControl1
@@ -170,31 +231,36 @@
             this.dateThangNam.TabIndex = 0;
             this.dateThangNam.EditValueChanged += new System.EventHandler(this.dateThangNam_EditValueChanged);
             // 
-            // ckBatDauSua
+            // ckChamTungO
             // 
-            this.ckBatDauSua.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ckBatDauSua.Location = new System.Drawing.Point(321, 37);
-            this.ckBatDauSua.Name = "ckBatDauSua";
-            this.ckBatDauSua.Properties.Appearance.Font = new System.Drawing.Font("Roboto", 12.75F);
-            this.ckBatDauSua.Properties.Appearance.Options.UseFont = true;
-            this.ckBatDauSua.Properties.Caption = "Chấm từng ô";
-            this.ckBatDauSua.Size = new System.Drawing.Size(122, 27);
-            this.ckBatDauSua.TabIndex = 10;
+            this.ckChamTungO.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckChamTungO.Enabled = false;
+            this.ckChamTungO.Location = new System.Drawing.Point(321, 37);
+            this.ckChamTungO.Name = "ckChamTungO";
+            this.ckChamTungO.Properties.Appearance.Font = new System.Drawing.Font("Roboto", 12.75F);
+            this.ckChamTungO.Properties.Appearance.Options.UseFont = true;
+            this.ckChamTungO.Properties.Caption = "Chấm từng ô";
+            this.ckChamTungO.Properties.RadioGroupIndex = 0;
+            this.ckChamTungO.Size = new System.Drawing.Size(122, 28);
+            this.ckChamTungO.TabIndex = 10;
+            this.ckChamTungO.TabStop = false;
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.cbLoaiChamCong);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(130, 37);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(185, 27);
+            this.panelControl2.Size = new System.Drawing.Size(185, 28);
             this.panelControl2.TabIndex = 9;
             // 
             // cbLoaiChamCong
             // 
             this.cbLoaiChamCong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbLoaiChamCong.Enabled = false;
             this.cbLoaiChamCong.Location = new System.Drawing.Point(2, 2);
             this.cbLoaiChamCong.Name = "cbLoaiChamCong";
-            this.cbLoaiChamCong.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.cbLoaiChamCong.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.cbLoaiChamCong.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.cbLoaiChamCong.Properties.Appearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.cbLoaiChamCong.Properties.Appearance.Font = new System.Drawing.Font("Roboto", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -204,13 +270,13 @@
             this.cbLoaiChamCong.Properties.AppearanceFocused.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.cbLoaiChamCong.Properties.AppearanceFocused.Options.UseBorderColor = true;
             this.cbLoaiChamCong.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            toolTipTitleItem1.Text = "Hiển thị danh sách loại chấm công";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            toolTipTitleItem2.Text = "Xóa trắng";
-            superToolTip2.Items.Add(toolTipTitleItem2);
+            toolTipTitleItem3.Text = "Hiển thị danh sách loại chấm công";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            toolTipTitleItem4.Text = "Xóa trắng";
+            superToolTip4.Items.Add(toolTipTitleItem4);
             this.cbLoaiChamCong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, superToolTip1, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "hủy", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, superToolTip2, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, superToolTip3, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "hủy", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, superToolTip4, true)});
             this.cbLoaiChamCong.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cbLoaiChamCong.Properties.DataSource = this.ccKyHieuBindingSource;
             this.cbLoaiChamCong.Properties.DisplayMember = "TenKyHieu";
@@ -225,7 +291,6 @@
             this.cbLoaiChamCong.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cbLoaiChamCong_Properties_ButtonClick);
             this.cbLoaiChamCong.Size = new System.Drawing.Size(181, 24);
             this.cbLoaiChamCong.TabIndex = 0;
-            this.cbLoaiChamCong.EditValueChanged += new System.EventHandler(this.cbLoaiChamCong_EditValueChanged);
             // 
             // ccKyHieuBindingSource
             // 
@@ -244,75 +309,771 @@
             this.labelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl2.Location = new System.Drawing.Point(3, 37);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(121, 27);
+            this.labelControl2.Size = new System.Drawing.Size(121, 28);
             this.labelControl2.TabIndex = 8;
             this.labelControl2.Text = "Loại chấm công:";
             // 
-            // ck_ChamMotCot
+            // ckChamMotCot
             // 
-            this.ck_ChamMotCot.Location = new System.Drawing.Point(449, 37);
-            this.ck_ChamMotCot.Name = "ck_ChamMotCot";
-            this.ck_ChamMotCot.Properties.Appearance.Font = new System.Drawing.Font("Roboto", 12.75F);
-            this.ck_ChamMotCot.Properties.Appearance.Options.UseFont = true;
-            this.ck_ChamMotCot.Properties.Caption = "Chấm một cột";
-            this.ck_ChamMotCot.Size = new System.Drawing.Size(141, 24);
-            this.ck_ChamMotCot.TabIndex = 10;
+            this.ckChamMotCot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckChamMotCot.Enabled = false;
+            this.ckChamMotCot.Location = new System.Drawing.Point(449, 37);
+            this.ckChamMotCot.Name = "ckChamMotCot";
+            this.ckChamMotCot.Properties.Appearance.Font = new System.Drawing.Font("Roboto", 12.75F);
+            this.ckChamMotCot.Properties.Appearance.Options.UseFont = true;
+            this.ckChamMotCot.Properties.Caption = "Chấm một cột";
+            this.ckChamMotCot.Properties.RadioGroupIndex = 0;
+            this.ckChamMotCot.Size = new System.Drawing.Size(141, 28);
+            this.ckChamMotCot.TabIndex = 10;
+            this.ckChamMotCot.TabStop = false;
             // 
-            // ck_ChamMotHang
+            // ckChamMotHang
             // 
-            this.ck_ChamMotHang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ck_ChamMotHang.Location = new System.Drawing.Point(596, 37);
-            this.ck_ChamMotHang.Name = "ck_ChamMotHang";
-            this.ck_ChamMotHang.Properties.Appearance.Font = new System.Drawing.Font("Roboto", 12.75F);
-            this.ck_ChamMotHang.Properties.Appearance.Options.UseFont = true;
-            this.ck_ChamMotHang.Properties.Caption = "Chấm một hàng";
-            this.ck_ChamMotHang.Size = new System.Drawing.Size(139, 27);
-            this.ck_ChamMotHang.TabIndex = 10;
+            this.ckChamMotHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckChamMotHang.Enabled = false;
+            this.ckChamMotHang.Location = new System.Drawing.Point(596, 37);
+            this.ckChamMotHang.Name = "ckChamMotHang";
+            this.ckChamMotHang.Properties.Appearance.Font = new System.Drawing.Font("Roboto", 12.75F);
+            this.ckChamMotHang.Properties.Appearance.Options.UseFont = true;
+            this.ckChamMotHang.Properties.Caption = "Chấm một hàng";
+            this.ckChamMotHang.Properties.RadioGroupIndex = 0;
+            this.ckChamMotHang.Size = new System.Drawing.Size(210, 28);
+            this.ckChamMotHang.TabIndex = 10;
+            this.ckChamMotHang.TabStop = false;
             // 
-            // ck_DaCham
+            // ckDaCham
             // 
-            this.ck_DaCham.Location = new System.Drawing.Point(321, 3);
-            this.ck_DaCham.Name = "ck_DaCham";
-            this.ck_DaCham.Properties.Appearance.Font = new System.Drawing.Font("Roboto", 12.75F);
-            this.ck_DaCham.Properties.Appearance.Options.UseFont = true;
-            this.ck_DaCham.Properties.Caption = "Chấm một cột";
-            this.ck_DaCham.Size = new System.Drawing.Size(122, 24);
-            this.ck_DaCham.TabIndex = 10;
+            this.ckDaCham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckDaCham.Enabled = false;
+            this.ckDaCham.Location = new System.Drawing.Point(321, 3);
+            this.ckDaCham.Name = "ckDaCham";
+            this.ckDaCham.Properties.Appearance.Font = new System.Drawing.Font("Roboto", 12.75F);
+            this.ckDaCham.Properties.Appearance.Options.UseFont = true;
+            this.ckDaCham.Properties.Caption = "Đã chấm";
+            this.ckDaCham.Size = new System.Drawing.Size(122, 28);
+            this.ckDaCham.TabIndex = 10;
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.txtNgayKetThuc);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl3.Location = new System.Drawing.Point(449, 71);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(141, 27);
+            this.panelControl3.TabIndex = 11;
+            // 
+            // txtNgayKetThuc
+            // 
+            this.txtNgayKetThuc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNgayKetThuc.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtNgayKetThuc.Enabled = false;
+            this.txtNgayKetThuc.Location = new System.Drawing.Point(2, 2);
+            this.txtNgayKetThuc.Name = "txtNgayKetThuc";
+            this.txtNgayKetThuc.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtNgayKetThuc.Properties.Appearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.txtNgayKetThuc.Properties.Appearance.Font = new System.Drawing.Font("Roboto", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgayKetThuc.Properties.Appearance.Options.UseBackColor = true;
+            this.txtNgayKetThuc.Properties.Appearance.Options.UseBorderColor = true;
+            this.txtNgayKetThuc.Properties.Appearance.Options.UseFont = true;
+            this.txtNgayKetThuc.Properties.AppearanceFocused.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtNgayKetThuc.Properties.AppearanceFocused.Options.UseBorderColor = true;
+            this.txtNgayKetThuc.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtNgayKetThuc.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txtNgayKetThuc.Properties.MaxValue = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.txtNgayKetThuc.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtNgayKetThuc.Properties.NullValuePrompt = "Ngày bắt đầu...";
+            this.txtNgayKetThuc.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtNgayKetThuc.Properties.ValidateOnEnterKey = true;
+            this.txtNgayKetThuc.Size = new System.Drawing.Size(137, 24);
+            this.txtNgayKetThuc.TabIndex = 0;
+            this.txtNgayKetThuc.EditValueChanged += new System.EventHandler(this.txtNgayKetThuc_EditValueChanged);
+            // 
+            // panelControl4
+            // 
+            this.panelControl4.Controls.Add(this.txtBatDau);
+            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl4.Location = new System.Drawing.Point(321, 71);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(122, 27);
+            this.panelControl4.TabIndex = 11;
+            // 
+            // txtBatDau
+            // 
+            this.txtBatDau.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBatDau.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtBatDau.Enabled = false;
+            this.txtBatDau.Location = new System.Drawing.Point(2, 2);
+            this.txtBatDau.Name = "txtBatDau";
+            this.txtBatDau.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.txtBatDau.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtBatDau.Properties.Appearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.txtBatDau.Properties.Appearance.Font = new System.Drawing.Font("Roboto", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBatDau.Properties.Appearance.Options.UseBackColor = true;
+            this.txtBatDau.Properties.Appearance.Options.UseBorderColor = true;
+            this.txtBatDau.Properties.Appearance.Options.UseFont = true;
+            this.txtBatDau.Properties.AppearanceFocused.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtBatDau.Properties.AppearanceFocused.Options.UseBorderColor = true;
+            this.txtBatDau.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtBatDau.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txtBatDau.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txtBatDau.Properties.MaxValue = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.txtBatDau.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtBatDau.Properties.NullValuePrompt = "Ngày kết thúc...";
+            this.txtBatDau.Properties.NullValuePromptShowForEmptyValue = true;
+            this.txtBatDau.Properties.ValidateOnEnterKey = true;
+            this.txtBatDau.Size = new System.Drawing.Size(118, 24);
+            this.txtBatDau.TabIndex = 0;
+            this.txtBatDau.EditValueChanged += new System.EventHandler(this.txtBatDau_EditValueChanged);
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl3.Location = new System.Drawing.Point(130, 71);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(185, 27);
+            this.labelControl3.TabIndex = 8;
+            this.labelControl3.Text = "Chọn từ ngày đến ngày:";
+            // 
+            // ckChamTheoNgay
+            // 
+            this.ckChamTheoNgay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckChamTheoNgay.Enabled = false;
+            this.ckChamTheoNgay.Location = new System.Drawing.Point(596, 71);
+            this.ckChamTheoNgay.Name = "ckChamTheoNgay";
+            this.ckChamTheoNgay.Properties.Appearance.Font = new System.Drawing.Font("Roboto", 12.75F);
+            this.ckChamTheoNgay.Properties.Appearance.Options.UseFont = true;
+            this.ckChamTheoNgay.Properties.Caption = "Chấm theo ngày đã chọn";
+            this.ckChamTheoNgay.Properties.RadioGroupIndex = 0;
+            this.ckChamTheoNgay.Size = new System.Drawing.Size(210, 27);
+            this.ckChamTheoNgay.TabIndex = 10;
+            this.ckChamTheoNgay.TabStop = false;
+            this.ckChamTheoNgay.CheckedChanged += new System.EventHandler(this.ckChamTheoNgay_CheckedChanged);
             // 
             // gridControl1
             // 
+            this.gridControl1.DataSource = this.ccXemChamCongBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridControl1.Location = new System.Drawing.Point(3, 70);
+            this.gridControl1.Location = new System.Drawing.Point(3, 104);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(812, 267);
+            this.gridControl1.Size = new System.Drawing.Size(1066, 326);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // ccXemChamCongBindingSource
+            // 
+            this.ccXemChamCongBindingSource.DataMember = "ccXemChamCong";
+            this.ccXemChamCongBindingSource.DataSource = this.anGiangDataSet1;
             // 
             // gridView1
             // 
             this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gridView1.ColumnPanelRowHeight = 40;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID,
+            this.colIDChamCong,
+            this.colIDNhanVien,
+            this.colHoTen,
+            this.colMaNhanVien,
+            this.col1,
+            this.col2,
+            this.col3,
+            this.col4,
+            this.col5,
+            this.col6,
+            this.col7,
+            this.col8,
+            this.col9,
+            this.col10,
+            this.col11,
+            this.col12,
+            this.col13,
+            this.col14,
+            this.col15,
+            this.col16,
+            this.col17,
+            this.col18,
+            this.col19,
+            this.col20,
+            this.col21,
+            this.col22,
+            this.col23,
+            this.col24,
+            this.col25,
+            this.col26,
+            this.col27,
+            this.col28,
+            this.col29,
+            this.col30,
+            this.col31,
+            this.colHuongLuong,
+            this.colAnTrua,
+            this.colPhepNam,
+            this.colNgayPhep,
+            this.colTenPhongBan});
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
+            this.gridView1.OptionsCustomization.AllowGroup = false;
+            this.gridView1.OptionsCustomization.AllowQuickHideColumns = false;
+            this.gridView1.OptionsCustomization.AllowSort = false;
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsFind.FindNullPrompt = "Nhập tên nhân viên cần tìm...";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedRow = false;
+            this.gridView1.OptionsView.AnimationType = DevExpress.XtraGrid.Views.Base.GridAnimationType.AnimateAllContent;
+            this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.False;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowIndicator = false;
+            this.gridView1.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Panel;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTenPhongBan, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
+            this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
             // 
-            // nvNhanVienPhongBanTableAdapter1
+            // colID
             // 
-            this.nvNhanVienPhongBanTableAdapter1.ClearBeforeFill = true;
+            this.colID.FieldName = "ID";
+            this.colID.Name = "colID";
+            // 
+            // colIDChamCong
+            // 
+            this.colIDChamCong.FieldName = "IDChamCong";
+            this.colIDChamCong.Name = "colIDChamCong";
+            // 
+            // colIDNhanVien
+            // 
+            this.colIDNhanVien.FieldName = "IDNhanVien";
+            this.colIDNhanVien.Name = "colIDNhanVien";
+            // 
+            // colHoTen
+            // 
+            this.colHoTen.Caption = "Họ tên";
+            this.colHoTen.FieldName = "HoTen";
+            this.colHoTen.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.colHoTen.MaxWidth = 150;
+            this.colHoTen.MinWidth = 150;
+            this.colHoTen.Name = "colHoTen";
+            this.colHoTen.OptionsColumn.AllowMove = false;
+            this.colHoTen.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.colHoTen.Visible = true;
+            this.colHoTen.VisibleIndex = 0;
+            this.colHoTen.Width = 171;
+            // 
+            // colMaNhanVien
+            // 
+            this.colMaNhanVien.FieldName = "MaNhanVien";
+            this.colMaNhanVien.Name = "colMaNhanVien";
+            // 
+            // col1
+            // 
+            this.col1.FieldName = "1";
+            this.col1.MinWidth = 30;
+            this.col1.Name = "col1";
+            this.col1.OptionsColumn.AllowEdit = false;
+            this.col1.OptionsColumn.AllowMove = false;
+            this.col1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col1.OptionsFilter.AllowAutoFilter = false;
+            this.col1.OptionsFilter.AllowFilter = false;
+            this.col1.Visible = true;
+            this.col1.VisibleIndex = 1;
+            this.col1.Width = 30;
+            // 
+            // col2
+            // 
+            this.col2.FieldName = "2";
+            this.col2.MinWidth = 30;
+            this.col2.Name = "col2";
+            this.col2.OptionsColumn.AllowMove = false;
+            this.col2.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col2.OptionsFilter.AllowAutoFilter = false;
+            this.col2.OptionsFilter.AllowFilter = false;
+            this.col2.Visible = true;
+            this.col2.VisibleIndex = 2;
+            this.col2.Width = 30;
+            // 
+            // col3
+            // 
+            this.col3.FieldName = "3";
+            this.col3.MinWidth = 30;
+            this.col3.Name = "col3";
+            this.col3.OptionsColumn.AllowMove = false;
+            this.col3.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col3.OptionsFilter.AllowAutoFilter = false;
+            this.col3.OptionsFilter.AllowFilter = false;
+            this.col3.Visible = true;
+            this.col3.VisibleIndex = 3;
+            this.col3.Width = 30;
+            // 
+            // col4
+            // 
+            this.col4.FieldName = "4";
+            this.col4.MinWidth = 30;
+            this.col4.Name = "col4";
+            this.col4.OptionsColumn.AllowMove = false;
+            this.col4.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col4.OptionsFilter.AllowAutoFilter = false;
+            this.col4.OptionsFilter.AllowFilter = false;
+            this.col4.Visible = true;
+            this.col4.VisibleIndex = 4;
+            this.col4.Width = 30;
+            // 
+            // col5
+            // 
+            this.col5.FieldName = "5";
+            this.col5.MinWidth = 30;
+            this.col5.Name = "col5";
+            this.col5.OptionsColumn.AllowMove = false;
+            this.col5.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col5.OptionsFilter.AllowAutoFilter = false;
+            this.col5.OptionsFilter.AllowFilter = false;
+            this.col5.Visible = true;
+            this.col5.VisibleIndex = 5;
+            this.col5.Width = 30;
+            // 
+            // col6
+            // 
+            this.col6.FieldName = "6";
+            this.col6.MinWidth = 30;
+            this.col6.Name = "col6";
+            this.col6.OptionsColumn.AllowMove = false;
+            this.col6.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col6.OptionsFilter.AllowAutoFilter = false;
+            this.col6.OptionsFilter.AllowFilter = false;
+            this.col6.Visible = true;
+            this.col6.VisibleIndex = 6;
+            this.col6.Width = 30;
+            // 
+            // col7
+            // 
+            this.col7.FieldName = "7";
+            this.col7.MinWidth = 30;
+            this.col7.Name = "col7";
+            this.col7.OptionsColumn.AllowMove = false;
+            this.col7.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col7.OptionsFilter.AllowAutoFilter = false;
+            this.col7.OptionsFilter.AllowFilter = false;
+            this.col7.Visible = true;
+            this.col7.VisibleIndex = 7;
+            this.col7.Width = 30;
+            // 
+            // col8
+            // 
+            this.col8.FieldName = "8";
+            this.col8.MinWidth = 30;
+            this.col8.Name = "col8";
+            this.col8.OptionsColumn.AllowMove = false;
+            this.col8.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col8.OptionsFilter.AllowAutoFilter = false;
+            this.col8.OptionsFilter.AllowFilter = false;
+            this.col8.Visible = true;
+            this.col8.VisibleIndex = 8;
+            this.col8.Width = 30;
+            // 
+            // col9
+            // 
+            this.col9.FieldName = "9";
+            this.col9.MinWidth = 30;
+            this.col9.Name = "col9";
+            this.col9.OptionsColumn.AllowMove = false;
+            this.col9.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col9.OptionsFilter.AllowAutoFilter = false;
+            this.col9.OptionsFilter.AllowFilter = false;
+            this.col9.Visible = true;
+            this.col9.VisibleIndex = 9;
+            this.col9.Width = 30;
+            // 
+            // col10
+            // 
+            this.col10.FieldName = "10";
+            this.col10.MinWidth = 30;
+            this.col10.Name = "col10";
+            this.col10.OptionsColumn.AllowMove = false;
+            this.col10.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col10.OptionsFilter.AllowAutoFilter = false;
+            this.col10.OptionsFilter.AllowFilter = false;
+            this.col10.Visible = true;
+            this.col10.VisibleIndex = 10;
+            this.col10.Width = 30;
+            // 
+            // col11
+            // 
+            this.col11.FieldName = "11";
+            this.col11.MinWidth = 30;
+            this.col11.Name = "col11";
+            this.col11.OptionsColumn.AllowMove = false;
+            this.col11.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col11.OptionsFilter.AllowAutoFilter = false;
+            this.col11.OptionsFilter.AllowFilter = false;
+            this.col11.Visible = true;
+            this.col11.VisibleIndex = 11;
+            this.col11.Width = 30;
+            // 
+            // col12
+            // 
+            this.col12.FieldName = "12";
+            this.col12.MinWidth = 30;
+            this.col12.Name = "col12";
+            this.col12.OptionsColumn.AllowMove = false;
+            this.col12.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col12.OptionsFilter.AllowAutoFilter = false;
+            this.col12.OptionsFilter.AllowFilter = false;
+            this.col12.Visible = true;
+            this.col12.VisibleIndex = 12;
+            this.col12.Width = 30;
+            // 
+            // col13
+            // 
+            this.col13.FieldName = "13";
+            this.col13.MinWidth = 30;
+            this.col13.Name = "col13";
+            this.col13.OptionsColumn.AllowMove = false;
+            this.col13.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col13.OptionsFilter.AllowAutoFilter = false;
+            this.col13.OptionsFilter.AllowFilter = false;
+            this.col13.Visible = true;
+            this.col13.VisibleIndex = 13;
+            this.col13.Width = 30;
+            // 
+            // col14
+            // 
+            this.col14.FieldName = "14";
+            this.col14.MinWidth = 30;
+            this.col14.Name = "col14";
+            this.col14.OptionsColumn.AllowMove = false;
+            this.col14.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col14.OptionsFilter.AllowAutoFilter = false;
+            this.col14.OptionsFilter.AllowFilter = false;
+            this.col14.Visible = true;
+            this.col14.VisibleIndex = 14;
+            this.col14.Width = 30;
+            // 
+            // col15
+            // 
+            this.col15.FieldName = "15";
+            this.col15.MinWidth = 30;
+            this.col15.Name = "col15";
+            this.col15.OptionsColumn.AllowMove = false;
+            this.col15.OptionsFilter.AllowAutoFilter = false;
+            this.col15.OptionsFilter.AllowFilter = false;
+            this.col15.Visible = true;
+            this.col15.VisibleIndex = 15;
+            this.col15.Width = 30;
+            // 
+            // col16
+            // 
+            this.col16.FieldName = "16";
+            this.col16.MinWidth = 30;
+            this.col16.Name = "col16";
+            this.col16.OptionsColumn.AllowMove = false;
+            this.col16.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col16.OptionsFilter.AllowAutoFilter = false;
+            this.col16.OptionsFilter.AllowFilter = false;
+            this.col16.Visible = true;
+            this.col16.VisibleIndex = 16;
+            this.col16.Width = 30;
+            // 
+            // col17
+            // 
+            this.col17.FieldName = "17";
+            this.col17.MinWidth = 30;
+            this.col17.Name = "col17";
+            this.col17.OptionsColumn.AllowMove = false;
+            this.col17.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col17.OptionsFilter.AllowAutoFilter = false;
+            this.col17.OptionsFilter.AllowFilter = false;
+            this.col17.Visible = true;
+            this.col17.VisibleIndex = 17;
+            this.col17.Width = 30;
+            // 
+            // col18
+            // 
+            this.col18.FieldName = "18";
+            this.col18.MinWidth = 30;
+            this.col18.Name = "col18";
+            this.col18.OptionsColumn.AllowMove = false;
+            this.col18.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col18.OptionsFilter.AllowAutoFilter = false;
+            this.col18.OptionsFilter.AllowFilter = false;
+            this.col18.Visible = true;
+            this.col18.VisibleIndex = 18;
+            this.col18.Width = 30;
+            // 
+            // col19
+            // 
+            this.col19.FieldName = "19";
+            this.col19.MinWidth = 30;
+            this.col19.Name = "col19";
+            this.col19.OptionsColumn.AllowMove = false;
+            this.col19.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col19.OptionsFilter.AllowAutoFilter = false;
+            this.col19.OptionsFilter.AllowFilter = false;
+            this.col19.Visible = true;
+            this.col19.VisibleIndex = 19;
+            this.col19.Width = 30;
+            // 
+            // col20
+            // 
+            this.col20.FieldName = "20";
+            this.col20.MinWidth = 30;
+            this.col20.Name = "col20";
+            this.col20.OptionsColumn.AllowMove = false;
+            this.col20.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col20.OptionsFilter.AllowAutoFilter = false;
+            this.col20.OptionsFilter.AllowFilter = false;
+            this.col20.Visible = true;
+            this.col20.VisibleIndex = 20;
+            this.col20.Width = 30;
+            // 
+            // col21
+            // 
+            this.col21.FieldName = "21";
+            this.col21.MinWidth = 30;
+            this.col21.Name = "col21";
+            this.col21.OptionsColumn.AllowMove = false;
+            this.col21.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col21.OptionsFilter.AllowAutoFilter = false;
+            this.col21.OptionsFilter.AllowFilter = false;
+            this.col21.Visible = true;
+            this.col21.VisibleIndex = 21;
+            this.col21.Width = 30;
+            // 
+            // col22
+            // 
+            this.col22.FieldName = "22";
+            this.col22.MinWidth = 30;
+            this.col22.Name = "col22";
+            this.col22.OptionsColumn.AllowMove = false;
+            this.col22.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col22.OptionsFilter.AllowAutoFilter = false;
+            this.col22.OptionsFilter.AllowFilter = false;
+            this.col22.Visible = true;
+            this.col22.VisibleIndex = 22;
+            this.col22.Width = 30;
+            // 
+            // col23
+            // 
+            this.col23.FieldName = "23";
+            this.col23.MinWidth = 30;
+            this.col23.Name = "col23";
+            this.col23.OptionsColumn.AllowMove = false;
+            this.col23.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col23.OptionsFilter.AllowAutoFilter = false;
+            this.col23.OptionsFilter.AllowFilter = false;
+            this.col23.Visible = true;
+            this.col23.VisibleIndex = 23;
+            this.col23.Width = 30;
+            // 
+            // col24
+            // 
+            this.col24.FieldName = "24";
+            this.col24.MinWidth = 30;
+            this.col24.Name = "col24";
+            this.col24.OptionsColumn.AllowMove = false;
+            this.col24.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col24.OptionsFilter.AllowAutoFilter = false;
+            this.col24.OptionsFilter.AllowFilter = false;
+            this.col24.Visible = true;
+            this.col24.VisibleIndex = 24;
+            this.col24.Width = 30;
+            // 
+            // col25
+            // 
+            this.col25.FieldName = "25";
+            this.col25.MinWidth = 30;
+            this.col25.Name = "col25";
+            this.col25.OptionsColumn.AllowMove = false;
+            this.col25.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col25.OptionsFilter.AllowAutoFilter = false;
+            this.col25.OptionsFilter.AllowFilter = false;
+            this.col25.Visible = true;
+            this.col25.VisibleIndex = 25;
+            this.col25.Width = 30;
+            // 
+            // col26
+            // 
+            this.col26.FieldName = "26";
+            this.col26.MinWidth = 30;
+            this.col26.Name = "col26";
+            this.col26.OptionsColumn.AllowMove = false;
+            this.col26.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col26.OptionsFilter.AllowAutoFilter = false;
+            this.col26.OptionsFilter.AllowFilter = false;
+            this.col26.Visible = true;
+            this.col26.VisibleIndex = 26;
+            this.col26.Width = 30;
+            // 
+            // col27
+            // 
+            this.col27.FieldName = "27";
+            this.col27.MinWidth = 30;
+            this.col27.Name = "col27";
+            this.col27.OptionsColumn.AllowMove = false;
+            this.col27.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col27.OptionsFilter.AllowAutoFilter = false;
+            this.col27.OptionsFilter.AllowFilter = false;
+            this.col27.Visible = true;
+            this.col27.VisibleIndex = 27;
+            this.col27.Width = 30;
+            // 
+            // col28
+            // 
+            this.col28.FieldName = "28";
+            this.col28.MinWidth = 30;
+            this.col28.Name = "col28";
+            this.col28.OptionsColumn.AllowMove = false;
+            this.col28.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col28.OptionsFilter.AllowAutoFilter = false;
+            this.col28.OptionsFilter.AllowFilter = false;
+            this.col28.Visible = true;
+            this.col28.VisibleIndex = 28;
+            this.col28.Width = 30;
+            // 
+            // col29
+            // 
+            this.col29.FieldName = "29";
+            this.col29.MinWidth = 30;
+            this.col29.Name = "col29";
+            this.col29.OptionsColumn.AllowMove = false;
+            this.col29.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col29.OptionsFilter.AllowAutoFilter = false;
+            this.col29.OptionsFilter.AllowFilter = false;
+            this.col29.Visible = true;
+            this.col29.VisibleIndex = 29;
+            this.col29.Width = 30;
+            // 
+            // col30
+            // 
+            this.col30.FieldName = "30";
+            this.col30.MinWidth = 30;
+            this.col30.Name = "col30";
+            this.col30.OptionsColumn.AllowMove = false;
+            this.col30.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col30.OptionsFilter.AllowAutoFilter = false;
+            this.col30.OptionsFilter.AllowFilter = false;
+            this.col30.Visible = true;
+            this.col30.VisibleIndex = 30;
+            this.col30.Width = 30;
+            // 
+            // col31
+            // 
+            this.col31.FieldName = "31";
+            this.col31.MinWidth = 30;
+            this.col31.Name = "col31";
+            this.col31.OptionsColumn.AllowMove = false;
+            this.col31.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col31.OptionsFilter.AllowAutoFilter = false;
+            this.col31.OptionsFilter.AllowFilter = false;
+            this.col31.Visible = true;
+            this.col31.VisibleIndex = 31;
+            this.col31.Width = 30;
+            // 
+            // colHuongLuong
+            // 
+            this.colHuongLuong.FieldName = "HuongLuong";
+            this.colHuongLuong.MinWidth = 60;
+            this.colHuongLuong.Name = "colHuongLuong";
+            this.colHuongLuong.OptionsColumn.AllowMove = false;
+            this.colHuongLuong.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.colHuongLuong.OptionsFilter.AllowAutoFilter = false;
+            this.colHuongLuong.OptionsFilter.AllowFilter = false;
+            this.colHuongLuong.Visible = true;
+            this.colHuongLuong.VisibleIndex = 32;
+            this.colHuongLuong.Width = 70;
+            // 
+            // colAnTrua
+            // 
+            this.colAnTrua.FieldName = "AnTrua";
+            this.colAnTrua.MinWidth = 60;
+            this.colAnTrua.Name = "colAnTrua";
+            this.colAnTrua.OptionsColumn.AllowMove = false;
+            this.colAnTrua.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.colAnTrua.OptionsFilter.AllowAutoFilter = false;
+            this.colAnTrua.OptionsFilter.AllowFilter = false;
+            this.colAnTrua.Visible = true;
+            this.colAnTrua.VisibleIndex = 33;
+            this.colAnTrua.Width = 70;
+            // 
+            // colPhepNam
+            // 
+            this.colPhepNam.FieldName = "PhepNam";
+            this.colPhepNam.MinWidth = 60;
+            this.colPhepNam.Name = "colPhepNam";
+            this.colPhepNam.OptionsColumn.AllowMove = false;
+            this.colPhepNam.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.colPhepNam.OptionsFilter.AllowAutoFilter = false;
+            this.colPhepNam.OptionsFilter.AllowFilter = false;
+            this.colPhepNam.Visible = true;
+            this.colPhepNam.VisibleIndex = 34;
+            this.colPhepNam.Width = 70;
+            // 
+            // colNgayPhep
+            // 
+            this.colNgayPhep.FieldName = "NgayPhep";
+            this.colNgayPhep.MinWidth = 60;
+            this.colNgayPhep.Name = "colNgayPhep";
+            this.colNgayPhep.OptionsColumn.AllowMove = false;
+            this.colNgayPhep.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.colNgayPhep.OptionsFilter.AllowAutoFilter = false;
+            this.colNgayPhep.OptionsFilter.AllowFilter = false;
+            this.colNgayPhep.Visible = true;
+            this.colNgayPhep.VisibleIndex = 35;
+            this.colNgayPhep.Width = 146;
+            // 
+            // colTenPhongBan
+            // 
+            this.colTenPhongBan.FieldName = "TenPhongBan";
+            this.colTenPhongBan.Name = "colTenPhongBan";
+            this.colTenPhongBan.OptionsColumn.AllowMove = false;
+            this.colTenPhongBan.OptionsFilter.AllowAutoFilter = false;
+            this.colTenPhongBan.OptionsFilter.AllowFilter = false;
+            this.colTenPhongBan.Visible = true;
+            this.colTenPhongBan.VisibleIndex = 37;
             // 
             // ccKyHieuTableAdapter
             // 
             this.ccKyHieuTableAdapter.ClearBeforeFill = true;
+            // 
+            // ccXemChamCongTableAdapter1
+            // 
+            this.ccXemChamCongTableAdapter1.ClearBeforeFill = true;
             // 
             // XUC_ChamCong
             // 
@@ -320,7 +1081,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "XUC_ChamCong";
-            this.Size = new System.Drawing.Size(818, 340);
+            this.Size = new System.Drawing.Size(1072, 433);
             this.Load += new System.EventHandler(this.XUC_ChamCong_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -329,16 +1090,24 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateThangNam.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateThangNam.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ckBatDauSua.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckChamTungO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbLoaiChamCong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ccKyHieuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ck_ChamMotCot.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ck_ChamMotHang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ck_DaCham.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckChamMotCot.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckChamMotHang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckDaCham.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayKetThuc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtBatDau.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckChamTheoNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ccXemChamCongBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -352,18 +1121,66 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private AnGiangDataSetTableAdapters.nvNhanVienPhongBanTableAdapter nvNhanVienPhongBanTableAdapter1;
         private AnGiangDataSet anGiangDataSet1;
         private DevExpress.XtraEditors.DateEdit dateThangNam;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LookUpEdit cbLoaiChamCong;
-        private DevExpress.XtraEditors.CheckEdit ckBatDauSua;
+        private DevExpress.XtraEditors.CheckEdit ckChamTungO;
         private System.Windows.Forms.BindingSource ccKyHieuBindingSource;
         private AnGiangDataSetTableAdapters.ccKyHieuTableAdapter ccKyHieuTableAdapter;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.CheckEdit ck_ChamMotHang;
-        private DevExpress.XtraEditors.CheckEdit ck_ChamMotCot;
-        private DevExpress.XtraEditors.CheckEdit ck_DaCham;
+        private DevExpress.XtraEditors.CheckEdit ckChamMotHang;
+        private DevExpress.XtraEditors.CheckEdit ckChamMotCot;
+        private DevExpress.XtraEditors.CheckEdit ckDaCham;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.SpinEdit txtNgayKetThuc;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraEditors.SpinEdit txtBatDau;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.CheckEdit ckChamTheoNgay;
+        private AnGiangDataSetTableAdapters.ccXemChamCongTableAdapter ccXemChamCongTableAdapter1;
+        private System.Windows.Forms.BindingSource ccXemChamCongBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
+        private DevExpress.XtraGrid.Columns.GridColumn colIDChamCong;
+        private DevExpress.XtraGrid.Columns.GridColumn colIDNhanVien;
+        private DevExpress.XtraGrid.Columns.GridColumn colHoTen;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaNhanVien;
+        private DevExpress.XtraGrid.Columns.GridColumn col1;
+        private DevExpress.XtraGrid.Columns.GridColumn col2;
+        private DevExpress.XtraGrid.Columns.GridColumn col3;
+        private DevExpress.XtraGrid.Columns.GridColumn col4;
+        private DevExpress.XtraGrid.Columns.GridColumn col5;
+        private DevExpress.XtraGrid.Columns.GridColumn col6;
+        private DevExpress.XtraGrid.Columns.GridColumn col7;
+        private DevExpress.XtraGrid.Columns.GridColumn col8;
+        private DevExpress.XtraGrid.Columns.GridColumn col9;
+        private DevExpress.XtraGrid.Columns.GridColumn col10;
+        private DevExpress.XtraGrid.Columns.GridColumn col11;
+        private DevExpress.XtraGrid.Columns.GridColumn col12;
+        private DevExpress.XtraGrid.Columns.GridColumn col13;
+        private DevExpress.XtraGrid.Columns.GridColumn col14;
+        private DevExpress.XtraGrid.Columns.GridColumn col15;
+        private DevExpress.XtraGrid.Columns.GridColumn col16;
+        private DevExpress.XtraGrid.Columns.GridColumn col17;
+        private DevExpress.XtraGrid.Columns.GridColumn col18;
+        private DevExpress.XtraGrid.Columns.GridColumn col19;
+        private DevExpress.XtraGrid.Columns.GridColumn col20;
+        private DevExpress.XtraGrid.Columns.GridColumn col21;
+        private DevExpress.XtraGrid.Columns.GridColumn col22;
+        private DevExpress.XtraGrid.Columns.GridColumn col23;
+        private DevExpress.XtraGrid.Columns.GridColumn col24;
+        private DevExpress.XtraGrid.Columns.GridColumn col25;
+        private DevExpress.XtraGrid.Columns.GridColumn col26;
+        private DevExpress.XtraGrid.Columns.GridColumn col27;
+        private DevExpress.XtraGrid.Columns.GridColumn col28;
+        private DevExpress.XtraGrid.Columns.GridColumn col29;
+        private DevExpress.XtraGrid.Columns.GridColumn col30;
+        private DevExpress.XtraGrid.Columns.GridColumn col31;
+        private DevExpress.XtraGrid.Columns.GridColumn colAnTrua;
+        private DevExpress.XtraGrid.Columns.GridColumn colHuongLuong;
+        private DevExpress.XtraGrid.Columns.GridColumn colPhepNam;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayPhep;
+        private DevExpress.XtraGrid.Columns.GridColumn colTenPhongBan;
 
     }
 }

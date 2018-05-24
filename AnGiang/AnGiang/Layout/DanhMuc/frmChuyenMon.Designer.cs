@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridControlChuyenMon = new DevExpress.XtraGrid.GridControl();
-            this.gridViewChuyenMon = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.anGiangDataSet = new AnGiang.AnGiangDataSet();
             this.dvChuyenMonBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dvChuyenMonTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.dvChuyenMonTableAdapter();
+            this.anGiangDataSet = new AnGiang.AnGiangDataSet();
+            this.gridViewChuyenMon = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIDChuyenMon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaChuyenMon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenChuyenMon = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,23 +40,36 @@
             this.colNgayCapNhat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDaXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDonViID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dvChuyenMonTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.dvChuyenMonTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlChuyenMon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewChuyenMon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvChuyenMonBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewChuyenMon)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlChuyenMon
             // 
             this.gridControlChuyenMon.DataSource = this.dvChuyenMonBindingSource;
             this.gridControlChuyenMon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlChuyenMon.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControlChuyenMon.Location = new System.Drawing.Point(0, 0);
             this.gridControlChuyenMon.MainView = this.gridViewChuyenMon;
+            this.gridControlChuyenMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControlChuyenMon.Name = "gridControlChuyenMon";
-            this.gridControlChuyenMon.Size = new System.Drawing.Size(863, 441);
+            this.gridControlChuyenMon.Size = new System.Drawing.Size(1007, 543);
             this.gridControlChuyenMon.TabIndex = 0;
             this.gridControlChuyenMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewChuyenMon});
+            // 
+            // dvChuyenMonBindingSource
+            // 
+            this.dvChuyenMonBindingSource.DataMember = "dvChuyenMon";
+            this.dvChuyenMonBindingSource.DataSource = this.anGiangDataSet;
+            // 
+            // anGiangDataSet
+            // 
+            this.anGiangDataSet.DataSetName = "AnGiangDataSet";
+            this.anGiangDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridViewChuyenMon
             // 
@@ -71,87 +83,87 @@
             this.colDonViID});
             this.gridViewChuyenMon.GridControl = this.gridControlChuyenMon;
             this.gridViewChuyenMon.Name = "gridViewChuyenMon";
+            this.gridViewChuyenMon.NewItemRowText = "Nhấn vào đây để thêm mới";
+            this.gridViewChuyenMon.OptionsBehavior.AutoUpdateTotalSummary = false;
+            this.gridViewChuyenMon.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplace;
+            this.gridViewChuyenMon.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gridViewChuyenMon.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            // 
-            // anGiangDataSet
-            // 
-            this.anGiangDataSet.DataSetName = "AnGiangDataSet";
-            this.anGiangDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dvChuyenMonBindingSource
-            // 
-            this.dvChuyenMonBindingSource.DataMember = "dvChuyenMon";
-            this.dvChuyenMonBindingSource.DataSource = this.anGiangDataSet;
-            // 
-            // dvChuyenMonTableAdapter
-            // 
-            this.dvChuyenMonTableAdapter.ClearBeforeFill = true;
+            this.gridViewChuyenMon.OptionsEditForm.ActionOnModifiedRowChange = DevExpress.XtraGrid.Views.Grid.EditFormModifiedAction.Save;
+            this.gridViewChuyenMon.OptionsEditForm.ShowOnDoubleClick = DevExpress.Utils.DefaultBoolean.True;
+            this.gridViewChuyenMon.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             // 
             // colIDChuyenMon
             // 
             this.colIDChuyenMon.FieldName = "IDChuyenMon";
             this.colIDChuyenMon.Name = "colIDChuyenMon";
-            this.colIDChuyenMon.Visible = true;
-            this.colIDChuyenMon.VisibleIndex = 0;
+            this.colIDChuyenMon.OptionsColumn.AllowEdit = false;
             // 
             // colMaChuyenMon
             // 
+            this.colMaChuyenMon.Caption = "Mã chuyên môn";
             this.colMaChuyenMon.FieldName = "MaChuyenMon";
             this.colMaChuyenMon.Name = "colMaChuyenMon";
+            this.colMaChuyenMon.OptionsColumn.AllowEdit = false;
             this.colMaChuyenMon.Visible = true;
-            this.colMaChuyenMon.VisibleIndex = 1;
+            this.colMaChuyenMon.VisibleIndex = 0;
+            this.colMaChuyenMon.Width = 268;
             // 
             // colTenChuyenMon
             // 
+            this.colTenChuyenMon.Caption = "Tên chuyên môn";
             this.colTenChuyenMon.FieldName = "TenChuyenMon";
             this.colTenChuyenMon.Name = "colTenChuyenMon";
+            this.colTenChuyenMon.OptionsColumn.AllowEdit = false;
             this.colTenChuyenMon.Visible = true;
-            this.colTenChuyenMon.VisibleIndex = 2;
+            this.colTenChuyenMon.VisibleIndex = 1;
+            this.colTenChuyenMon.Width = 719;
             // 
             // colNgayTao
             // 
             this.colNgayTao.FieldName = "NgayTao";
             this.colNgayTao.Name = "colNgayTao";
-            this.colNgayTao.Visible = true;
-            this.colNgayTao.VisibleIndex = 3;
+            this.colNgayTao.OptionsColumn.AllowEdit = false;
             // 
             // colNgayCapNhat
             // 
             this.colNgayCapNhat.FieldName = "NgayCapNhat";
             this.colNgayCapNhat.Name = "colNgayCapNhat";
-            this.colNgayCapNhat.Visible = true;
-            this.colNgayCapNhat.VisibleIndex = 4;
+            this.colNgayCapNhat.OptionsColumn.AllowEdit = false;
             // 
             // colDaXoa
             // 
             this.colDaXoa.FieldName = "DaXoa";
             this.colDaXoa.Name = "colDaXoa";
-            this.colDaXoa.Visible = true;
-            this.colDaXoa.VisibleIndex = 5;
+            this.colDaXoa.OptionsColumn.AllowEdit = false;
             // 
             // colDonViID
             // 
+            this.colDonViID.Caption = "Đơn vị";
             this.colDonViID.FieldName = "DonViID";
             this.colDonViID.Name = "colDonViID";
-            this.colDonViID.Visible = true;
-            this.colDonViID.VisibleIndex = 6;
+            this.colDonViID.OptionsColumn.AllowEdit = false;
+            // 
+            // dvChuyenMonTableAdapter
+            // 
+            this.dvChuyenMonTableAdapter.ClearBeforeFill = true;
             // 
             // frmChuyenMon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 441);
+            this.ClientSize = new System.Drawing.Size(1007, 543);
             this.Controls.Add(this.gridControlChuyenMon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmChuyenMon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChuyenMon";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmChuyenMon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlChuyenMon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewChuyenMon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvChuyenMonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewChuyenMon)).EndInit();
             this.ResumeLayout(false);
 
         }

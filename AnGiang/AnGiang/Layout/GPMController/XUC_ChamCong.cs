@@ -12,17 +12,74 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors.Repository;
 using AnGiang.Model;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Localization;
+using DevExpress.XtraEditors.Controls;
+using System.Reflection;
 
 namespace AnGiang.Layout.GPMController
 {
     public partial class XUC_ChamCong : DevExpress.XtraEditors.XtraUserControl
     {
+        private bool _MouseRight = false;
+        private int _SoNgay = 0;
+        private List<int> _NgayNghi;
+        private List<int> _NgayNghiT7;
+
         public XUC_ChamCong()
         {
-            InitializeComponent();
-            nvNhanVienPhongBanTableAdapter1.Fill(anGiangDataSet1.nvNhanVienPhongBan);
-            ccKyHieuTableAdapter.Fill(anGiangDataSet1.ccKyHieu);
+            InitializeComponent();           
+            GridLocalizer.Active = new MyGridLocalizer();
+            Localizer.Active = new MyLocalizer();           
         }
+
+        #region Việt Sub
+        public class MyGridLocalizer : GridLocalizer
+        {
+            public override string GetLocalizedString(GridStringId id)
+            {
+                switch (id)
+                {
+                    case GridStringId.FindControlFindButton:
+                        return "Tìm Kiếm";
+                    case GridStringId.FindControlClearButton:
+                        return "Hủy Tìm";
+                    case GridStringId.FilterPanelCustomizeButton:
+                        return "Tùy Chọn Kích Cở";
+                    case GridStringId.EditFormCancelButton:
+                        return "Hủy";
+                    case GridStringId.EditFormUpdateButton:
+                        return "Cập Nhật";
+                    case GridStringId.EditFormSaveMessage:
+                        return "Dữ liệu đã thay đổi, bạn có muốn lưu không?";
+                    case GridStringId.WindowWarningCaption:
+                        return "CHÚ Ý";
+                    case GridStringId.GridGroupPanelText:
+                        return "Kéo một trường của hàng đầu tiên trong bảng vào đây";
+                    default:
+                        return base.GetLocalizedString(id);
+                }
+            }
+        }
+        public class MyLocalizer : Localizer
+        {
+            public override string GetLocalizedString(StringId id)
+            {
+                switch (id)
+                {
+                    case StringId.InvalidValueText:
+                        return "Giá trị không hợp lệ";
+                    case StringId.XtraMessageBoxYesButtonText:
+                        return "Có";
+                    case StringId.XtraMessageBoxCancelButtonText:
+                        return "Hủy";
+                    case StringId.XtraMessageBoxNoButtonText:
+                        return "Không";
+                    default:
+                        return base.GetLocalizedString(id);
+                }
+            }
+        }
+        #endregion
 
         #region Kiem tra
         public bool laNamNhuan(int nYear)
@@ -71,108 +128,178 @@ namespace AnGiang.Layout.GPMController
 
             return nNumOfDays;
         }
+        private void cbLoaiChamCong_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Caption.Contains("hủy"))
+            {
+                ccKyHieu layMacDinhNghiCuoiTuan = DataProvider.Ins.DB.ccKyHieux.Where(q => q.MacDinh == 1).FirstOrDefault();
+                cbLoaiChamCong.EditValue = layMacDinhNghiCuoiTuan.IDKyHieu;
+                LoadUnchecked();
+            }
+        }
+        private void ckChamTheoNgay_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txtBatDau.Value > txtNgayKetThuc.Value)
+            {
+                ckChamTheoNgay.Checked = false;
+            }
+        }
+        private void txtNgayKetThuc_EditValueChanged(object sender, EventArgs e)
+        {
+            if (txtBatDau.Value > txtNgayKetThuc.Value)
+            {
+                txtNgayKetThuc.Value = txtBatDau.Value;
+            }
+        }
+        private void txtBatDau_EditValueChanged(object sender, EventArgs e)
+        {
+            if (txtBatDau.Value > txtNgayKetThuc.Value)
+            {
+                txtNgayKetThuc.Value = txtBatDau.Value;
+            }
+        }
+        private void gridView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+                _MouseRight = true;
+            else
+                _MouseRight = false;
+        }
 
         #endregion
 
+        #region Load
+        void LoadEnable()
+        {
+            ckChamTungO.Enabled = true;
+            ckChamMotCot.Enabled = true;
+            ckChamMotHang.Enabled = true;
+            ckChamTheoNgay.Enabled = true;
+            ckDaCham.Enabled = true;
+            txtBatDau.Enabled = true;
+            txtNgayKetThuc.Enabled = true;
+            cbLoaiChamCong.Enabled = true;
+        }
+        void LoadDisable()
+        {
+            ckChamTungO.Enabled = false;
+            ckChamMotCot.Enabled = false;
+            ckChamMotHang.Enabled = false;
+            ckChamTheoNgay.Enabled = false;
+            ckDaCham.Enabled = false;
+            txtBatDau.Enabled = false;
+            cbLoaiChamCong.Enabled = false;
+            txtNgayKetThuc.Enabled = false;
+        }
+        void LoadUnchecked()
+        {
+            ckChamMotCot.Checked = false;
+            ckChamTungO.Checked = false;
+            ckChamMotHang.Checked = false;
+            ckChamTheoNgay.Checked = false;
+        }
+        #endregion
+
+        public bool CapNhatChiTiet(long IDNhanVien, long IDChamCong, int Ngay, long IDKyHieu=0)
+        {
+            if(IDKyHieu==0)
+            IDKyHieu = (long)cbLoaiChamCong.EditValue;
+            var kyhieuvankhongphep = DataProvider.Ins.DB.ccKyHieux.Where(q => q.MaKyHieu == "K").SingleOrDefault();
+            if (_NgayNghi.Contains(Ngay) && IDKyHieu != kyhieuvankhongphep.IDKyHieu)
+                    return DataProvider.Ins.DB.pr_ThemChiTiet(IDKyHieu, IDChamCong, Ngay, 2) > 0;
+            if (_NgayNghiT7.Contains(Ngay))
+                    return DataProvider.Ins.DB.pr_ThemChiTiet(IDKyHieu, IDChamCong, Ngay, 3) > 0;
+            if (!_NgayNghi.Contains(Ngay) && !_NgayNghiT7.Contains(Ngay))
+                return DataProvider.Ins.DB.pr_ThemChiTiet(IDKyHieu, IDChamCong, Ngay, 0) > 0;               
+            return false;
+        }
         private void XUC_ChamCong_Load(object sender, EventArgs e)
         {          
-            gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            gridView1.OptionsView.ShowIndicator = false;
-            gridView1.OptionsBehavior.AutoExpandAllGroups = true;
+            ccKyHieuTableAdapter.Fill(anGiangDataSet1.ccKyHieu);
+            ccXemChamCongTableAdapter1.Fill(anGiangDataSet1.ccXemChamCong,DateTime.Now.Month,DateTime.Now.Year);
+            colHuongLuong.Caption = "Hưởng \nlương";
+            colNgayPhep.Caption = "Ngày \nphép";
+            colPhepNam.Caption = "Phép \nnăm";
+            colAnTrua.Caption = "Ăn \nTrưa";
+            dateThangNam.EditValue = DateTime.Now;
+            dateThangNam.Properties.MaxValue = DateTime.Now;
+            ccKyHieu layMacDinhNghiCuoiTuan = DataProvider.Ins.DB.ccKyHieux.Where(q => q.MacDinh == 1).SingleOrDefault();
+            cbLoaiChamCong.EditValue = layMacDinhNghiCuoiTuan.IDKyHieu;
         }
         private void dateThangNam_EditValueChanged(object sender, EventArgs e)
         {
-            if (dateThangNam == null)
-                return;
-            gridControl1.DataSource = null;
             DateTime dt = dateThangNam.DateTime;
-            gridView1.Columns.Clear();
-            //var chamcong = DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year);
-            DataTable tb = nvNhanVienPhongBanTableAdapter1.GetData();             
-            AnGiang.Model.ccKyHieu layMacDinh = AnGiang.Model.DataProvider.Ins.DB.ccKyHieux.Where(q => q.MacDinh == 1).First();
-            List<int> ngaycuoituan = new List<int>();
-            _SoNgay = tinhSoNgayTrongThang(dt.Month, dt.Year);
-            for (int i = 1; i <= _SoNgay; i++)
+            var nhanvien = DataProvider.Ins.DB.nvNhanViens.Where(q => q.DaXoa == 0 && (q.NgayLamViec.Value.Year == dt.Year && q.NgayLamViec.Value.Month <= dt.Month || q.NgayLamViec.Value.Year < dt.Year)).ToList();
+            if (dt == null || nhanvien == null)
             {
-                DataColumn coldt = new DataColumn(i.ToString());                                
-                string temp = dt.Year + "-" + dt.Month.ToString("00") + "-" + i.ToString("00");
-                DateTime KiemTraCuoiTuan = DateTime.ParseExact(temp + " 00:00:00,000", "yyyy-MM-dd HH:mm:ss,fff", System.Globalization.CultureInfo.InvariantCulture);
-                if ((KiemTraCuoiTuan.DayOfWeek == DayOfWeek.Sunday) || (KiemTraCuoiTuan.DayOfWeek == DayOfWeek.Saturday))
-                {
-                    ngaycuoituan.Add(i);
-                }else
-                {
-                    coldt.DefaultValue = layMacDinh.MaKyHieu;
-                }
-
-                tb.Columns.Add(coldt);
+                LoadDisable();
+                return;
             }
+            LoadEnable();            
+            _SoNgay = tinhSoNgayTrongThang(dt.Month, dt.Year); //lấy số ngày trong tháng của năm
+            txtBatDau.Properties.MaxValue = _SoNgay; //giới hạng lại ngày
+            txtNgayKetThuc.Properties.MaxValue = _SoNgay; //giới hạng lại ngày
 
-            #region khoi tao
-            tb.Columns.Add("HuongLuong");
-            tb.Columns.Add("AnTrua");
-            tb.Columns.Add("PhepNam");
-            gridControl1.DataSource = tb;
-            GridColumn colTenPhongBan = gridView1.Columns.ColumnByFieldName("TenPhongBan");
-            GridColumn colHuongLuong = gridView1.Columns.ColumnByFieldName("HuongLuong");
-            GridColumn colAnTrua = gridView1.Columns.ColumnByFieldName("AnTrua");
-            GridColumn colNghiPhep = gridView1.Columns.ColumnByFieldName("PhepNam");
-            GridColumn colHoten = gridView1.Columns.ColumnByFieldName("HoTen");
-            GridColumn colNhanVien = gridView1.Columns.ColumnByFieldName("IDNhanVien");
-            colTenPhongBan.GroupIndex = 0;          
-            colNhanVien.Visible = false;
-            colNhanVien.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;            
-            colHoten.OptionsColumn.ReadOnly = true;
-            colHuongLuong.OptionsColumn.ReadOnly = true;
-            colAnTrua.OptionsColumn.ReadOnly = true;
-            colNghiPhep.OptionsColumn.ReadOnly = true;
-            colHoten.Caption = "Họ tên";
-            colHuongLuong.Caption = "Hưỡng lương";
-            colHoten.Caption = "Ăn trưa";
-            colHoten.Caption = "Phép năm";
-            colHoten.MinWidth = 200;
-            colHoten.MaxWidth = 200;
-            colHoten.Fixed = FixedStyle.Left;           
-            colHuongLuong.MinWidth = 70;
-            colAnTrua.MinWidth = 70;
-            colNghiPhep.MinWidth = 70;
-            colHuongLuong.OptionsColumn.FixedWidth = false;
-            colAnTrua.OptionsColumn.FixedWidth = false;            
-            colNghiPhep.OptionsColumn.FixedWidth = false;
+            //lấy danh sach nhân viên           
+            List<long> listIDNhanVien = nhanvien.Select(x => x.IDNhanVien).ToList(); //lấy danh sách ID nhân viên làm việc
+            var chamcong = DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && listIDNhanVien.Contains((long)q.NhanVienID)).ToList();
+            List<long?> listNhanVienID = chamcong.Select(x => x.NhanVienID).ToList(); //danh sách Id nhân viên có trong bảng chấm công        
+            var DanhSachNhanVienChuaThem = DataProvider.Ins.DB.nvNhanViens.Where(q => q.DaXoa == 0 && (q.NgayLamViec.Value.Year == dt.Year && q.NgayLamViec.Value.Month <= dt.Month || q.NgayLamViec.Value.Year < dt.Year) && !listNhanVienID.Contains(q.IDNhanVien)).ToList();
+
+            //lấy ký hiệu mặt định nghĩ cuối tuần                              
+            ccKyHieu layMacDinh = DataProvider.Ins.DB.ccKyHieux.Where(q => q.MaKyHieu == "8").FirstOrDefault(); //1: ngay lam 8 tieng    
+            ccKyHieu layMacDinhNghiChuNhat = DataProvider.Ins.DB.ccKyHieux.Where(q => q.MacDinh == 1).FirstOrDefault();  //2: nghi ngay chu nhat 
+            ccKyHieu layMacDinhNghiThuBay = DataProvider.Ins.DB.ccKyHieux.Where(q => q.MaKyHieu == "4").FirstOrDefault(); //3: ngay lam thu 7 4 tieng
+
+            //lấy danh sách cuối tuần
+            _NgayNghi = new List<int>();
+            _NgayNghiT7 = new List<int>();
             for (int i = 1; i <= _SoNgay; i++)
-            {
-                GridColumn col = gridView1.Columns.ColumnByFieldName(i.ToString());
-                col.MaxWidth = 30;
-                col.MinWidth = 30;
-                col.OptionsFilter.AllowFilter = false;
-                col.OptionsFilter.AllowAutoFilter = false;
-                col.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-                //col.OptionsColumn.ReadOnly=true;
-                if(ngaycuoituan.Contains(i))
+            {                
+                DateTime KiemTraCuoiTuan = new DateTime(dt.Year, dt.Month, i); 
+                if (KiemTraCuoiTuan.DayOfWeek == DayOfWeek.Sunday)
+                    _NgayNghi.Add(i);
+                if (KiemTraCuoiTuan.DayOfWeek == DayOfWeek.Saturday)
+                    _NgayNghiT7.Add(i);
+                if (_NgayNghi.Contains(i) || _NgayNghiT7.Contains(i))
                 {
+                    GridColumn col = gridView1.Columns.ColumnByFieldName(i.ToString());
                     col.AppearanceHeader.BackColor = Color.DarkSalmon;
-                    col.AppearanceCell.BackColor = Color.DarkSalmon;                   
+                    col.AppearanceCell.BackColor = Color.DarkSalmon;
                 }
             }
-            #endregion
-        }
-
-        private void cbLoaiChamCong_EditValueChanged(object sender, EventArgs e)
-        {
-            if (cbLoaiChamCong.EditValue != null)
+            //kiểm tra xem còn nhân viền nào chưa được thêm vào bảng chấm công chưa nếu chưa thì thêm vào
+            if (listIDNhanVien.Count != listNhanVienID.Count)
             {
-                var loaichamcong = DataProvider.Ins.DB.ccKyHieux.Find(cbLoaiChamCong.EditValue);
-                if(loaichamcong!=null)
-                _MaKyHieu = loaichamcong.MaKyHieu;
+                float ngaychunhat = _NgayNghi.Count;
+                float ngaythubay = _NgayNghiT7.Count;
+                float ngaynghi = ngaychunhat + ngaythubay / 2;
+                float huongluong = _SoNgay - ngaynghi;
+                foreach (nvNhanVien nv in DanhSachNhanVienChuaThem)
+                {
+                    //thêm vào châm công mới
+                    DataProvider.Ins.DB.pr_ThemChamCong(nv.IDNhanVien, dt.Month, dt.Year, _SoNgay, ngaynghi, huongluong);
+                    //đưa số ngày vào chi tiết
+                    DataProvider.Ins.DB.Entry(DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && q.NhanVienID == nv.IDNhanVien).FirstOrDefault());
+                    long IDChamCong = DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && q.NhanVienID == nv.IDNhanVien).FirstOrDefault().IDChamCong;
+                    for (int i = 1; i <= _SoNgay; i++)
+                    {
+                        if (_NgayNghi.Contains(i))
+                            CapNhatChiTiet(nv.IDNhanVien, IDChamCong, i, layMacDinhNghiChuNhat.IDKyHieu);
+                        else
+                            if (_NgayNghiT7.Contains(i))
+                                CapNhatChiTiet(nv.IDNhanVien, IDChamCong, i, layMacDinhNghiThuBay.IDKyHieu);
+                            else
+                                CapNhatChiTiet(nv.IDNhanVien, IDChamCong, i, layMacDinh.IDKyHieu);
+                    }
+                  DataProvider.Ins.DB.pr_LoadChamCong(IDChamCong);
+                }
             }
-        }
-
-        private string _MaKyHieu = string.Empty;
-        private int _SoNgay = 0;
+            ccXemChamCongTableAdapter1.Fill(anGiangDataSet1.ccXemChamCong,dt.Month,dt.Year);          
+        }    
         private void gridView1_RowCellClick(object sender, RowCellClickEventArgs e)
         {
-            switch(e.Column.FieldName)
+            switch (e.Column.FieldName)
             {
                 case "HuongLuong":
                     return;
@@ -184,49 +311,89 @@ namespace AnGiang.Layout.GPMController
                     return;
             }
 
-            if (ckBatDauSua.Checked)
+            long IDKyHieu = (long)cbLoaiChamCong.EditValue;
+            string maKyHieu = DataProvider.Ins.DB.ccKyHieux.Find(IDKyHieu).MaKyHieu;
+            if (!ckChamMotCot.Checked && !ckChamMotHang.Checked && !ckChamTungO.Checked && !ckChamTheoNgay.Checked)
+                return;
+            DateTime dt = dateThangNam.DateTime;
+            int IDNhanVien = int.Parse(gridView1.GetFocusedRowCellValue("IDNhanVien").ToString());
+            DataProvider.Ins.DB.Entry(DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && q.NhanVienID == IDNhanVien).FirstOrDefault()).Reload();
+            long IDChamCong = DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && q.NhanVienID == IDNhanVien).FirstOrDefault().IDChamCong;
+
+            GridColumn colHuongLuong = gridView1.Columns.ColumnByFieldName("HuongLuong");
+            GridColumn colAnTrua = gridView1.Columns.ColumnByFieldName("AnTrua");
+            GridColumn colNghiPhep = gridView1.Columns.ColumnByFieldName("PhepNam");
+            GridColumn colNgayPhep = gridView1.Columns.ColumnByFieldName("NgayPhep");
+          
+            if (ckChamTungO.Checked)
             {
-                gridView1.SetFocusedRowCellValue(e.Column, _MaKyHieu);
-                //gridView1.
-                //int ID = (int)gridView1.GetRowCellValue(e.RowHandle, "IDNhanVien");
-                 //DateTime dt = dateThangNam.DateTime;
-                 //DataProvider.Ins.DB.pr_ThemChamCong(ID, dt.Month, dt.Year, _SoNgay);
-                 //var chamcong = DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year);
-                 //if (chamcong != null)
-                 //{
-                 //    DataProvider.Ins.DB.pr_ThemChiTiet((int)cbLoaiChamCong.EditValue, chamcong.First().IDChamCong, int.Parse(e.Column.FieldName));
-                 //}
+                int Ngay = int.Parse(e.Column.FieldName);
+                if (!CapNhatChiTiet(IDNhanVien, IDChamCong, Ngay))
+                    return;
+                gridView1.SetFocusedRowCellValue(e.Column, maKyHieu);                                               
             }
-            if(ck_ChamMotHang.Checked)
+            else
+            //chấm công nhanh theo một hàng
+            if (ckChamMotHang.Checked)
             {
                 for (int i = 1; i <= _SoNgay; i++)
                 {
                     GridColumn col = gridView1.Columns.ColumnByFieldName(i.ToString());
-                    gridView1.SetFocusedRowCellValue(col, _MaKyHieu);
+                    int Ngay = int.Parse(col.FieldName);
+                    if (CapNhatChiTiet(IDNhanVien, IDChamCong, Ngay))
+                    gridView1.SetFocusedRowCellValue(col, maKyHieu);                    
                 }
             }
-
-            if(ck_ChamMotCot.Checked)
+            else
+            //chấm công nhanh theo ngày
+            if (ckChamTheoNgay.Checked)
+            {               
+                for (int i = (int)txtBatDau.Value; i <= (int)txtNgayKetThuc.Value; i++)
+                {
+                    GridColumn col = gridView1.Columns.ColumnByFieldName(i.ToString());
+                    int Ngay = int.Parse(col.FieldName);
+                    if (CapNhatChiTiet(IDNhanVien, IDChamCong, Ngay))
+                    gridView1.SetFocusedRowCellValue(col, maKyHieu);                                        
+                }
+            }
+            else
+            //chấm công nhanh theo cột
+            if (ckChamMotCot.Checked)
             {
-                 DataTable tb = nvNhanVienPhongBanTableAdapter1.GetData();
-                int i=0;
-                foreach(DataRow r in tb.Rows)
-                {                   
-                    gridView1.SetRowCellValue(gridView1.GetRowHandle(i),e.Column, _MaKyHieu);
+                DataTable tb = null;//hienThiChamCongTableAdapter1.GetData(dt.Month, dt.Year, dt);
+                int i = 0;
+                gridView1.SetFocusedRowCellValue(e.Column, maKyHieu);
+                foreach (DataRow r in tb.Rows)
+                {
+                    int Ngay = int.Parse(e.Column.FieldName);
+                    int IDNhanVienRow = int.Parse(gridView1.GetRowCellValue(i, "IDNhanVien").ToString());
+                    long IDChamCongRow = DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && q.NhanVienID == IDNhanVienRow).FirstOrDefault().IDChamCong;
+                    
+                    if (CapNhatChiTiet(IDNhanVien, IDChamCongRow, Ngay))
+                    {
+                        DataProvider.Ins.DB.Entry(DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && q.NhanVienID == IDNhanVienRow).FirstOrDefault()).Reload();
+                        ccChamCong CapNhatCotChamCongRow = DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && q.NhanVienID == IDNhanVienRow).FirstOrDefault();
+                        gridView1.SetRowCellValue(i, e.Column, maKyHieu);
+                        gridView1.SetRowCellValue(i, colHuongLuong, CapNhatCotChamCongRow.HuongLuong);
+                        gridView1.SetRowCellValue(i, colAnTrua, CapNhatCotChamCongRow.AnTrua);
+                        gridView1.SetRowCellValue(i, colNghiPhep, CapNhatCotChamCongRow.PhepNam);
+                        gridView1.SetRowCellValue(i, colNgayPhep, CapNhatCotChamCongRow.NgayPhep);
+                    }
+                    DataProvider.Ins.DB.pr_LoadChamCong(IDChamCongRow);
                     i++;
                 }
-            
             }
-           
-        }
-
-        private void cbLoaiChamCong_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            if (e.Button.Caption.Contains("hủy"))
+            if (!ckChamMotCot.Checked)
             {
-                cbLoaiChamCong.EditValue = null;
-                _MaKyHieu = string.Empty;
+                DataProvider.Ins.DB.Entry(DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && q.NhanVienID == IDNhanVien).FirstOrDefault()).Reload();
+                var CapNhatCotChamCong = DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && q.NhanVienID == IDNhanVien).FirstOrDefault();
+                gridView1.SetFocusedRowCellValue(colHuongLuong, CapNhatCotChamCong.HuongLuong);
+                gridView1.SetFocusedRowCellValue(colAnTrua, CapNhatCotChamCong.AnTrua);
+                gridView1.SetFocusedRowCellValue(colNghiPhep, CapNhatCotChamCong.PhepNam);
+                gridView1.SetFocusedRowCellValue(colNgayPhep, CapNhatCotChamCong.NgayPhep);
+                DataProvider.Ins.DB.pr_LoadChamCong(IDChamCong);
             }
         }
+        
     }
 }

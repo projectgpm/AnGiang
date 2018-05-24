@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using AnGiang.Layout.NhanVien;
 using AnGiang.Controller;
 using AnGiang.Layout.DanhMuc;
+using AnGiang.Layout.ChamCong;
+using AnGiang.Layout.Luong;
 //using AnGiang.Layout.Luong;
 
 namespace AnGiang
@@ -93,20 +95,49 @@ namespace AnGiang
             }
         }
 
-        private void barChucVu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barChuyenMon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmChucVu fr = new frmChucVu();
+            frmChuyenMon fr = new frmChuyenMon();
             if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
             {
                 fr.MdiParent = this;
                 fr.Show();
             }
-        
         }
 
-        private void barChuyenMon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void navBangChamCong_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            frmChuyenMon fr = new frmChuyenMon();
+            frmChamCong fr = new frmChamCong();
+            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+            {
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
+        private void barDanhMucCD_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDanhMucCD fr = new frmDanhMucCD();
+            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+            {
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
+        private void navDinhMuc_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmThietLap fr = new frmThietLap();
+            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+            {
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
+        private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmDinhMucTienLuong fr = new frmDinhMucTienLuong();
             if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
             {
                 fr.MdiParent = this;

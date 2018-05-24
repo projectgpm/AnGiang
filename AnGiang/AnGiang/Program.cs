@@ -6,6 +6,7 @@ using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using AnGiang.Layout.ChamCong;
+using AnGiang.Layout.DanhMuc;
 
 namespace AnGiang
 {
@@ -23,7 +24,7 @@ namespace AnGiang
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            Application.Run(new frmChamCong());
+            Application.Run(new frmMain());
         }
     }
 }

@@ -35,7 +35,7 @@
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barPhongBan = new DevExpress.XtraBars.BarButtonItem();
             this.barChucDanh = new DevExpress.XtraBars.BarButtonItem();
-            this.barChucVu = new DevExpress.XtraBars.BarButtonItem();
+            this.barDanhMucCD = new DevExpress.XtraBars.BarButtonItem();
             this.barChuyenMon = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
@@ -85,7 +85,7 @@
             this.barSubItem5,
             this.barPhongBan,
             this.barChucDanh,
-            this.barChucVu,
+            this.barDanhMucCD,
             this.barChuyenMon,
             this.barXemGio,
             this.barXemNgay,
@@ -119,7 +119,7 @@
             this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barPhongBan),
             new DevExpress.XtraBars.LinkPersistInfo(this.barChucDanh),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barChucVu),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barDanhMucCD),
             new DevExpress.XtraBars.LinkPersistInfo(this.barChuyenMon)});
             this.barSubItem1.Name = "barSubItem1";
             // 
@@ -137,12 +137,12 @@
             this.barChucDanh.Name = "barChucDanh";
             this.barChucDanh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barChucDanh_ItemClick);
             // 
-            // barChucVu
+            // barDanhMucCD
             // 
-            this.barChucVu.Caption = "Chức vụ";
-            this.barChucVu.Id = 8;
-            this.barChucVu.Name = "barChucVu";
-            this.barChucVu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barChucVu_ItemClick);
+            this.barDanhMucCD.Caption = "Danh mục chức danh";
+            this.barDanhMucCD.Id = 8;
+            this.barDanhMucCD.Name = "barDanhMucCD";
+            this.barDanhMucCD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barDanhMucCD_ItemClick);
             // 
             // barChuyenMon
             // 
@@ -223,28 +223,32 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1367, 20);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1595, 26);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 502);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1367, 27);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 616);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1595, 35);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 482);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 26);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 590);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1367, 20);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 482);
+            this.barDockControlRight.Location = new System.Drawing.Point(1595, 26);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 590);
             // 
             // barButtonItem1
             // 
@@ -269,10 +273,11 @@
             this.navBangChamCong,
             this.navDinhMuc,
             this.navBarItem1});
-            this.navBarControlLeft.Location = new System.Drawing.Point(0, 20);
+            this.navBarControlLeft.Location = new System.Drawing.Point(0, 26);
+            this.navBarControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.navBarControlLeft.Name = "navBarControlLeft";
-            this.navBarControlLeft.OptionsNavPane.ExpandedWidth = 242;
-            this.navBarControlLeft.Size = new System.Drawing.Size(242, 482);
+            this.navBarControlLeft.OptionsNavPane.ExpandedWidth = 282;
+            this.navBarControlLeft.Size = new System.Drawing.Size(282, 590);
             this.navBarControlLeft.TabIndex = 4;
             this.navBarControlLeft.Text = "navBarControl1";
             // 
@@ -320,12 +325,14 @@
             this.navBangChamCong.Caption = "Bảng chấm công";
             this.navBangChamCong.ImageUri.Uri = "Today";
             this.navBangChamCong.Name = "navBangChamCong";
+            this.navBangChamCong.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBangChamCong_LinkClicked);
             // 
             // navDinhMuc
             // 
             this.navDinhMuc.Caption = "Thiết lập định mức";
             this.navDinhMuc.ImageUri.Uri = "CustomizeGrid";
             this.navDinhMuc.Name = "navDinhMuc";
+            this.navDinhMuc.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navDinhMuc_LinkClicked);
             // 
             // navBarGroup3
             // 
@@ -337,8 +344,10 @@
             // 
             // navBarItem1
             // 
-            this.navBarItem1.Caption = "navBarItem1";
+            this.navBarItem1.Caption = "Định mức tiền lương";
             this.navBarItem1.Name = "navBarItem1";
+            this.navBarItem1.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem1.SmallImage")));
+            this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked);
             // 
             // navBarGroup4
             // 
@@ -353,9 +362,9 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1367, 529);
+            this.ClientSize = new System.Drawing.Size(1595, 651);
             this.Controls.Add(this.navBarControlLeft);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -364,6 +373,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " GPM Việt Nam :: Phần mềm quản lý chấm công nhân viên v1.0";
@@ -396,7 +406,7 @@
         private DevExpress.XtraBars.BarSubItem barSubItem5;
         private DevExpress.XtraBars.BarButtonItem barPhongBan;
         private DevExpress.XtraBars.BarButtonItem barChucDanh;
-        private DevExpress.XtraBars.BarButtonItem barChucVu;
+        private DevExpress.XtraBars.BarButtonItem barDanhMucCD;
         private DevExpress.XtraBars.BarButtonItem barChuyenMon;
         private DevExpress.XtraNavBar.NavBarItem navDanhSachNhanVien;
         private DevExpress.XtraNavBar.NavBarItem navAddNhanVien;
