@@ -34,18 +34,28 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v16.1" />
+    <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v16.1" />
+    <Reference Include="DevExpress.DataAccess.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v16.1" />
     <Reference Include="DevExpress.Sparkline.v16.1.Core" />
+    <Reference Include="DevExpress.Utils.v16.1.UI, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v16.1" />
+    <Reference Include="DevExpress.XtraGauges.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DevExpress.XtraReports.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v16.1.Extensions, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="GPMLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -69,10 +79,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnGiangDataSet.cs">
-      <DependentUpon>AnGiangDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="AnGiangDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,6 +102,12 @@
     </Compile>
     <Compile Include="Layout\ChamCong\frmThietLap.Designer.cs">
       <DependentUpon>frmThietLap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\ChamCong\frmXemBaoCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\ChamCong\frmXemBaoCao.Designer.cs">
+      <DependentUpon>frmXemBaoCao.cs</DependentUpon>
     </Compile>
     <Compile Include="Layout\DanhMuc\frmChucDanh.cs">
       <SubType>Form</SubType>
@@ -139,17 +151,17 @@
     <Compile Include="Layout\GPMController\XUC_NhanVien.designer.cs">
       <DependentUpon>XUC_NhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layout\GPMController\XUC_XemLuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\GPMController\XUC_XemLuong.Designer.cs">
+      <DependentUpon>XUC_XemLuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layout\Luong\frmDinhMucTienLuong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Layout\Luong\frmDinhMucTienLuong.Designer.cs">
       <DependentUpon>frmDinhMucTienLuong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Layout\Luong\XtraForm3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Layout\Luong\XtraForm3.Designer.cs">
-      <DependentUpon>XtraForm3.cs</DependentUpon>
     </Compile>
     <Compile Include="Layout\NhanVien\frmDanhSachNV.cs">
       <SubType>Form</SubType>
@@ -162,9 +174,6 @@
     </Compile>
     <Compile Include="Layout\NhanVien\frmThemNhanVien.Designer.cs">
       <DependentUpon>frmThemNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Model\bangLuongTongHop_Result.cs">
-      <DependentUpon>PhaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ccChamCong.cs">
       <DependentUpon>PhaModel.tt</DependentUpon>
@@ -186,6 +195,9 @@
       <DependentUpon>PhaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\dvPhongBan.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\lgBangLuong.cs">
       <DependentUpon>PhaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\lgLuong.cs">
@@ -227,8 +239,25 @@
     <Compile Include="Model\TrinhDo.cs">
       <DependentUpon>PhaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PrintRibbonControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\r_BaoCaoLuong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\r_BaoCaoLuong.Designer.cs">
+      <DependentUpon>r_BaoCaoLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\r_BaoCaoLuongXyNghiep.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\r_BaoCaoLuongXyNghiep.Designer.cs">
+      <DependentUpon>r_BaoCaoLuongXyNghiep.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +266,9 @@
     </Compile>
     <EmbeddedResource Include="Layout\ChamCong\frmThietLap.resx">
       <DependentUpon>frmThietLap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\ChamCong\frmXemBaoCao.resx">
+      <DependentUpon>frmXemBaoCao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\DanhMuc\frmDanhMucCD.resx">
       <DependentUpon>frmDanhMucCD.cs</DependentUpon>
@@ -247,11 +279,21 @@
     <EmbeddedResource Include="Layout\GPMController\XUC_NhanVien.resx">
       <DependentUpon>XUC_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Layout\GPMController\XUC_XemLuong.resx">
+      <DependentUpon>XUC_XemLuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Layout\Luong\frmDinhMucTienLuong.resx">
       <DependentUpon>frmDinhMucTienLuong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Layout\Luong\XtraForm3.resx">
-      <DependentUpon>XtraForm3.cs</DependentUpon>
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\r_BaoCaoLuong.resx">
+      <DependentUpon>r_BaoCaoLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\r_BaoCaoLuongXyNghiep.resx">
+      <DependentUpon>r_BaoCaoLuongXyNghiep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraForm1.resx">
       <DependentUpon>XtraForm1.cs</DependentUpon>
@@ -291,9 +333,9 @@
       <DependentUpon>AnGiangDataSet.xsd</DependentUpon>
     </None>
     <None Include="AnGiangDataSet.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>AnGiangDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="AnGiangDataSet.xss">
       <DependentUpon>AnGiangDataSet.xsd</DependentUpon>
@@ -317,6 +359,7 @@
       <LastGenOutput>PhaModel.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AnGiang.Model.AnGiangEntities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

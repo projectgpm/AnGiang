@@ -117,8 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="no_avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\no_avatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9ImxnQmFuZ0x1b25nIj48RmllbGQgTmFtZT0iSURDaGFtQ29uZyIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IlRHUENLSyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkhFU09MVU9ORyIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJOR0FZTkdISSIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJUSUVOTFVPTkdQSEVQIiBUeXBlPSJEb3VibGUiIC8+PEZpZWxkIE5hbWU9IkhFU09DSFVDREFOSCIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJQQ0tLIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iTkdBWUNPTkciIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJUSUVOTFVPTkciIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iVElFTlBDS0siIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iVElFTkxVT05HMTAwIiBUeXBlPSJEb3VibGUiIC8+PEZpZWxkIE5hbWU9IlRJRU5MVU9ORzgwIiBUeXBlPSJEb3VibGUiIC8+PEZpZWxkIE5hbWU9IkJIWEgiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iQkhZVCIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJCSFROIiBUeXBlPSJEb3VibGUiIC8+PEZpZWxkIE5hbWU9IkNEUEhJIiBUeXBlPSJEb3VibGUiIC8+PEZpZWxkIE5hbWU9IkRBTkdQSEkiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iVEhVQ0xBTkgiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iTFVPTkdDT0JBTiIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJIT1RFTiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJURU5DSFVDREFOSCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJURU5QSE9OR0JBTiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUSEFORyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Ik5BTSIgVHlwZT0iSW50MzIiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
   </data>
 </root>

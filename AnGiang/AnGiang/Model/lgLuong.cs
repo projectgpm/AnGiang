@@ -14,7 +14,7 @@ namespace AnGiang.Model
     
     public partial class lgLuong
     {
-        public int IDLgLuong { get; set; }
+        public long IDLgLuong { get; set; }
         public Nullable<double> LuongVung { get; set; }
         public Nullable<double> LuongCoBan { get; set; }
         public Nullable<double> TienCuoiNam { get; set; }

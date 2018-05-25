@@ -26,8 +26,7 @@ namespace AnGiang.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=115.79.221.89,1433;Initial Catalog=AnGiang;User ID=PhaAnGiang;Passwor" +
-            "d=123456")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\sqlexpress;Initial Catalog=AnGiang;Integrated Security=True")]
         public string AnGiangConnectionString {
             get {
                 return ((string)(this["AnGiangConnectionString"]));

@@ -7,6 +7,7 @@ using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using AnGiang.Layout.ChamCong;
 using AnGiang.Layout.DanhMuc;
+using AnGiang.Layout.Luong;
 
 namespace AnGiang
 {

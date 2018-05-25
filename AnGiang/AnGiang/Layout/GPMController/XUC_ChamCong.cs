@@ -15,6 +15,8 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Localization;
 using DevExpress.XtraEditors.Controls;
 using System.Reflection;
+using AnGiang.Layout.ChamCong;
+using GPMLibrary;
 
 namespace AnGiang.Layout.GPMController
 {
@@ -82,52 +84,6 @@ namespace AnGiang.Layout.GPMController
         #endregion
 
         #region Kiem tra
-        public bool laNamNhuan(int nYear)
-        {
-            if ((nYear % 4 == 0 && nYear % 100 != 0) || nYear % 400 == 0)
-            {
-                return true;
-            }
-            return false;
-
-            // <=> return ((nYear % 4 == 0 && nYear % 100 != 0) || nYear % 400 == 0);
-        }
-        // Hàm trả về số ngày trong tháng thuộc năm cho trước
-        public int tinhSoNgayTrongThang(int nMonth, int nYear)
-        {
-            int nNumOfDays = 0;
-
-            switch (nMonth)
-            {
-                case 1:
-                case 3:
-                case 5:
-                case 7:
-                case 8:
-                case 10:
-                case 12:
-                    nNumOfDays = 31;
-                    break;
-                case 4:
-                case 6:
-                case 9:
-                case 11:
-                    nNumOfDays = 30;
-                    break;
-                case 2:
-                    if (laNamNhuan(nYear))
-                    {
-                        nNumOfDays = 29;
-                    }
-                    else
-                    {
-                        nNumOfDays = 28;
-                    }
-                    break;
-            }
-
-            return nNumOfDays;
-        }
         private void cbLoaiChamCong_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if (e.Button.Caption.Contains("hủy"))
@@ -214,9 +170,9 @@ namespace AnGiang.Layout.GPMController
             return false;
         }
         private void XUC_ChamCong_Load(object sender, EventArgs e)
-        {          
+        {
             ccKyHieuTableAdapter.Fill(anGiangDataSet1.ccKyHieu);
-            ccXemChamCongTableAdapter1.Fill(anGiangDataSet1.ccXemChamCong,DateTime.Now.Month,DateTime.Now.Year);
+            ccXemChamCongTableAdapter1.Fill(anGiangDataSet1.ccXemChamCong, DateTime.Now.Month, DateTime.Now.Year);
             colHuongLuong.Caption = "Hưởng \nlương";
             colNgayPhep.Caption = "Ngày \nphép";
             colPhepNam.Caption = "Phép \nnăm";
@@ -229,27 +185,35 @@ namespace AnGiang.Layout.GPMController
         private void dateThangNam_EditValueChanged(object sender, EventArgs e)
         {
             DateTime dt = dateThangNam.DateTime;
+            //lấy danh sach nhân viên
             var nhanvien = DataProvider.Ins.DB.nvNhanViens.Where(q => q.DaXoa == 0 && (q.NgayLamViec.Value.Year == dt.Year && q.NgayLamViec.Value.Month <= dt.Month || q.NgayLamViec.Value.Year < dt.Year)).ToList();
             if (dt == null || nhanvien == null)
             {
                 LoadDisable();
                 return;
             }
-            LoadEnable();            
-            _SoNgay = tinhSoNgayTrongThang(dt.Month, dt.Year); //lấy số ngày trong tháng của năm
-            txtBatDau.Properties.MaxValue = _SoNgay; //giới hạng lại ngày
-            txtNgayKetThuc.Properties.MaxValue = _SoNgay; //giới hạng lại ngày
+            LoadEnable();
+            //lấy số ngày trong tháng của năm
+            _SoNgay = Tooler.Tools.GetDayInMoth(dt.Month, dt.Year);
+            //giới hạng lại ngày
+            txtBatDau.Properties.MaxValue = _SoNgay;
+            //giới hạng lại ngày
+            txtNgayKetThuc.Properties.MaxValue = _SoNgay; 
 
-            //lấy danh sach nhân viên           
-            List<long> listIDNhanVien = nhanvien.Select(x => x.IDNhanVien).ToList(); //lấy danh sách ID nhân viên làm việc
+            
+            //lấy danh sách ID nhân viên làm việc
+            List<long> listIDNhanVien = nhanvien.Select(x => x.IDNhanVien).ToList(); 
             var chamcong = DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && listIDNhanVien.Contains((long)q.NhanVienID)).ToList();
             List<long?> listNhanVienID = chamcong.Select(x => x.NhanVienID).ToList(); //danh sách Id nhân viên có trong bảng chấm công        
             var DanhSachNhanVienChuaThem = DataProvider.Ins.DB.nvNhanViens.Where(q => q.DaXoa == 0 && (q.NgayLamViec.Value.Year == dt.Year && q.NgayLamViec.Value.Month <= dt.Month || q.NgayLamViec.Value.Year < dt.Year) && !listNhanVienID.Contains(q.IDNhanVien)).ToList();
 
-            //lấy ký hiệu mặt định nghĩ cuối tuần                              
-            ccKyHieu layMacDinh = DataProvider.Ins.DB.ccKyHieux.Where(q => q.MaKyHieu == "8").FirstOrDefault(); //1: ngay lam 8 tieng    
-            ccKyHieu layMacDinhNghiChuNhat = DataProvider.Ins.DB.ccKyHieux.Where(q => q.MacDinh == 1).FirstOrDefault();  //2: nghi ngay chu nhat 
-            ccKyHieu layMacDinhNghiThuBay = DataProvider.Ins.DB.ccKyHieux.Where(q => q.MaKyHieu == "4").FirstOrDefault(); //3: ngay lam thu 7 4 tieng
+            //lấy ký hiệu mặt định nghĩ cuối tuần
+            //ngay lam 8 tieng 
+            ccKyHieu layMacDinh = DataProvider.Ins.DB.ccKyHieux.Where(q => q.MaKyHieu == "8").FirstOrDefault();
+            //1: nghi ngay chu nhat 
+            ccKyHieu layMacDinhNghiChuNhat = DataProvider.Ins.DB.ccKyHieux.Where(q => q.MacDinh == 1).FirstOrDefault();
+            //Ngay lam thu 7 4 tieng
+            ccKyHieu layMacDinhNghiThuBay = DataProvider.Ins.DB.ccKyHieux.Where(q => q.MaKyHieu == "4").FirstOrDefault(); 
 
             //lấy danh sách cuối tuần
             _NgayNghi = new List<int>();
@@ -311,6 +275,7 @@ namespace AnGiang.Layout.GPMController
                                     CapNhatChiTiet(nv.IDNhanVien, IDChamCong, i, layMacDinh.IDKyHieu);
                         }
                         DataProvider.Ins.DB.pr_LoadChamCong(IDChamCong);
+                        DataProvider.Ins.DB.pr_bangLuongTongHop(1, (int?)nv.IDNhanVien, dt.Month, dt.Year);
                     }
                 }
             ccXemChamCongTableAdapter1.Fill(anGiangDataSet1.ccXemChamCong,dt.Month,dt.Year);          
@@ -378,7 +343,7 @@ namespace AnGiang.Layout.GPMController
             //chấm công nhanh theo cột
             if (ckChamMotCot.Checked)
             {
-                DataTable tb = null;//hienThiChamCongTableAdapter1.GetData(dt.Month, dt.Year, dt);
+                DataTable tb = ccXemChamCongTableAdapter1.GetData(dt.Month, dt.Year);
                 int i = 0;
                 gridView1.SetFocusedRowCellValue(e.Column, maKyHieu);
                 foreach (DataRow r in tb.Rows)
@@ -398,6 +363,7 @@ namespace AnGiang.Layout.GPMController
                         gridView1.SetRowCellValue(i, colNgayPhep, CapNhatCotChamCongRow.NgayPhep);
                     }
                     DataProvider.Ins.DB.pr_LoadChamCong(IDChamCongRow);
+                    DataProvider.Ins.DB.pr_bangLuongTongHop(1, IDNhanVienRow, dt.Month, dt.Year);
                     i++;
                 }
             }
@@ -410,7 +376,18 @@ namespace AnGiang.Layout.GPMController
                 gridView1.SetFocusedRowCellValue(colNghiPhep, CapNhatCotChamCong.PhepNam);
                 gridView1.SetFocusedRowCellValue(colNgayPhep, CapNhatCotChamCong.NgayPhep);
                 DataProvider.Ins.DB.pr_LoadChamCong(IDChamCong);
+                DataProvider.Ins.DB.pr_bangLuongTongHop(1, IDNhanVien, dt.Month, dt.Year);
+                
             }
+        }
+        private void btn_ViewReport_Click(object sender, EventArgs e)
+        {
+            DateTime dt = dateThangNam.DateTime;
+            lgBangLuongTableAdapter1.Fill(anGiangDataSet1.lgBangLuong, dt.Month, dt.Year);
+            double? tongtien = DataProvider.Ins.DB.lgBangLuongs.Where(q => q.THANG == dt.Month && q.NAM == dt.Year).Sum(q => q.THUCLANH);
+            DataTable tb = lgBangLuongTableAdapter1.GetData(dt.Month, dt.Year);
+            XtraForm f = new frmXemBaoCao(dt.Year, dt.Month, tongtien, tb, "Xí Nghiệp Phà An Giang");
+            f.ShowDialog();
         }
         
     }

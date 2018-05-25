@@ -35,6 +35,7 @@ namespace AnGiang.Model
         public DbSet<dvChuyenMon> dvChuyenMons { get; set; }
         public DbSet<dvDonVi> dvDonVis { get; set; }
         public DbSet<dvPhongBan> dvPhongBans { get; set; }
+        public DbSet<lgBangLuong> lgBangLuongs { get; set; }
         public DbSet<lgLuong> lgLuongs { get; set; }
         public DbSet<lskLoaiSuKien> lskLoaiSuKiens { get; set; }
         public DbSet<lskSuKien> lskSuKiens { get; set; }
@@ -44,7 +45,7 @@ namespace AnGiang.Model
         public DbSet<tlDinhMuc> tlDinhMucs { get; set; }
         public DbSet<TrinhDo> TrinhDoes { get; set; }
     
-        public virtual ObjectResult<bangLuongTongHop_Result> bangLuongTongHop(Nullable<int> iDDonVi, Nullable<int> iDNhanVien, Nullable<int> thang, Nullable<int> nam)
+        public virtual int pr_bangLuongTongHop(Nullable<int> iDDonVi, Nullable<int> iDNhanVien, Nullable<int> thang, Nullable<int> nam)
         {
             var iDDonViParameter = iDDonVi.HasValue ?
                 new ObjectParameter("IDDonVi", iDDonVi) :
@@ -62,7 +63,7 @@ namespace AnGiang.Model
                 new ObjectParameter("Nam", nam) :
                 new ObjectParameter("Nam", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<bangLuongTongHop_Result>("bangLuongTongHop", iDDonViParameter, iDNhanVienParameter, thangParameter, namParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pr_bangLuongTongHop", iDDonViParameter, iDNhanVienParameter, thangParameter, namParameter);
         }
     
         public virtual ObjectResult<string> pr_LayChiTietChamCong(Nullable<int> ngay, Nullable<long> iDChamCong)

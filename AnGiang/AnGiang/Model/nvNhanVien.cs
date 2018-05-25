@@ -26,7 +26,6 @@ namespace AnGiang.Model
         public Nullable<double> HeSoChucDanh { get; set; }
         public Nullable<int> TGPCKK { get; set; }
         public Nullable<int> DieuKienPCKK { get; set; }
-        public string HinhAnh { get; set; }
         public string GhiChu { get; set; }
         public Nullable<System.DateTime> NgayLamViec { get; set; }
         public Nullable<System.DateTime> NgayNghiViec { get; set; }

@@ -20,7 +20,7 @@ namespace AnGiang.Model
         public Nullable<int> Thang { get; set; }
         public Nullable<int> Nam { get; set; }
         public Nullable<int> SoNgay { get; set; }
-        public Nullable<int> SoNgayNghi { get; set; }
+        public Nullable<double> SoNgayNghi { get; set; }
         public Nullable<double> AnTrua { get; set; }
         public Nullable<double> HuongLuong { get; set; }
         public Nullable<double> PhepNam { get; set; }

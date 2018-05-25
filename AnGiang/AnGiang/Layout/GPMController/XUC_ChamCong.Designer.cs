@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -55,6 +55,7 @@
             this.txtBatDau = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.ckChamTheoNgay = new DevExpress.XtraEditors.CheckEdit();
+            this.btn_ViewReport = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.ccXemChamCongBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -101,6 +102,7 @@
             this.colTenPhongBan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ccKyHieuTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.ccKyHieuTableAdapter();
             this.ccXemChamCongTableAdapter1 = new AnGiang.AnGiangDataSetTableAdapters.ccXemChamCongTableAdapter();
+            this.lgBangLuongTableAdapter1 = new AnGiang.AnGiangDataSetTableAdapters.lgBangLuongTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -164,6 +166,7 @@
             this.tableLayoutPanel2.Controls.Add(this.panelControl4, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.labelControl3, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.ckChamTheoNgay, 4, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btn_ViewReport, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
@@ -270,13 +273,13 @@
             this.cbLoaiChamCong.Properties.AppearanceFocused.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.cbLoaiChamCong.Properties.AppearanceFocused.Options.UseBorderColor = true;
             this.cbLoaiChamCong.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            toolTipTitleItem3.Text = "Hiển thị danh sách loại chấm công";
-            superToolTip3.Items.Add(toolTipTitleItem3);
-            toolTipTitleItem4.Text = "Xóa trắng";
-            superToolTip4.Items.Add(toolTipTitleItem4);
+            toolTipTitleItem1.Text = "Hiển thị danh sách loại chấm công";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            toolTipTitleItem2.Text = "Xóa trắng";
+            superToolTip2.Items.Add(toolTipTitleItem2);
             this.cbLoaiChamCong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, superToolTip3, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "hủy", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, superToolTip4, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, superToolTip1, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "hủy", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, superToolTip2, true)});
             this.cbLoaiChamCong.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.cbLoaiChamCong.Properties.DataSource = this.ccKyHieuBindingSource;
             this.cbLoaiChamCong.Properties.DisplayMember = "TenKyHieu";
@@ -352,6 +355,7 @@
             this.ckDaCham.Properties.Caption = "Đã chấm";
             this.ckDaCham.Size = new System.Drawing.Size(122, 28);
             this.ckDaCham.TabIndex = 10;
+            this.ckDaCham.Visible = false;
             // 
             // panelControl3
             // 
@@ -474,6 +478,31 @@
             this.ckChamTheoNgay.TabIndex = 10;
             this.ckChamTheoNgay.TabStop = false;
             this.ckChamTheoNgay.CheckedChanged += new System.EventHandler(this.ckChamTheoNgay_CheckedChanged);
+            // 
+            // btn_ViewReport
+            // 
+            this.btn_ViewReport.AllowFocus = false;
+            this.btn_ViewReport.Appearance.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_ViewReport.Appearance.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ViewReport.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_ViewReport.Appearance.Options.UseBackColor = true;
+            this.btn_ViewReport.Appearance.Options.UseFont = true;
+            this.btn_ViewReport.Appearance.Options.UseForeColor = true;
+            this.btn_ViewReport.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ViewReport.AppearanceHovered.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ViewReport.AppearanceHovered.Options.UseBackColor = true;
+            this.btn_ViewReport.AppearanceHovered.Options.UseFont = true;
+            this.btn_ViewReport.AutoSize = true;
+            this.btn_ViewReport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.btn_ViewReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ViewReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_ViewReport.Location = new System.Drawing.Point(449, 3);
+            this.btn_ViewReport.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btn_ViewReport.Name = "btn_ViewReport";
+            this.btn_ViewReport.Size = new System.Drawing.Size(141, 28);
+            this.btn_ViewReport.TabIndex = 12;
+            this.btn_ViewReport.Text = "Xem Lương";
+            this.btn_ViewReport.Click += new System.EventHandler(this.btn_ViewReport_Click);
             // 
             // gridControl1
             // 
@@ -1075,6 +1104,10 @@
             // 
             this.ccXemChamCongTableAdapter1.ClearBeforeFill = true;
             // 
+            // lgBangLuongTableAdapter1
+            // 
+            this.lgBangLuongTableAdapter1.ClearBeforeFill = true;
+            // 
             // XUC_ChamCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1181,6 +1214,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPhepNam;
         private DevExpress.XtraGrid.Columns.GridColumn colNgayPhep;
         private DevExpress.XtraGrid.Columns.GridColumn colTenPhongBan;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewReport;
+        private AnGiangDataSetTableAdapters.lgBangLuongTableAdapter lgBangLuongTableAdapter1;
 
     }
 }

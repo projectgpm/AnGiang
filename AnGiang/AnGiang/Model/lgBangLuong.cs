@@ -10,9 +10,11 @@
 namespace AnGiang.Model
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class bangLuongTongHop_Result
+    public partial class lgBangLuong
     {
+        public long IDChamCong { get; set; }
         public Nullable<int> TGPCKK { get; set; }
         public Nullable<double> HESOLUONG { get; set; }
         public Nullable<double> NGAYNGHI { get; set; }
@@ -31,7 +33,10 @@ namespace AnGiang.Model
         public Nullable<double> DANGPHI { get; set; }
         public Nullable<double> THUCLANH { get; set; }
         public Nullable<double> LUONGCOBAN { get; set; }
-        public Nullable<int> Column1 { get; set; }
-        public Nullable<double> Column2 { get; set; }
+        public string HOTEN { get; set; }
+        public string TENCHUCDANH { get; set; }
+        public string TENPHONGBAN { get; set; }
+        public Nullable<int> THANG { get; set; }
+        public Nullable<int> NAM { get; set; }
     }
 }

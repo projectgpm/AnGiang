@@ -14,7 +14,7 @@ namespace AnGiang.Model
     
     public partial class dvDonVi
     {
-        public int IDDonVi { get; set; }
+        public long IDDonVi { get; set; }
         public string MaDonVi { get; set; }
         public string TenDonVi { get; set; }
         public Nullable<double> DonGia { get; set; }

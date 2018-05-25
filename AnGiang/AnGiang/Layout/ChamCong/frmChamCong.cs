@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using AnGiang.Layout.GPMController;
 
 namespace AnGiang.Layout.ChamCong
 {
@@ -16,6 +17,14 @@ namespace AnGiang.Layout.ChamCong
         public frmChamCong()
         {
             InitializeComponent();
+            XUC_ChamCong uc = new XUC_ChamCong();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
+        }
+
+        private void frmChamCong_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }
