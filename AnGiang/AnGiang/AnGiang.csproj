@@ -233,6 +233,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PhaModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>PhaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\tlDinhMuc.cs">
       <DependentUpon>PhaModel.tt</DependentUpon>
     </Compile>

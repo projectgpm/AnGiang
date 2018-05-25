@@ -36,5 +36,8 @@ namespace AnGiang.Model
         public Nullable<long> DonViID { get; set; }
         public Nullable<long> TrinhDoID { get; set; }
         public Nullable<long> ChucDanhID { get; set; }
+    
+        public virtual TrinhDo TrinhDo { get; set; }
+        public virtual nvChucDanh nvChucDanh { get; set; }
     }
 }

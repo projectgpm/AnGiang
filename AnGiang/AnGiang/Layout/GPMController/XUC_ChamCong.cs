@@ -17,6 +17,7 @@ using DevExpress.XtraEditors.Controls;
 using System.Reflection;
 using AnGiang.Layout.ChamCong;
 using GPMLibrary;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace AnGiang.Layout.GPMController
 {
@@ -177,6 +178,8 @@ namespace AnGiang.Layout.GPMController
             colNgayPhep.Caption = "Ngày \nphép";
             colPhepNam.Caption = "Phép \nnăm";
             colAnTrua.Caption = "Ăn \nTrưa";
+            flyThongTinNhanVien.Options.CloseOnOuterClick = true;
+            
             dateThangNam.EditValue = DateTime.Now;
             dateThangNam.Properties.MaxValue = DateTime.Now;
             ccKyHieu layMacDinhNghiCuoiTuan = DataProvider.Ins.DB.ccKyHieux.Where(q => q.MacDinh == 1).SingleOrDefault();
@@ -291,6 +294,27 @@ namespace AnGiang.Layout.GPMController
                 case "PhepNam":
                     return;
                 case "HoTen":
+                    if(e.RowHandle>=0)
+                    {
+                        int idNhanVien = int.Parse(gridView1.GetFocusedRowCellValue(colIDNhanVien).ToString());
+                        nvNhanVien nv = DataProvider.Ins.DB.nvNhanViens.Find(idNhanVien);
+                        lbcmnd.Text = nv.CMND;
+                        lbhoten.Text = nv.HoTen;
+                        lbdiachi.Text = nv.DiaChi;
+                        lbdienthoai.Text = nv.DienThoai;
+                        lbtrinhdo.Text = nv.TrinhDo.TenTrinhDo;
+                        lbchucdanh.Text = nv.nvChucDanh.TenChucDanh;
+                        lbgioitinh.Text = nv.GioiTinh > 0 ? "Nam" : "Nữ";
+                        lbhesoluong.Text = nv.HeSoLuong.ToString();
+                        lbhesochucdanh.Text = nv.HeSoChucDanh.ToString();
+                        lbDKPCKK.Text = nv.DieuKienPCKK.ToString();
+                        lbTGPCKK.Text = nv.TGPCKK.ToString();
+                        lbngaysinh.Text = ((DateTime)nv.NgaySinh).ToString("dd/MM/yyyy");
+                        GridHitInfo hitInfo = gridView1.CalcHitInfo(e.Location);
+                        flyThongTinNhanVien.ShowBeakForm(gridControl1.PointToScreen(e.Location));
+
+                       
+                    }
                     return;
             }
 
