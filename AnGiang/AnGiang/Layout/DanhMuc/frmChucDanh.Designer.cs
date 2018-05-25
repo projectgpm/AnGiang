@@ -38,7 +38,6 @@
             this.colIDChucDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaChucDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenChucDanh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHeSoChucDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgayTao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgayCapNhat = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -78,6 +77,7 @@
             this.tableAdapterManager.ccChamCongTableAdapter = null;
             this.tableAdapterManager.ccChiTietTableAdapter = null;
             this.tableAdapterManager.ccKyHieuTableAdapter = null;
+            this.tableAdapterManager.ccXemChamCongTableAdapter = null;
             this.tableAdapterManager.dvChuyenMonTableAdapter = null;
             this.tableAdapterManager.dvDonViTableAdapter = null;
             this.tableAdapterManager.dvPhongBanTableAdapter = null;
@@ -111,7 +111,6 @@
             this.colIDChucDanh,
             this.colMaChucDanh,
             this.colTenChucDanh,
-            this.colHeSoChucDanh,
             this.colGhiChu,
             this.colNgayTao,
             this.colNgayCapNhat,
@@ -161,16 +160,6 @@
             this.colTenChucDanh.VisibleIndex = 1;
             this.colTenChucDanh.Width = 210;
             // 
-            // colHeSoChucDanh
-            // 
-            this.colHeSoChucDanh.Caption = "Hệ số chức danh";
-            this.colHeSoChucDanh.FieldName = "HeSoChucDanh";
-            this.colHeSoChucDanh.Name = "colHeSoChucDanh";
-            this.colHeSoChucDanh.OptionsColumn.AllowEdit = false;
-            this.colHeSoChucDanh.Visible = true;
-            this.colHeSoChucDanh.VisibleIndex = 2;
-            this.colHeSoChucDanh.Width = 133;
-            // 
             // colGhiChu
             // 
             this.colGhiChu.Caption = "Ghi chú";
@@ -179,7 +168,7 @@
             this.colGhiChu.OptionsColumn.AllowEdit = false;
             this.colGhiChu.OptionsEditForm.VisibleIndex = 9;
             this.colGhiChu.Visible = true;
-            this.colGhiChu.VisibleIndex = 4;
+            this.colGhiChu.VisibleIndex = 3;
             this.colGhiChu.Width = 282;
             // 
             // colNgayTao
@@ -208,7 +197,7 @@
             this.colDanhMucCDID.Name = "colDanhMucCDID";
             this.colDanhMucCDID.OptionsColumn.AllowEdit = false;
             this.colDanhMucCDID.Visible = true;
-            this.colDanhMucCDID.VisibleIndex = 3;
+            this.colDanhMucCDID.VisibleIndex = 2;
             this.colDanhMucCDID.Width = 235;
             // 
             // rlsDanhMucCD
@@ -283,7 +272,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colIDChucDanh;
         private DevExpress.XtraGrid.Columns.GridColumn colMaChucDanh;
         private DevExpress.XtraGrid.Columns.GridColumn colTenChucDanh;
-        private DevExpress.XtraGrid.Columns.GridColumn colHeSoChucDanh;
         private DevExpress.XtraGrid.Columns.GridColumn colGhiChu;
         private DevExpress.XtraGrid.Columns.GridColumn colNgayTao;
         private DevExpress.XtraGrid.Columns.GridColumn colNgayCapNhat;

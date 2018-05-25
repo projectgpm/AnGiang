@@ -42,6 +42,9 @@
             System.Windows.Forms.Label cMNDLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label heSoLuongLabel;
+            System.Windows.Forms.Label heSoChucDanhLabel;
+            System.Windows.Forms.Label tGPCKKLabel;
+            System.Windows.Forms.Label chucDanhIDLabel;
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -49,12 +52,11 @@
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiCancel = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.txtDaXoaTmp = new DevExpress.XtraEditors.TextEdit();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.maNhanVienTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.hoTenTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.dienThoaiTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -64,17 +66,33 @@
             this.ngayLamViecDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.ngayNghiViecDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.heSoLuongTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.nvNhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.anGiangDataSet = new AnGiang.AnGiangDataSet();
+            this.tGPCKKSpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.heSoChucDanhSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.ngaySinhdateEdit = new DevExpress.XtraEditors.DateEdit();
             this.gioiTinhSpinEdit = new DevExpress.XtraEditors.ComboBoxEdit();
             this.trinhDoIDSpinEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.trinhDoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.anGiangDataSet = new AnGiang.AnGiangDataSet();
+            this.HinhAnhPictureEdit = new DevExpress.XtraEditors.PictureEdit();
             this.phongBanIDSpinEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.dvPhongBanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chucDanhIDSpinEdit = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.nvChucDanhBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rlsDanhMuc = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.nvDanhMucCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colIDChucDanh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaChucDanh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenChucDanh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNgayTao = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNgayCapNhat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDaXoa1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDanhMucCDID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.heSoLuongTextEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.nvNhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dvPhongBanTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.dvPhongBanTableAdapter();
             this.trinhDoTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.TrinhDoTableAdapter();
             this.nvNhanVienTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.nvNhanVienTableAdapter();
@@ -84,10 +102,12 @@
             this.colIDNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHoTen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPhongBan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rlsPhongBan = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colDaXoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPhongBanID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rlsPhongBan = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.nvChucDanhTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.nvChucDanhTableAdapter();
+            this.nvDanhMucCDTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.nvDanhMucCDTableAdapter();
             maNhanVienLabel = new System.Windows.Forms.Label();
             trinhDoIDLabel = new System.Windows.Forms.Label();
             phongBanIDLabel = new System.Windows.Forms.Label();
@@ -101,11 +121,12 @@
             cMNDLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             heSoLuongLabel = new System.Windows.Forms.Label();
+            heSoChucDanhLabel = new System.Windows.Forms.Label();
+            tGPCKKLabel = new System.Windows.Forms.Label();
+            chucDanhIDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDaXoaTmp.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maNhanVienTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoTenTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dienThoaiTextEdit.Properties)).BeginInit();
@@ -117,9 +138,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ngayNghiViecDateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngayNghiViecDateEdit.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.heSoLuongTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nvNhanVienBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tGPCKKSpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heSoChucDanhSpinEdit.Properties)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ngaySinhdateEdit.Properties.CalendarTimeProperties)).BeginInit();
@@ -127,8 +147,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.gioiTinhSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trinhDoIDSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trinhDoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HinhAnhPictureEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phongBanIDSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvPhongBanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chucDanhIDSpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nvChucDanhBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rlsDanhMuc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nvDanhMucCDBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heSoLuongTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nvNhanVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvNhanVienGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlsPhongBan)).BeginInit();
@@ -156,7 +185,7 @@
             // phongBanIDLabel
             // 
             phongBanIDLabel.AutoSize = true;
-            phongBanIDLabel.Location = new System.Drawing.Point(32, 330);
+            phongBanIDLabel.Location = new System.Drawing.Point(32, 326);
             phongBanIDLabel.Name = "phongBanIDLabel";
             phongBanIDLabel.Size = new System.Drawing.Size(78, 17);
             phongBanIDLabel.TabIndex = 26;
@@ -183,7 +212,7 @@
             // ngayNghiViecLabel
             // 
             ngayNghiViecLabel.AutoSize = true;
-            ngayNghiViecLabel.Location = new System.Drawing.Point(32, 300);
+            ngayNghiViecLabel.Location = new System.Drawing.Point(32, 298);
             ngayNghiViecLabel.Name = "ngayNghiViecLabel";
             ngayNghiViecLabel.Size = new System.Drawing.Size(99, 17);
             ngayNghiViecLabel.TabIndex = 18;
@@ -246,11 +275,38 @@
             // heSoLuongLabel
             // 
             heSoLuongLabel.AutoSize = true;
-            heSoLuongLabel.Location = new System.Drawing.Point(32, 365);
+            heSoLuongLabel.Location = new System.Drawing.Point(32, 354);
             heSoLuongLabel.Name = "heSoLuongLabel";
             heSoLuongLabel.Size = new System.Drawing.Size(105, 17);
             heSoLuongLabel.TabIndex = 43;
             heSoLuongLabel.Text = "13. Hệ số lương";
+            // 
+            // heSoChucDanhLabel
+            // 
+            heSoChucDanhLabel.AutoSize = true;
+            heSoChucDanhLabel.Location = new System.Drawing.Point(32, 382);
+            heSoChucDanhLabel.Name = "heSoChucDanhLabel";
+            heSoChucDanhLabel.Size = new System.Drawing.Size(136, 17);
+            heSoChucDanhLabel.TabIndex = 43;
+            heSoChucDanhLabel.Text = "14. Hệ số chức danh";
+            // 
+            // tGPCKKLabel
+            // 
+            tGPCKKLabel.AutoSize = true;
+            tGPCKKLabel.Location = new System.Drawing.Point(34, 410);
+            tGPCKKLabel.Name = "tGPCKKLabel";
+            tGPCKKLabel.Size = new System.Drawing.Size(151, 17);
+            tGPCKKLabel.TabIndex = 43;
+            tGPCKKLabel.Text = "15. Thời gian tính PCKK";
+            // 
+            // chucDanhIDLabel
+            // 
+            chucDanhIDLabel.AutoSize = true;
+            chucDanhIDLabel.Location = new System.Drawing.Point(34, 438);
+            chucDanhIDLabel.Name = "chucDanhIDLabel";
+            chucDanhIDLabel.Size = new System.Drawing.Size(100, 17);
+            chucDanhIDLabel.TabIndex = 43;
+            chucDanhIDLabel.Text = "16. Chức danh";
             // 
             // ribbonControl
             // 
@@ -262,10 +318,11 @@
             this.bbiNew,
             this.bbiEdit,
             this.bbiDelete,
-            this.bbiRefresh});
+            this.bbiRefresh,
+            this.bbiCancel});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl.MaxItemId = 20;
+            this.ribbonControl.MaxItemId = 21;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -315,11 +372,19 @@
             // 
             // bbiRefresh
             // 
-            this.bbiRefresh.Caption = "Cập nhật";
+            this.bbiRefresh.Caption = "Lưu lại";
             this.bbiRefresh.Id = 19;
-            this.bbiRefresh.ImageUri.Uri = "Refresh";
+            this.bbiRefresh.ImageUri.Uri = "Save";
             this.bbiRefresh.Name = "bbiRefresh";
             this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
+            // 
+            // bbiCancel
+            // 
+            this.bbiCancel.Caption = "Hủy";
+            this.bbiCancel.Id = 20;
+            this.bbiCancel.ImageUri.Uri = "Reset";
+            this.bbiCancel.Name = "bbiCancel";
+            this.bbiCancel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiCancel_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -337,6 +402,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiDelete);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiRefresh);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bbiCancel);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Chức năng";
@@ -351,13 +417,15 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(chucDanhIDLabel);
+            this.panelControl2.Controls.Add(tGPCKKLabel);
+            this.panelControl2.Controls.Add(heSoChucDanhLabel);
             this.panelControl2.Controls.Add(heSoLuongLabel);
             this.panelControl2.Controls.Add(maNhanVienLabel);
             this.panelControl2.Controls.Add(label1);
             this.panelControl2.Controls.Add(trinhDoIDLabel);
             this.panelControl2.Controls.Add(phongBanIDLabel);
             this.panelControl2.Controls.Add(hoTenLabel);
-            this.panelControl2.Controls.Add(this.txtDaXoaTmp);
             this.panelControl2.Controls.Add(dienThoaiLabel);
             this.panelControl2.Controls.Add(ngayNghiViecLabel);
             this.panelControl2.Controls.Add(gioiTinhLabel);
@@ -371,30 +439,13 @@
             this.panelControl2.Size = new System.Drawing.Size(194, 496);
             this.panelControl2.TabIndex = 2;
             // 
-            // txtDaXoaTmp
-            // 
-            this.txtDaXoaTmp.Location = new System.Drawing.Point(17, 451);
-            this.txtDaXoaTmp.MenuManager = this.ribbonControl;
-            this.txtDaXoaTmp.Name = "txtDaXoaTmp";
-            this.txtDaXoaTmp.Size = new System.Drawing.Size(100, 22);
-            this.txtDaXoaTmp.TabIndex = 43;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(466, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 224);
-            this.pictureBox1.TabIndex = 45;
-            this.pictureBox1.TabStop = false;
-            // 
             // maNhanVienTextEdit
             // 
             this.maNhanVienTextEdit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.maNhanVienTextEdit.Location = new System.Drawing.Point(3, 3);
             this.maNhanVienTextEdit.MenuManager = this.ribbonControl;
             this.maNhanVienTextEdit.Name = "maNhanVienTextEdit";
-            this.maNhanVienTextEdit.Size = new System.Drawing.Size(451, 22);
+            this.maNhanVienTextEdit.Size = new System.Drawing.Size(317, 22);
             this.maNhanVienTextEdit.TabIndex = 33;
             // 
             // hoTenTextEdit
@@ -403,7 +454,7 @@
             this.hoTenTextEdit.Location = new System.Drawing.Point(3, 31);
             this.hoTenTextEdit.MenuManager = this.ribbonControl;
             this.hoTenTextEdit.Name = "hoTenTextEdit";
-            this.hoTenTextEdit.Size = new System.Drawing.Size(451, 22);
+            this.hoTenTextEdit.Size = new System.Drawing.Size(317, 22);
             this.hoTenTextEdit.TabIndex = 34;
             // 
             // dienThoaiTextEdit
@@ -412,7 +463,7 @@
             this.dienThoaiTextEdit.Location = new System.Drawing.Point(3, 59);
             this.dienThoaiTextEdit.MenuManager = this.ribbonControl;
             this.dienThoaiTextEdit.Name = "dienThoaiTextEdit";
-            this.dienThoaiTextEdit.Size = new System.Drawing.Size(451, 22);
+            this.dienThoaiTextEdit.Size = new System.Drawing.Size(317, 22);
             this.dienThoaiTextEdit.TabIndex = 35;
             // 
             // diaChiTextEdit
@@ -421,7 +472,7 @@
             this.diaChiTextEdit.Location = new System.Drawing.Point(3, 115);
             this.diaChiTextEdit.MenuManager = this.ribbonControl;
             this.diaChiTextEdit.Name = "diaChiTextEdit";
-            this.diaChiTextEdit.Size = new System.Drawing.Size(451, 22);
+            this.diaChiTextEdit.Size = new System.Drawing.Size(317, 22);
             this.diaChiTextEdit.TabIndex = 37;
             // 
             // cMNDTextEdit
@@ -430,7 +481,7 @@
             this.cMNDTextEdit.Location = new System.Drawing.Point(3, 143);
             this.cMNDTextEdit.MenuManager = this.ribbonControl;
             this.cMNDTextEdit.Name = "cMNDTextEdit";
-            this.cMNDTextEdit.Size = new System.Drawing.Size(451, 22);
+            this.cMNDTextEdit.Size = new System.Drawing.Size(317, 22);
             this.cMNDTextEdit.TabIndex = 38;
             // 
             // ghiChuTextEdit
@@ -479,55 +530,75 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.ngayNghiViecDateEdit, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.heSoLuongTextEdit, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tGPCKKSpinEdit, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.heSoChucDanhSpinEdit, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.ngayLamViecDateEdit, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.phongBanIDSpinEdit, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.ghiChuTextEdit, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.chucDanhIDSpinEdit, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.heSoLuongTextEdit, 0, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(663, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 10;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 236F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(655, 496);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // heSoLuongTextEdit
+            // tGPCKKSpinEdit
             // 
-            this.heSoLuongTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.nvNhanVienBindingSource, "HeSoLuong", true));
-            this.heSoLuongTextEdit.Location = new System.Drawing.Point(3, 361);
-            this.heSoLuongTextEdit.MenuManager = this.ribbonControl;
-            this.heSoLuongTextEdit.Name = "heSoLuongTextEdit";
-            this.heSoLuongTextEdit.Size = new System.Drawing.Size(100, 22);
-            this.heSoLuongTextEdit.TabIndex = 44;
+            this.tGPCKKSpinEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tGPCKKSpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.tGPCKKSpinEdit.Location = new System.Drawing.Point(3, 407);
+            this.tGPCKKSpinEdit.MenuManager = this.ribbonControl;
+            this.tGPCKKSpinEdit.Name = "tGPCKKSpinEdit";
+            this.tGPCKKSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tGPCKKSpinEdit.Size = new System.Drawing.Size(649, 22);
+            this.tGPCKKSpinEdit.TabIndex = 44;
             // 
-            // nvNhanVienBindingSource
+            // heSoChucDanhSpinEdit
             // 
-            this.nvNhanVienBindingSource.DataMember = "nvNhanVien";
-            this.nvNhanVienBindingSource.DataSource = this.anGiangDataSet;
-            // 
-            // anGiangDataSet
-            // 
-            this.anGiangDataSet.DataSetName = "AnGiangDataSet";
-            this.anGiangDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.heSoChucDanhSpinEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.heSoChucDanhSpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.heSoChucDanhSpinEdit.Location = new System.Drawing.Point(3, 379);
+            this.heSoChucDanhSpinEdit.MenuManager = this.ribbonControl;
+            this.heSoChucDanhSpinEdit.Name = "heSoChucDanhSpinEdit";
+            this.heSoChucDanhSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.heSoChucDanhSpinEdit.Size = new System.Drawing.Size(649, 22);
+            this.heSoChucDanhSpinEdit.TabIndex = 44;
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.48289F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.51711F));
-            this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 1, 0);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 320F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.HinhAnhPictureEdit, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(649, 230);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
@@ -556,7 +627,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(457, 224);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(323, 224);
             this.tableLayoutPanel2.TabIndex = 46;
             // 
             // ngaySinhdateEdit
@@ -572,7 +643,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ngaySinhdateEdit.Properties.MinValue = new System.DateTime(1900, 12, 31, 0, 0, 0, 0);
             this.ngaySinhdateEdit.Properties.NullValuePrompt = "dd/mm/yyyy";
-            this.ngaySinhdateEdit.Size = new System.Drawing.Size(451, 22);
+            this.ngaySinhdateEdit.Size = new System.Drawing.Size(317, 22);
             this.ngaySinhdateEdit.TabIndex = 43;
             // 
             // gioiTinhSpinEdit
@@ -590,7 +661,7 @@
             "Nam"});
             this.gioiTinhSpinEdit.Properties.PopupFormSize = new System.Drawing.Size(150, 0);
             this.gioiTinhSpinEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.gioiTinhSpinEdit.Size = new System.Drawing.Size(451, 22);
+            this.gioiTinhSpinEdit.Size = new System.Drawing.Size(317, 22);
             this.gioiTinhSpinEdit.TabIndex = 36;
             // 
             // trinhDoIDSpinEdit
@@ -615,7 +686,7 @@
             this.trinhDoIDSpinEdit.Properties.NullText = "-- Chọn trình độ --";
             this.trinhDoIDSpinEdit.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.OnlyInPopup;
             this.trinhDoIDSpinEdit.Properties.ValueMember = "IDTrinhDo";
-            this.trinhDoIDSpinEdit.Size = new System.Drawing.Size(451, 22);
+            this.trinhDoIDSpinEdit.Size = new System.Drawing.Size(317, 22);
             this.trinhDoIDSpinEdit.TabIndex = 44;
             this.trinhDoIDSpinEdit.Popup += new System.EventHandler(this.trinhDoIDSpinEdit_Popup);
             // 
@@ -623,6 +694,27 @@
             // 
             this.trinhDoBindingSource.DataMember = "TrinhDo";
             this.trinhDoBindingSource.DataSource = this.anGiangDataSet;
+            // 
+            // anGiangDataSet
+            // 
+            this.anGiangDataSet.DataSetName = "AnGiangDataSet";
+            this.anGiangDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // HinhAnhPictureEdit
+            // 
+            this.HinhAnhPictureEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HinhAnhPictureEdit.EditValue = global::AnGiang.Properties.Resources.no_avatar;
+            this.HinhAnhPictureEdit.Location = new System.Drawing.Point(332, 3);
+            this.HinhAnhPictureEdit.MenuManager = this.ribbonControl;
+            this.HinhAnhPictureEdit.Name = "HinhAnhPictureEdit";
+            this.HinhAnhPictureEdit.Properties.InitialImage = null;
+            this.HinhAnhPictureEdit.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.HinhAnhPictureEdit.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.HinhAnhPictureEdit.Properties.ZoomAccelerationFactor = 1D;
+            this.HinhAnhPictureEdit.Properties.ZoomPercent = 90D;
+            this.HinhAnhPictureEdit.Size = new System.Drawing.Size(314, 224);
+            this.HinhAnhPictureEdit.TabIndex = 47;
+            this.HinhAnhPictureEdit.Validated += new System.EventHandler(this.HinhAnhPictureEdit_Validated);
             // 
             // phongBanIDSpinEdit
             // 
@@ -649,6 +741,150 @@
             this.dvPhongBanBindingSource.DataMember = "dvPhongBan";
             this.dvPhongBanBindingSource.DataSource = this.anGiangDataSet;
             // 
+            // chucDanhIDSpinEdit
+            // 
+            this.chucDanhIDSpinEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chucDanhIDSpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.chucDanhIDSpinEdit.Location = new System.Drawing.Point(3, 435);
+            this.chucDanhIDSpinEdit.MenuManager = this.ribbonControl;
+            this.chucDanhIDSpinEdit.Name = "chucDanhIDSpinEdit";
+            this.chucDanhIDSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.chucDanhIDSpinEdit.Properties.DataSource = this.nvChucDanhBindingSource;
+            this.chucDanhIDSpinEdit.Properties.DisplayMember = "TenChucDanh";
+            this.chucDanhIDSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.chucDanhIDSpinEdit.Properties.NullText = "";
+            this.chucDanhIDSpinEdit.Properties.NullValuePrompt = "-- Chọn chức danh --";
+            this.chucDanhIDSpinEdit.Properties.PopupFormSize = new System.Drawing.Size(500, 0);
+            this.chucDanhIDSpinEdit.Properties.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.rlsDanhMuc});
+            this.chucDanhIDSpinEdit.Properties.ValueMember = "IDChucDanh";
+            this.chucDanhIDSpinEdit.Properties.View = this.gridLookUpEdit1View;
+            this.chucDanhIDSpinEdit.Size = new System.Drawing.Size(649, 22);
+            this.chucDanhIDSpinEdit.TabIndex = 44;
+            // 
+            // nvChucDanhBindingSource
+            // 
+            this.nvChucDanhBindingSource.DataMember = "nvChucDanh";
+            this.nvChucDanhBindingSource.DataSource = this.anGiangDataSet;
+            // 
+            // rlsDanhMuc
+            // 
+            this.rlsDanhMuc.AutoHeight = false;
+            this.rlsDanhMuc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rlsDanhMuc.DataSource = this.nvDanhMucCDBindingSource;
+            this.rlsDanhMuc.DisplayMember = "TenChucDanh";
+            this.rlsDanhMuc.Name = "rlsDanhMuc";
+            this.rlsDanhMuc.ValueMember = "IDDanhMucCD";
+            // 
+            // nvDanhMucCDBindingSource
+            // 
+            this.nvDanhMucCDBindingSource.DataMember = "nvDanhMucCD";
+            this.nvDanhMucCDBindingSource.DataSource = this.anGiangDataSet;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIDChucDanh,
+            this.colMaChucDanh,
+            this.colTenChucDanh,
+            this.colGhiChu,
+            this.colNgayTao,
+            this.colNgayCapNhat,
+            this.colDaXoa1,
+            this.colDanhMucCDID});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colIDChucDanh
+            // 
+            this.colIDChucDanh.FieldName = "IDChucDanh";
+            this.colIDChucDanh.Name = "colIDChucDanh";
+            this.colIDChucDanh.OptionsColumn.AllowEdit = false;
+            // 
+            // colMaChucDanh
+            // 
+            this.colMaChucDanh.Caption = "Mã chức danh";
+            this.colMaChucDanh.FieldName = "MaChucDanh";
+            this.colMaChucDanh.Name = "colMaChucDanh";
+            this.colMaChucDanh.OptionsColumn.AllowEdit = false;
+            this.colMaChucDanh.Visible = true;
+            this.colMaChucDanh.VisibleIndex = 0;
+            // 
+            // colTenChucDanh
+            // 
+            this.colTenChucDanh.Caption = "Tên chức danh";
+            this.colTenChucDanh.FieldName = "TenChucDanh";
+            this.colTenChucDanh.Name = "colTenChucDanh";
+            this.colTenChucDanh.OptionsColumn.AllowEdit = false;
+            this.colTenChucDanh.Visible = true;
+            this.colTenChucDanh.VisibleIndex = 1;
+            // 
+            // colGhiChu
+            // 
+            this.colGhiChu.FieldName = "GhiChu";
+            this.colGhiChu.Name = "colGhiChu";
+            this.colGhiChu.OptionsColumn.AllowEdit = false;
+            // 
+            // colNgayTao
+            // 
+            this.colNgayTao.FieldName = "NgayTao";
+            this.colNgayTao.Name = "colNgayTao";
+            this.colNgayTao.OptionsColumn.AllowEdit = false;
+            // 
+            // colNgayCapNhat
+            // 
+            this.colNgayCapNhat.FieldName = "NgayCapNhat";
+            this.colNgayCapNhat.Name = "colNgayCapNhat";
+            this.colNgayCapNhat.OptionsColumn.AllowEdit = false;
+            // 
+            // colDaXoa1
+            // 
+            this.colDaXoa1.FieldName = "DaXoa";
+            this.colDaXoa1.Name = "colDaXoa1";
+            this.colDaXoa1.OptionsColumn.AllowEdit = false;
+            // 
+            // colDanhMucCDID
+            // 
+            this.colDanhMucCDID.Caption = "Danh mục";
+            this.colDanhMucCDID.ColumnEdit = this.rlsDanhMuc;
+            this.colDanhMucCDID.FieldName = "DanhMucCDID";
+            this.colDanhMucCDID.Name = "colDanhMucCDID";
+            this.colDanhMucCDID.OptionsColumn.AllowEdit = false;
+            this.colDanhMucCDID.Visible = true;
+            this.colDanhMucCDID.VisibleIndex = 2;
+            // 
+            // heSoLuongTextEdit
+            // 
+            this.heSoLuongTextEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.heSoLuongTextEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.heSoLuongTextEdit.Location = new System.Drawing.Point(3, 351);
+            this.heSoLuongTextEdit.MenuManager = this.ribbonControl;
+            this.heSoLuongTextEdit.Name = "heSoLuongTextEdit";
+            this.heSoLuongTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.heSoLuongTextEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.heSoLuongTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.heSoLuongTextEdit.Size = new System.Drawing.Size(649, 22);
+            this.heSoLuongTextEdit.TabIndex = 44;
+            // 
+            // nvNhanVienBindingSource
+            // 
+            this.nvNhanVienBindingSource.DataMember = "nvNhanVien";
+            this.nvNhanVienBindingSource.DataSource = this.anGiangDataSet;
+            // 
             // dvPhongBanTableAdapter
             // 
             this.dvPhongBanTableAdapter.ClearBeforeFill = true;
@@ -667,6 +903,7 @@
             this.tableAdapterManager.ccChamCongTableAdapter = null;
             this.tableAdapterManager.ccChiTietTableAdapter = null;
             this.tableAdapterManager.ccKyHieuTableAdapter = null;
+            this.tableAdapterManager.ccXemChamCongTableAdapter = null;
             this.tableAdapterManager.dvChuyenMonTableAdapter = null;
             this.tableAdapterManager.dvDonViTableAdapter = null;
             this.tableAdapterManager.dvPhongBanTableAdapter = this.dvPhongBanTableAdapter;
@@ -701,8 +938,8 @@
             this.colIDNhanVien,
             this.colMaNhanVien,
             this.colHoTen,
-            this.colPhongBan,
-            this.colDaXoa});
+            this.colDaXoa,
+            this.colPhongBanID});
             this.gridView1.GridControl = this.nvNhanVienGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -711,11 +948,9 @@
             // 
             // colIDNhanVien
             // 
-            this.colIDNhanVien.Caption = "gridColumn1";
             this.colIDNhanVien.FieldName = "IDNhanVien";
             this.colIDNhanVien.Name = "colIDNhanVien";
             this.colIDNhanVien.OptionsColumn.AllowEdit = false;
-            this.colIDNhanVien.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
             // 
             // colMaNhanVien
             // 
@@ -725,27 +960,34 @@
             this.colMaNhanVien.OptionsColumn.AllowEdit = false;
             this.colMaNhanVien.Visible = true;
             this.colMaNhanVien.VisibleIndex = 0;
-            this.colMaNhanVien.Width = 130;
+            this.colMaNhanVien.Width = 91;
             // 
             // colHoTen
             // 
-            this.colHoTen.Caption = "Tên nhân viên";
+            this.colHoTen.Caption = "Họ tên";
             this.colHoTen.FieldName = "HoTen";
             this.colHoTen.Name = "colHoTen";
             this.colHoTen.OptionsColumn.AllowEdit = false;
             this.colHoTen.Visible = true;
             this.colHoTen.VisibleIndex = 1;
-            this.colHoTen.Width = 222;
+            this.colHoTen.Width = 177;
             // 
-            // colPhongBan
+            // colDaXoa
             // 
-            this.colPhongBan.Caption = "Phòng ban";
-            this.colPhongBan.ColumnEdit = this.rlsPhongBan;
-            this.colPhongBan.FieldName = "PhongBanID";
-            this.colPhongBan.Name = "colPhongBan";
-            this.colPhongBan.Visible = true;
-            this.colPhongBan.VisibleIndex = 2;
-            this.colPhongBan.Width = 82;
+            this.colDaXoa.FieldName = "DaXoa";
+            this.colDaXoa.Name = "colDaXoa";
+            this.colDaXoa.OptionsColumn.AllowEdit = false;
+            // 
+            // colPhongBanID
+            // 
+            this.colPhongBanID.Caption = "Phòng ban";
+            this.colPhongBanID.ColumnEdit = this.rlsPhongBan;
+            this.colPhongBanID.FieldName = "PhongBanID";
+            this.colPhongBanID.Name = "colPhongBanID";
+            this.colPhongBanID.OptionsColumn.AllowEdit = false;
+            this.colPhongBanID.Visible = true;
+            this.colPhongBanID.VisibleIndex = 2;
+            this.colPhongBanID.Width = 166;
             // 
             // rlsPhongBan
             // 
@@ -756,14 +998,6 @@
             this.rlsPhongBan.DisplayMember = "TenPhongBan";
             this.rlsPhongBan.Name = "rlsPhongBan";
             this.rlsPhongBan.ValueMember = "IDPhongBan";
-            // 
-            // colDaXoa
-            // 
-            this.colDaXoa.Caption = "gridColumn1";
-            this.colDaXoa.FieldName = "DaXoa";
-            this.colDaXoa.Name = "colDaXoa";
-            this.colDaXoa.OptionsColumn.AllowEdit = false;
-            this.colDaXoa.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
             // 
             // tableLayoutPanel4
             // 
@@ -782,6 +1016,14 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1321, 502);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
+            // nvChucDanhTableAdapter
+            // 
+            this.nvChucDanhTableAdapter.ClearBeforeFill = true;
+            // 
+            // nvDanhMucCDTableAdapter
+            // 
+            this.nvDanhMucCDTableAdapter.ClearBeforeFill = true;
+            // 
             // XUC_NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -794,8 +1036,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDaXoaTmp.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maNhanVienTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoTenTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dienThoaiTextEdit.Properties)).EndInit();
@@ -807,9 +1047,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ngayNghiViecDateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngayNghiViecDateEdit.Properties)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.heSoLuongTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nvNhanVienBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tGPCKKSpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heSoChucDanhSpinEdit.Properties)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ngaySinhdateEdit.Properties.CalendarTimeProperties)).EndInit();
@@ -817,8 +1056,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.gioiTinhSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trinhDoIDSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trinhDoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HinhAnhPictureEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phongBanIDSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvPhongBanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chucDanhIDSpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nvChucDanhBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rlsDanhMuc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nvDanhMucCDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heSoLuongTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nvNhanVienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvNhanVienGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlsPhongBan)).EndInit();
@@ -841,7 +1089,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.TextEdit maNhanVienTextEdit;
         private DevExpress.XtraEditors.TextEdit hoTenTextEdit;
         private DevExpress.XtraEditors.TextEdit dienThoaiTextEdit;
@@ -867,14 +1114,32 @@
         private DevExpress.XtraGrid.GridControl nvNhanVienGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private DevExpress.XtraGrid.Columns.GridColumn colMaNhanVien;
-        private DevExpress.XtraGrid.Columns.GridColumn colHoTen;
-        private DevExpress.XtraGrid.Columns.GridColumn colIDNhanVien;
-        private DevExpress.XtraGrid.Columns.GridColumn colDaXoa;
-        private DevExpress.XtraEditors.TextEdit txtDaXoaTmp;
-        private DevExpress.XtraGrid.Columns.GridColumn colPhongBan;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rlsPhongBan;
         private DevExpress.XtraEditors.DateEdit ngaySinhdateEdit;
-        private DevExpress.XtraEditors.TextEdit heSoLuongTextEdit;
+        private DevExpress.XtraGrid.Columns.GridColumn colIDNhanVien;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaNhanVien;
+        private DevExpress.XtraGrid.Columns.GridColumn colHoTen;
+        private DevExpress.XtraGrid.Columns.GridColumn colDaXoa;
+        private DevExpress.XtraGrid.Columns.GridColumn colPhongBanID;
+        private DevExpress.XtraEditors.PictureEdit HinhAnhPictureEdit;
+        private DevExpress.XtraEditors.SpinEdit tGPCKKSpinEdit;
+        private DevExpress.XtraEditors.SpinEdit heSoChucDanhSpinEdit;
+        private DevExpress.XtraBars.BarButtonItem bbiCancel;
+        private DevExpress.XtraEditors.GridLookUpEdit chucDanhIDSpinEdit;
+        private System.Windows.Forms.BindingSource nvChucDanhBindingSource;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private AnGiangDataSetTableAdapters.nvChucDanhTableAdapter nvChucDanhTableAdapter;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rlsDanhMuc;
+        private System.Windows.Forms.BindingSource nvDanhMucCDBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colIDChucDanh;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaChucDanh;
+        private DevExpress.XtraGrid.Columns.GridColumn colTenChucDanh;
+        private DevExpress.XtraGrid.Columns.GridColumn colGhiChu;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayTao;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayCapNhat;
+        private DevExpress.XtraGrid.Columns.GridColumn colDaXoa1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDanhMucCDID;
+        private AnGiangDataSetTableAdapters.nvDanhMucCDTableAdapter nvDanhMucCDTableAdapter;
+        private DevExpress.XtraEditors.SpinEdit heSoLuongTextEdit;
     }
 }

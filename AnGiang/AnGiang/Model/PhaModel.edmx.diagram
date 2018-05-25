@@ -4,22 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="62d6b7ae05804918a4361f957e6313d9" Name="Diagram1" ZoomLevel="99">
-        <EntityTypeShape EntityType="AnGiangModel.ccChamCong" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.ccChiTiet" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.ccKyHieu" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.ccXemChamCong" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.dvChuyenMon" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.dvDonVi" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.dvPhongBan" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.lgLuong" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.lskLoaiSuKien" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.lskSuKien" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.nvChucDanh" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.nvDanhMucCD" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.nvNhanVien" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.tlDinhMuc" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.TrinhDo" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="51cdeec8d71c42159ffb90451ba4659f" Name="Diagram1">
+        <EntityTypeShape EntityType="AnGiangModel.ccChamCong" Width="1.5" PointX="5.5724125064780994" PointY="1.9830247322018373" />
+        <EntityTypeShape EntityType="AnGiangModel.ccChiTiet" Width="1.5" PointX="7.823694379918134" PointY="23.324779148830462" />
+        <EntityTypeShape EntityType="AnGiangModel.ccKyHieu" Width="1.5" PointX="8.5747733044320587" PointY="26.347198468794673" />
+        <EntityTypeShape EntityType="AnGiangModel.ccXemChamCong" Width="1.5" PointX="5.5318330086450249" PointY="10.150819261628584" />
+        <EntityTypeShape EntityType="AnGiangModel.dvChuyenMon" Width="1.5" PointX="6.3187441054353233" PointY="23.945601966206731" />
+        <EntityTypeShape EntityType="AnGiangModel.dvDonVi" Width="1.5" PointX="0.75930586865139471" PointY="27.527625990811561" />
+        <EntityTypeShape EntityType="AnGiangModel.dvPhongBan" Width="1.5" PointX="4.6015587004840182" PointY="24.914289948024923" />
+        <EntityTypeShape EntityType="AnGiangModel.lgLuong" Width="1.5" PointX="4.974082854098679" PointY="30.755523591654153" />
+        <EntityTypeShape EntityType="AnGiangModel.lskLoaiSuKien" Width="1.5" PointX="7.1672653533365889" PointY="0.99383306549574857" />
+        <EntityTypeShape EntityType="AnGiangModel.lskSuKien" Width="1.5" PointX="5.2406926365758721" PointY="15.409917376660703" />
+        <EntityTypeShape EntityType="AnGiangModel.nvChucDanh" Width="1.5" PointX="7.557596083524448" PointY="21.110792512591367" />
+        <EntityTypeShape EntityType="AnGiangModel.nvDanhMucCD" Width="1.5" PointX="3.9050385392760107" PointY="5.5721695598085272" />
+        <EntityTypeShape EntityType="AnGiangModel.nvNhanVien" Width="1.5" PointX="7.25289073551674" PointY="15.476301632577695" />
+        <EntityTypeShape EntityType="AnGiangModel.tlDinhMuc" Width="1.5" PointX="6.4103171352345107" PointY="3.813846485602598" />
+        <EntityTypeShape EntityType="AnGiangModel.TrinhDo" Width="1.5" PointX="8.9457071204416945" PointY="12.51101993606939" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

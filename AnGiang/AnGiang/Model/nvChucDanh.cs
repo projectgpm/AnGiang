@@ -17,7 +17,6 @@ namespace AnGiang.Model
         public long IDChucDanh { get; set; }
         public string MaChucDanh { get; set; }
         public string TenChucDanh { get; set; }
-        public Nullable<double> HeSoChucDanh { get; set; }
         public string GhiChu { get; set; }
         public Nullable<System.DateTime> NgayTao { get; set; }
         public Nullable<System.DateTime> NgayCapNhat { get; set; }

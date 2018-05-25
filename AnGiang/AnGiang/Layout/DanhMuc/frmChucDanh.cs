@@ -62,7 +62,6 @@ namespace AnGiang.Layout.DanhMuc
                 }
                 else
                 {
-                    cd.HeSoChucDanh = double.Parse(gridView1.GetRowCellValue(e.RowHandle, colHeSoChucDanh).ToString());
                     cd.GhiChu = gridView1.GetRowCellValue(e.RowHandle, colGhiChu).ToString();
                     cd.DaXoa = 0;
                     cd.NgayTao = cd.NgayCapNhat = DateTime.Now;
@@ -82,7 +81,6 @@ namespace AnGiang.Layout.DanhMuc
                 }
                 else
                 {
-                    cd.HeSoChucDanh = double.Parse(gridView1.GetRowCellValue(e.RowHandle, colHeSoChucDanh).ToString());
                     cd.GhiChu = gridView1.GetRowCellValue(e.RowHandle, colGhiChu).ToString();
                     cd.NgayCapNhat = DateTime.Now;
                     cd.DanhMucCDID = long.Parse(gridView1.GetRowCellValue(e.RowHandle, colDanhMucCDID).ToString());

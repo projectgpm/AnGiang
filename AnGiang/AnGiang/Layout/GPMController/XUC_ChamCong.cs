@@ -254,47 +254,65 @@ namespace AnGiang.Layout.GPMController
             //lấy danh sách cuối tuần
             _NgayNghi = new List<int>();
             _NgayNghiT7 = new List<int>();
+            for (int i = _SoNgay+1; i <= 31; i++)
+            {
+                GridColumn col = gridView1.Columns.ColumnByFieldName(i.ToString());
+                col.Visible = false;
+            }
             for (int i = 1; i <= _SoNgay; i++)
             {                
-                DateTime KiemTraCuoiTuan = new DateTime(dt.Year, dt.Month, i); 
+                DateTime KiemTraCuoiTuan = new DateTime(dt.Year, dt.Month, i);
+                GridColumn col = gridView1.Columns.ColumnByFieldName(i.ToString());
+                if (!col.Visible)
+                { 
+                    col.Visible = true;
+                    col.VisibleIndex = i+1;
+                }
+                
                 if (KiemTraCuoiTuan.DayOfWeek == DayOfWeek.Sunday)
                     _NgayNghi.Add(i);
                 if (KiemTraCuoiTuan.DayOfWeek == DayOfWeek.Saturday)
                     _NgayNghiT7.Add(i);
                 if (_NgayNghi.Contains(i) || _NgayNghiT7.Contains(i))
                 {
-                    GridColumn col = gridView1.Columns.ColumnByFieldName(i.ToString());
+                   
                     col.AppearanceHeader.BackColor = Color.DarkSalmon;
                     col.AppearanceCell.BackColor = Color.DarkSalmon;
                 }
-            }
-            //kiểm tra xem còn nhân viền nào chưa được thêm vào bảng chấm công chưa nếu chưa thì thêm vào
-            if (listIDNhanVien.Count != listNhanVienID.Count)
-            {
-                float ngaychunhat = _NgayNghi.Count;
-                float ngaythubay = _NgayNghiT7.Count;
-                float ngaynghi = ngaychunhat + ngaythubay / 2;
-                float huongluong = _SoNgay - ngaynghi;
-                foreach (nvNhanVien nv in DanhSachNhanVienChuaThem)
+                else
                 {
-                    //thêm vào châm công mới
-                    DataProvider.Ins.DB.pr_ThemChamCong(nv.IDNhanVien, dt.Month, dt.Year, _SoNgay, ngaynghi, huongluong);
-                    //đưa số ngày vào chi tiết
-                    DataProvider.Ins.DB.Entry(DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && q.NhanVienID == nv.IDNhanVien).FirstOrDefault());
-                    long IDChamCong = DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && q.NhanVienID == nv.IDNhanVien).FirstOrDefault().IDChamCong;
-                    for (int i = 1; i <= _SoNgay; i++)
-                    {
-                        if (_NgayNghi.Contains(i))
-                            CapNhatChiTiet(nv.IDNhanVien, IDChamCong, i, layMacDinhNghiChuNhat.IDKyHieu);
-                        else
-                            if (_NgayNghiT7.Contains(i))
-                                CapNhatChiTiet(nv.IDNhanVien, IDChamCong, i, layMacDinhNghiThuBay.IDKyHieu);
-                            else
-                                CapNhatChiTiet(nv.IDNhanVien, IDChamCong, i, layMacDinh.IDKyHieu);
-                    }
-                  DataProvider.Ins.DB.pr_LoadChamCong(IDChamCong);
+                    col.AppearanceHeader.BackColor = Color.Transparent;
+                    col.AppearanceCell.BackColor = Color.Transparent;
                 }
+                
             }
+                //kiểm tra xem còn nhân viền nào chưa được thêm vào bảng chấm công chưa nếu chưa thì thêm vào
+                if (listIDNhanVien.Count != listNhanVienID.Count)
+                {
+                    float ngaychunhat = _NgayNghi.Count;
+                    float ngaythubay = _NgayNghiT7.Count;
+                    float ngaynghi = ngaychunhat + ngaythubay / 2;
+                    float huongluong = _SoNgay - ngaynghi;
+                    foreach (nvNhanVien nv in DanhSachNhanVienChuaThem)
+                    {
+                        //thêm vào châm công mới
+                        DataProvider.Ins.DB.pr_ThemChamCong(nv.IDNhanVien, dt.Month, dt.Year, _SoNgay, ngaynghi, huongluong);
+                        //đưa số ngày vào chi tiết
+                        DataProvider.Ins.DB.Entry(DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && q.NhanVienID == nv.IDNhanVien).FirstOrDefault());
+                        long IDChamCong = DataProvider.Ins.DB.ccChamCongs.Where(q => q.Thang == dt.Month && q.Nam == dt.Year && q.NhanVienID == nv.IDNhanVien).FirstOrDefault().IDChamCong;
+                        for (int i = 1; i <= _SoNgay; i++)
+                        {
+                            if (_NgayNghi.Contains(i))
+                                CapNhatChiTiet(nv.IDNhanVien, IDChamCong, i, layMacDinhNghiChuNhat.IDKyHieu);
+                            else
+                                if (_NgayNghiT7.Contains(i))
+                                    CapNhatChiTiet(nv.IDNhanVien, IDChamCong, i, layMacDinhNghiThuBay.IDKyHieu);
+                                else
+                                    CapNhatChiTiet(nv.IDNhanVien, IDChamCong, i, layMacDinh.IDKyHieu);
+                        }
+                        DataProvider.Ins.DB.pr_LoadChamCong(IDChamCong);
+                    }
+                }
             ccXemChamCongTableAdapter1.Fill(anGiangDataSet1.ccXemChamCong,dt.Month,dt.Year);          
         }    
         private void gridView1_RowCellClick(object sender, RowCellClickEventArgs e)
