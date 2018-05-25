@@ -14,8 +14,15 @@ namespace AnGiang.Model
     
     public partial class TrinhDo
     {
+        public TrinhDo()
+        {
+            this.nvNhanViens = new HashSet<nvNhanVien>();
+        }
+    
         public long IDTrinhDo { get; set; }
         public string MaTrinhDo { get; set; }
         public string TenTrinhDo { get; set; }
+    
+        public virtual ICollection<nvNhanVien> nvNhanViens { get; set; }
     }
 }

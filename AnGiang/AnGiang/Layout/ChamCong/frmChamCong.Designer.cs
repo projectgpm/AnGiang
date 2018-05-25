@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(696, 420);
             this.Name = "frmChamCong";
             this.Text = "frmChamCong";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

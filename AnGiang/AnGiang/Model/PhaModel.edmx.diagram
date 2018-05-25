@@ -5,22 +5,25 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="9daf772787914e39b2370ecf889bb8b0" Name="Diagram1">
-        <EntityTypeShape EntityType="AnGiangModel.ccChamCong" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.ccChiTiet" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.ccKyHieu" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.ccXemChamCong" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.dvChuyenMon" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.dvDonVi" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.dvPhongBan" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.lgBangLuong" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.lgLuong" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.lskLoaiSuKien" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.lskSuKien" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.nvChucDanh" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.nvDanhMucCD" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.nvNhanVien" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.tlDinhMuc" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AnGiangModel.TrinhDo" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnGiangModel.ccChamCong" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AnGiangModel.ccChiTiet" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AnGiangModel.ccKyHieu" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AnGiangModel.ccXemChamCong" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AnGiangModel.dvChuyenMon" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AnGiangModel.dvDonVi" Width="1.5" PointX="7.75" PointY="5.75" />
+        <EntityTypeShape EntityType="AnGiangModel.dvPhongBan" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AnGiangModel.lgBangLuong" Width="1.5" PointX="9.75" PointY="4.75" />
+        <EntityTypeShape EntityType="AnGiangModel.lgLuong" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AnGiangModel.lskLoaiSuKien" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="AnGiangModel.lskSuKien" Width="1.5" PointX="11.75" PointY="4.75" />
+        <EntityTypeShape EntityType="AnGiangModel.nvChucDanh" Width="1.5" PointX="4.75" PointY="11.75" />
+        <EntityTypeShape EntityType="AnGiangModel.nvDanhMucCD" Width="1.5" PointX="6.75" PointY="11.75" />
+        <EntityTypeShape EntityType="AnGiangModel.nvNhanVien" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="AnGiangModel.sysdiagram" Width="1.5" PointX="8.75" PointY="11.75" />
+        <EntityTypeShape EntityType="AnGiangModel.tlDinhMuc" Width="1.5" PointX="11.75" PointY="9.75" />
+        <EntityTypeShape EntityType="AnGiangModel.TrinhDo" Width="1.5" PointX="0.75" PointY="2.875" />
+        <AssociationConnector Association="AnGiangModel.FK_nvNhanVien_TrinhDo" />
+        <AssociationConnector Association="AnGiangModel.FK_nvNhanVien_nvChucDanh" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

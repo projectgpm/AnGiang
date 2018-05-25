@@ -14,6 +14,11 @@ namespace AnGiang.Model
     
     public partial class nvChucDanh
     {
+        public nvChucDanh()
+        {
+            this.nvNhanViens = new HashSet<nvNhanVien>();
+        }
+    
         public long IDChucDanh { get; set; }
         public Nullable<long> DanhMucCDID { get; set; }
         public string MaChucDanh { get; set; }
@@ -23,5 +28,7 @@ namespace AnGiang.Model
         public Nullable<System.DateTime> NgayTao { get; set; }
         public Nullable<System.DateTime> NgayCapNhat { get; set; }
         public Nullable<int> DaXoa { get; set; }
+    
+        public virtual ICollection<nvNhanVien> nvNhanViens { get; set; }
     }
 }

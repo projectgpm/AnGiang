@@ -42,6 +42,7 @@ namespace AnGiang.Model
         public DbSet<nvChucDanh> nvChucDanhs { get; set; }
         public DbSet<nvDanhMucCD> nvDanhMucCDs { get; set; }
         public DbSet<nvNhanVien> nvNhanViens { get; set; }
+        public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<tlDinhMuc> tlDinhMucs { get; set; }
         public DbSet<TrinhDo> TrinhDoes { get; set; }
     
