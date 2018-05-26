@@ -195,11 +195,10 @@
             this.btn_Login.AutoSize = true;
             this.btn_Login.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btn_Login.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Login.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Login.Location = new System.Drawing.Point(3, 3);
             this.btn_Login.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(105, 36);
+            this.btn_Login.Size = new System.Drawing.Size(83, 24);
             this.btn_Login.TabIndex = 2;
             this.btn_Login.Text = "Đăng nhập";
             // 

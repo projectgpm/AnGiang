@@ -17,5 +17,28 @@ namespace AnGiang
         {
             InitializeComponent();
         }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void XtraForm1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTGCKK_EditValueChanged(object sender, EventArgs e)
+        {
+            if((int)txtTGCKK.EditValue<0)
+            {
+                txtTGCKK.EditValue = 0;
+            }
+        }
+
+        private void txtTGCKK_Leave(object sender, EventArgs e)
+        {
+
+        }
     }
 }

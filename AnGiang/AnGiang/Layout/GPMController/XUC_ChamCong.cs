@@ -297,6 +297,7 @@ namespace AnGiang.Layout.GPMController
                     if(e.RowHandle>=0)
                     {
                         int idNhanVien = int.Parse(gridView1.GetFocusedRowCellValue(colIDNhanVien).ToString());
+                        DataProvider.Ins.DB.Entry(DataProvider.Ins.DB.nvNhanViens.Find(idNhanVien));
                         nvNhanVien nv = DataProvider.Ins.DB.nvNhanViens.Find(idNhanVien);
                         lbcmnd.Text = nv.CMND;
                         lbhoten.Text = nv.HoTen;
@@ -305,10 +306,15 @@ namespace AnGiang.Layout.GPMController
                         lbtrinhdo.Text = nv.TrinhDo.TenTrinhDo;
                         lbchucdanh.Text = nv.nvChucDanh.TenChucDanh;
                         lbgioitinh.Text = nv.GioiTinh > 0 ? "Nam" : "Nữ";
-                        lbhesoluong.Text = nv.HeSoLuong.ToString();
-                        lbhesochucdanh.Text = nv.HeSoChucDanh.ToString();
-                        lbDKPCKK.Text = nv.DieuKienPCKK.ToString();
-                        lbTGPCKK.Text = nv.TGPCKK.ToString();
+                        txthesoluong.EditValue = nv.HeSoLuong;
+                        txthesochucdanh.EditValue = nv.HeSoChucDanh;
+                        txtDKPCKK.EditValue = nv.DieuKienPCKK;
+                        txtTGCKK.EditValue = nv.TGPCKK;
+                        txtTGCKK.Tag = txthesochucdanh.Tag = txthesoluong.Tag = txtDKPCKK.Tag = idNhanVien;
+                        txtTGCKK.EditValueChanged += txtChanged;
+                        txtDKPCKK.EditValueChanged += txtChanged;
+                        txthesochucdanh.EditValueChanged += txtChanged;
+                        txthesoluong.EditValueChanged += txtChanged;
                         lbngaysinh.Text = ((DateTime)nv.NgaySinh).ToString("dd/MM/yyyy");
                         GridHitInfo hitInfo = gridView1.CalcHitInfo(e.Location);
                         flyThongTinNhanVien.ShowBeakForm(gridControl1.PointToScreen(e.Location));
@@ -319,6 +325,7 @@ namespace AnGiang.Layout.GPMController
             }
 
             long IDKyHieu = (long)cbLoaiChamCong.EditValue;
+            DataProvider.Ins.DB.Entry(DataProvider.Ins.DB.ccKyHieux.Find(IDKyHieu));
             string maKyHieu = DataProvider.Ins.DB.ccKyHieux.Find(IDKyHieu).MaKyHieu;
             if (!ckChamMotCot.Checked && !ckChamMotHang.Checked && !ckChamTungO.Checked && !ckChamTheoNgay.Checked)
                 return;
@@ -413,6 +420,35 @@ namespace AnGiang.Layout.GPMController
             XtraForm f = new frmXemBaoCao(dt.Year, dt.Month, tongtien, tb, "Xí Nghiệp Phà An Giang");
             f.ShowDialog();
         }
-        
+
+        private void txtChanged(object sender, EventArgs e)
+        {
+               SpinEdit uc =  sender as SpinEdit;
+               DataProvider.Ins.DB.Entry(DataProvider.Ins.DB.nvNhanViens.Find(uc.Tag));
+               nvNhanVien nv = DataProvider.Ins.DB.nvNhanViens.Find(uc.Tag);
+               DateTime dt = dateThangNam.DateTime;
+               switch (uc.Name)
+               {
+                   case "txtTGCKK":
+                       if (txtTGCKK.EditValue != txtTGCKK.OldEditValue)
+                       { nv.TGPCKK = int.Parse(txtTGCKK.EditValue.ToString());}
+                       break;
+                   case "txthesochucdanh":
+                       if (txthesochucdanh.EditValue != txthesochucdanh.OldEditValue)
+                       { nv.HeSoChucDanh = double.Parse(txthesochucdanh.EditValue.ToString());}
+                       break;
+                   case "txthesoluong":
+                       if (txthesoluong.EditValue != txthesoluong.OldEditValue)
+                            { nv.HeSoLuong = double.Parse(txthesoluong.EditValue.ToString());}
+                       break;
+                   case "txtDKPCKK":
+                        if (txtDKPCKK.EditValue != txtDKPCKK.OldEditValue)
+                        { nv.DieuKienPCKK = int.Parse(txtDKPCKK.EditValue.ToString());}
+                       break;
+                   default: return;
+               }
+               DataProvider.Ins.DB.pr_bangLuongTongHop(1, (int?)nv.IDNhanVien, dt.Month, dt.Year);
+               DataProvider.Ins.DB.SaveChanges();
+        }
     }
 }
