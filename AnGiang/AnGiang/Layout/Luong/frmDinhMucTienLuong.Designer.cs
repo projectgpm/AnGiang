@@ -72,6 +72,7 @@
             this.tableAdapterManager.dvChuyenMonTableAdapter = null;
             this.tableAdapterManager.dvDonViTableAdapter = null;
             this.tableAdapterManager.dvPhongBanTableAdapter = null;
+            this.tableAdapterManager.lgBangLuongTableAdapter = null;
             this.tableAdapterManager.lgLuongTableAdapter = this.lgLuongTableAdapter;
             this.tableAdapterManager.lskLoaiSuKienTableAdapter = null;
             this.tableAdapterManager.lskSuKienTableAdapter = null;
@@ -111,6 +112,7 @@
             this.gridViewDinhMucTienLuong.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplace;
             this.gridViewDinhMucTienLuong.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gridViewDinhMucTienLuong.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridViewDinhMucTienLuong.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             // 
             // colIDLgLuong
             // 
@@ -172,6 +174,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDinhMucTienLuong";
             this.Text = "frmDinhMucTienLuong";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDinhMucTienLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lgLuongBindingSource)).EndInit();

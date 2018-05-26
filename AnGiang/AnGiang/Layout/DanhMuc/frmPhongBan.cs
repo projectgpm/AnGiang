@@ -66,8 +66,9 @@ namespace AnGiang.Layout.DanhMuc
                     pb.GhiChu = gridViewPhongBan.GetRowCellValue(e.RowHandle, colGhiChu).ToString();
                     pb.NgayCapNhat = DateTime.Now;
                 }
-                DataProvider.Ins.DB.SaveChanges();
             }
+            DataProvider.Ins.DB.SaveChanges();
+            this.dvPhongBanTableAdapter.Fill(this.anGiangDataSet.dvPhongBan);
         }
     }
 }

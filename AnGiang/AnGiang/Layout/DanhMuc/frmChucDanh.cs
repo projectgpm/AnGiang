@@ -88,6 +88,7 @@ namespace AnGiang.Layout.DanhMuc
                 }
             }
             DataProvider.Ins.DB.SaveChanges();
+            this.nvChucDanhTableAdapter.Fill(this.anGiangDataSet.nvChucDanh);
             //load waiting form cập nhật thành công
         }
         #endregion

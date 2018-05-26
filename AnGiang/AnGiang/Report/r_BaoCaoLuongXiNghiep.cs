@@ -8,9 +8,9 @@ using GPMLibrary;
 
 namespace AnGiang.Report
 {
-    public partial class r_BaoCaoLuongXyNghiep : DevExpress.XtraReports.UI.XtraReport
+    public partial class r_BaoCaoLuongXiNghiep : DevExpress.XtraReports.UI.XtraReport
     {
-        public r_BaoCaoLuongXyNghiep()
+        public r_BaoCaoLuongXiNghiep()
         {
             InitializeComponent();
         }

@@ -69,6 +69,7 @@ namespace AnGiang.Layout.DanhMuc
                 }
             }
             DataProvider.Ins.DB.SaveChanges();
+            this.nvDanhMucCDTableAdapter.Fill(this.anGiangDataSet.nvDanhMucCD);
         }
     }
 }

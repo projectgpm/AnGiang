@@ -81,6 +81,7 @@
             this.tableAdapterManager.dvChuyenMonTableAdapter = null;
             this.tableAdapterManager.dvDonViTableAdapter = null;
             this.tableAdapterManager.dvPhongBanTableAdapter = null;
+            this.tableAdapterManager.lgBangLuongTableAdapter = null;
             this.tableAdapterManager.lgLuongTableAdapter = null;
             this.tableAdapterManager.lskLoaiSuKienTableAdapter = null;
             this.tableAdapterManager.lskSuKienTableAdapter = null;

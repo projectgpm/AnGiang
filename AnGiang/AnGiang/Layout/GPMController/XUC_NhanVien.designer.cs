@@ -66,8 +66,6 @@
             this.ngayLamViecDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.ngayNghiViecDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tGPCKKSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.heSoChucDanhSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.ngaySinhdateEdit = new DevExpress.XtraEditors.DateEdit();
@@ -76,8 +74,6 @@
             this.trinhDoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anGiangDataSet = new AnGiang.AnGiangDataSet();
             this.HinhAnhPictureEdit = new DevExpress.XtraEditors.PictureEdit();
-            this.phongBanIDSpinEdit = new DevExpress.XtraEditors.LookUpEdit();
-            this.dvPhongBanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chucDanhIDSpinEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.nvChucDanhBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rlsDanhMuc = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -91,7 +87,12 @@
             this.colNgayCapNhat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDaXoa1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDanhMucCDID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tGPCKKSpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.heSoChucDanhSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.heSoLuongTextEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.phongBanIDSpinEdit = new DevExpress.XtraEditors.LookUpEdit();
+            this.dvPhongBanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.nvNhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dvPhongBanTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.dvPhongBanTableAdapter();
             this.trinhDoTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.TrinhDoTableAdapter();
@@ -138,8 +139,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ngayNghiViecDateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngayNghiViecDateEdit.Properties)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tGPCKKSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.heSoChucDanhSpinEdit.Properties)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ngaySinhdateEdit.Properties.CalendarTimeProperties)).BeginInit();
@@ -149,14 +148,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.trinhDoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HinhAnhPictureEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phongBanIDSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvPhongBanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chucDanhIDSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvChucDanhBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlsDanhMuc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvDanhMucCDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tGPCKKSpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heSoChucDanhSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heSoLuongTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phongBanIDSpinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvPhongBanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvNhanVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvNhanVienGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -176,7 +177,7 @@
             // trinhDoIDLabel
             // 
             trinhDoIDLabel.AutoSize = true;
-            trinhDoIDLabel.Location = new System.Drawing.Point(32, 244);
+            trinhDoIDLabel.Location = new System.Drawing.Point(32, 242);
             trinhDoIDLabel.Name = "trinhDoIDLabel";
             trinhDoIDLabel.Size = new System.Drawing.Size(109, 17);
             trinhDoIDLabel.TabIndex = 30;
@@ -185,11 +186,11 @@
             // phongBanIDLabel
             // 
             phongBanIDLabel.AutoSize = true;
-            phongBanIDLabel.Location = new System.Drawing.Point(32, 326);
+            phongBanIDLabel.Location = new System.Drawing.Point(32, 298);
             phongBanIDLabel.Name = "phongBanIDLabel";
             phongBanIDLabel.Size = new System.Drawing.Size(78, 17);
             phongBanIDLabel.TabIndex = 26;
-            phongBanIDLabel.Text = "12. Ghi chú";
+            phongBanIDLabel.Text = "11. Ghi chú";
             // 
             // hoTenLabel
             // 
@@ -212,11 +213,11 @@
             // ngayNghiViecLabel
             // 
             ngayNghiViecLabel.AutoSize = true;
-            ngayNghiViecLabel.Location = new System.Drawing.Point(32, 298);
+            ngayNghiViecLabel.Location = new System.Drawing.Point(32, 354);
             ngayNghiViecLabel.Name = "ngayNghiViecLabel";
             ngayNghiViecLabel.Size = new System.Drawing.Size(99, 17);
             ngayNghiViecLabel.TabIndex = 18;
-            ngayNghiViecLabel.Text = "11. Phòng ban";
+            ngayNghiViecLabel.Text = "12. Phòng ban";
             // 
             // gioiTinhLabel
             // 
@@ -230,7 +231,7 @@
             // ngayLamViecLabel
             // 
             ngayLamViecLabel.AutoSize = true;
-            ngayLamViecLabel.Location = new System.Drawing.Point(32, 272);
+            ngayLamViecLabel.Location = new System.Drawing.Point(32, 270);
             ngayLamViecLabel.Name = "ngayLamViecLabel";
             ngayLamViecLabel.Size = new System.Drawing.Size(122, 17);
             ngayLamViecLabel.TabIndex = 16;
@@ -275,7 +276,7 @@
             // heSoLuongLabel
             // 
             heSoLuongLabel.AutoSize = true;
-            heSoLuongLabel.Location = new System.Drawing.Point(32, 354);
+            heSoLuongLabel.Location = new System.Drawing.Point(32, 382);
             heSoLuongLabel.Name = "heSoLuongLabel";
             heSoLuongLabel.Size = new System.Drawing.Size(105, 17);
             heSoLuongLabel.TabIndex = 43;
@@ -284,7 +285,7 @@
             // heSoChucDanhLabel
             // 
             heSoChucDanhLabel.AutoSize = true;
-            heSoChucDanhLabel.Location = new System.Drawing.Point(32, 382);
+            heSoChucDanhLabel.Location = new System.Drawing.Point(32, 410);
             heSoChucDanhLabel.Name = "heSoChucDanhLabel";
             heSoChucDanhLabel.Size = new System.Drawing.Size(136, 17);
             heSoChucDanhLabel.TabIndex = 43;
@@ -293,7 +294,7 @@
             // tGPCKKLabel
             // 
             tGPCKKLabel.AutoSize = true;
-            tGPCKKLabel.Location = new System.Drawing.Point(34, 410);
+            tGPCKKLabel.Location = new System.Drawing.Point(32, 438);
             tGPCKKLabel.Name = "tGPCKKLabel";
             tGPCKKLabel.Size = new System.Drawing.Size(151, 17);
             tGPCKKLabel.TabIndex = 43;
@@ -302,7 +303,7 @@
             // chucDanhIDLabel
             // 
             chucDanhIDLabel.AutoSize = true;
-            chucDanhIDLabel.Location = new System.Drawing.Point(34, 438);
+            chucDanhIDLabel.Location = new System.Drawing.Point(32, 466);
             chucDanhIDLabel.Name = "chucDanhIDLabel";
             chucDanhIDLabel.Size = new System.Drawing.Size(100, 17);
             chucDanhIDLabel.TabIndex = 43;
@@ -417,17 +418,17 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(chucDanhIDLabel);
-            this.panelControl2.Controls.Add(tGPCKKLabel);
             this.panelControl2.Controls.Add(heSoChucDanhLabel);
-            this.panelControl2.Controls.Add(heSoLuongLabel);
+            this.panelControl2.Controls.Add(chucDanhIDLabel);
             this.panelControl2.Controls.Add(maNhanVienLabel);
+            this.panelControl2.Controls.Add(ngayNghiViecLabel);
+            this.panelControl2.Controls.Add(tGPCKKLabel);
             this.panelControl2.Controls.Add(label1);
+            this.panelControl2.Controls.Add(heSoLuongLabel);
             this.panelControl2.Controls.Add(trinhDoIDLabel);
             this.panelControl2.Controls.Add(phongBanIDLabel);
             this.panelControl2.Controls.Add(hoTenLabel);
             this.panelControl2.Controls.Add(dienThoaiLabel);
-            this.panelControl2.Controls.Add(ngayNghiViecLabel);
             this.panelControl2.Controls.Add(gioiTinhLabel);
             this.panelControl2.Controls.Add(ngayLamViecLabel);
             this.panelControl2.Controls.Add(ghiChuLabel);
@@ -487,11 +488,11 @@
             // ghiChuTextEdit
             // 
             this.ghiChuTextEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ghiChuTextEdit.Location = new System.Drawing.Point(3, 323);
+            this.ghiChuTextEdit.Location = new System.Drawing.Point(3, 295);
             this.ghiChuTextEdit.MenuManager = this.ribbonControl;
             this.ghiChuTextEdit.Name = "ghiChuTextEdit";
             this.ghiChuTextEdit.Size = new System.Drawing.Size(649, 22);
-            this.ghiChuTextEdit.TabIndex = 39;
+            this.ghiChuTextEdit.TabIndex = 43;
             // 
             // ngayLamViecDateEdit
             // 
@@ -507,7 +508,7 @@
             this.ngayLamViecDateEdit.Properties.MinValue = new System.DateTime(1990, 12, 31, 0, 0, 0, 0);
             this.ngayLamViecDateEdit.Properties.NullValuePrompt = "dd/mm/yyyy";
             this.ngayLamViecDateEdit.Size = new System.Drawing.Size(649, 22);
-            this.ngayLamViecDateEdit.TabIndex = 40;
+            this.ngayLamViecDateEdit.TabIndex = 41;
             // 
             // ngayNghiViecDateEdit
             // 
@@ -523,21 +524,22 @@
             this.ngayNghiViecDateEdit.Properties.MinValue = new System.DateTime(1990, 12, 31, 0, 0, 0, 0);
             this.ngayNghiViecDateEdit.Properties.NullValuePrompt = "dd/mm/yyyy";
             this.ngayNghiViecDateEdit.Size = new System.Drawing.Size(649, 22);
-            this.ngayNghiViecDateEdit.TabIndex = 41;
+            this.ngayNghiViecDateEdit.TabIndex = 42;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.ngayNghiViecDateEdit, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tGPCKKSpinEdit, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.heSoChucDanhSpinEdit, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.ngayLamViecDateEdit, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.phongBanIDSpinEdit, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.ghiChuTextEdit, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.chucDanhIDSpinEdit, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.heSoLuongTextEdit, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.chucDanhIDSpinEdit, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.tGPCKKSpinEdit, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.heSoChucDanhSpinEdit, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.heSoLuongTextEdit, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.ghiChuTextEdit, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.phongBanIDSpinEdit, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.labelControl1, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(663, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -554,38 +556,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(655, 496);
             this.tableLayoutPanel1.TabIndex = 4;
-            // 
-            // tGPCKKSpinEdit
-            // 
-            this.tGPCKKSpinEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tGPCKKSpinEdit.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tGPCKKSpinEdit.Location = new System.Drawing.Point(3, 407);
-            this.tGPCKKSpinEdit.MenuManager = this.ribbonControl;
-            this.tGPCKKSpinEdit.Name = "tGPCKKSpinEdit";
-            this.tGPCKKSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.tGPCKKSpinEdit.Size = new System.Drawing.Size(649, 22);
-            this.tGPCKKSpinEdit.TabIndex = 44;
-            // 
-            // heSoChucDanhSpinEdit
-            // 
-            this.heSoChucDanhSpinEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.heSoChucDanhSpinEdit.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.heSoChucDanhSpinEdit.Location = new System.Drawing.Point(3, 379);
-            this.heSoChucDanhSpinEdit.MenuManager = this.ribbonControl;
-            this.heSoChucDanhSpinEdit.Name = "heSoChucDanhSpinEdit";
-            this.heSoChucDanhSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.heSoChucDanhSpinEdit.Size = new System.Drawing.Size(649, 22);
-            this.heSoChucDanhSpinEdit.TabIndex = 44;
             // 
             // tableLayoutPanel3
             // 
@@ -644,7 +614,7 @@
             this.ngaySinhdateEdit.Properties.MinValue = new System.DateTime(1900, 12, 31, 0, 0, 0, 0);
             this.ngaySinhdateEdit.Properties.NullValuePrompt = "dd/mm/yyyy";
             this.ngaySinhdateEdit.Size = new System.Drawing.Size(317, 22);
-            this.ngaySinhdateEdit.TabIndex = 43;
+            this.ngaySinhdateEdit.TabIndex = 39;
             // 
             // gioiTinhSpinEdit
             // 
@@ -687,7 +657,7 @@
             this.trinhDoIDSpinEdit.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.OnlyInPopup;
             this.trinhDoIDSpinEdit.Properties.ValueMember = "IDTrinhDo";
             this.trinhDoIDSpinEdit.Size = new System.Drawing.Size(317, 22);
-            this.trinhDoIDSpinEdit.TabIndex = 44;
+            this.trinhDoIDSpinEdit.TabIndex = 40;
             this.trinhDoIDSpinEdit.Popup += new System.EventHandler(this.trinhDoIDSpinEdit_Popup);
             // 
             // trinhDoBindingSource
@@ -714,42 +684,16 @@
             this.HinhAnhPictureEdit.Properties.ZoomPercent = 90D;
             this.HinhAnhPictureEdit.Size = new System.Drawing.Size(314, 224);
             this.HinhAnhPictureEdit.TabIndex = 47;
-            this.HinhAnhPictureEdit.Validated += new System.EventHandler(this.HinhAnhPictureEdit_Validated);
-            // 
-            // phongBanIDSpinEdit
-            // 
-            this.phongBanIDSpinEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.phongBanIDSpinEdit.Location = new System.Drawing.Point(3, 295);
-            this.phongBanIDSpinEdit.MenuManager = this.ribbonControl;
-            this.phongBanIDSpinEdit.Name = "phongBanIDSpinEdit";
-            this.phongBanIDSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.phongBanIDSpinEdit.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaPhongBan", "Mã phòng ban"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenPhongBan", "Tên phòng ban")});
-            this.phongBanIDSpinEdit.Properties.DataSource = this.dvPhongBanBindingSource;
-            this.phongBanIDSpinEdit.Properties.DisplayMember = "TenPhongBan";
-            this.phongBanIDSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
-            this.phongBanIDSpinEdit.Properties.NullText = "-- Chọn phòng ban --";
-            this.phongBanIDSpinEdit.Properties.ValueMember = "IDPhongBan";
-            this.phongBanIDSpinEdit.Size = new System.Drawing.Size(649, 22);
-            this.phongBanIDSpinEdit.TabIndex = 42;
-            this.phongBanIDSpinEdit.Popup += new System.EventHandler(this.phongBanIDSpinEdit_Popup);
-            // 
-            // dvPhongBanBindingSource
-            // 
-            this.dvPhongBanBindingSource.DataMember = "dvPhongBan";
-            this.dvPhongBanBindingSource.DataSource = this.anGiangDataSet;
+            this.HinhAnhPictureEdit.EditValueChanged += new System.EventHandler(this.HinhAnhPictureEdit_EditValueChanged);
             // 
             // chucDanhIDSpinEdit
             // 
-            this.chucDanhIDSpinEdit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chucDanhIDSpinEdit.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.chucDanhIDSpinEdit.Location = new System.Drawing.Point(3, 435);
+            this.chucDanhIDSpinEdit.Location = new System.Drawing.Point(3, 463);
             this.chucDanhIDSpinEdit.MenuManager = this.ribbonControl;
             this.chucDanhIDSpinEdit.Name = "chucDanhIDSpinEdit";
             this.chucDanhIDSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -765,7 +709,7 @@
             this.chucDanhIDSpinEdit.Properties.ValueMember = "IDChucDanh";
             this.chucDanhIDSpinEdit.Properties.View = this.gridLookUpEdit1View;
             this.chucDanhIDSpinEdit.Size = new System.Drawing.Size(649, 22);
-            this.chucDanhIDSpinEdit.TabIndex = 44;
+            this.chucDanhIDSpinEdit.TabIndex = 48;
             // 
             // nvChucDanhBindingSource
             // 
@@ -862,15 +806,44 @@
             this.colDanhMucCDID.Visible = true;
             this.colDanhMucCDID.VisibleIndex = 2;
             // 
+            // tGPCKKSpinEdit
+            // 
+            this.tGPCKKSpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.tGPCKKSpinEdit.Location = new System.Drawing.Point(3, 435);
+            this.tGPCKKSpinEdit.MenuManager = this.ribbonControl;
+            this.tGPCKKSpinEdit.Name = "tGPCKKSpinEdit";
+            this.tGPCKKSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tGPCKKSpinEdit.Size = new System.Drawing.Size(649, 22);
+            this.tGPCKKSpinEdit.TabIndex = 47;
+            // 
+            // heSoChucDanhSpinEdit
+            // 
+            this.heSoChucDanhSpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.heSoChucDanhSpinEdit.Location = new System.Drawing.Point(3, 407);
+            this.heSoChucDanhSpinEdit.MenuManager = this.ribbonControl;
+            this.heSoChucDanhSpinEdit.Name = "heSoChucDanhSpinEdit";
+            this.heSoChucDanhSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.heSoChucDanhSpinEdit.Size = new System.Drawing.Size(649, 22);
+            this.heSoChucDanhSpinEdit.TabIndex = 46;
+            // 
             // heSoLuongTextEdit
             // 
-            this.heSoLuongTextEdit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.heSoLuongTextEdit.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.heSoLuongTextEdit.Location = new System.Drawing.Point(3, 351);
+            this.heSoLuongTextEdit.Location = new System.Drawing.Point(3, 379);
             this.heSoLuongTextEdit.MenuManager = this.ribbonControl;
             this.heSoLuongTextEdit.Name = "heSoLuongTextEdit";
             this.heSoLuongTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -878,7 +851,40 @@
             this.heSoLuongTextEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.heSoLuongTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.heSoLuongTextEdit.Size = new System.Drawing.Size(649, 22);
-            this.heSoLuongTextEdit.TabIndex = 44;
+            this.heSoLuongTextEdit.TabIndex = 45;
+            // 
+            // phongBanIDSpinEdit
+            // 
+            this.phongBanIDSpinEdit.Location = new System.Drawing.Point(3, 351);
+            this.phongBanIDSpinEdit.MenuManager = this.ribbonControl;
+            this.phongBanIDSpinEdit.Name = "phongBanIDSpinEdit";
+            this.phongBanIDSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.phongBanIDSpinEdit.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaPhongBan", "Mã phòng ban"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenPhongBan", "Tên phòng ban")});
+            this.phongBanIDSpinEdit.Properties.DataSource = this.dvPhongBanBindingSource;
+            this.phongBanIDSpinEdit.Properties.DisplayMember = "TenPhongBan";
+            this.phongBanIDSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.phongBanIDSpinEdit.Properties.NullText = "-- Chọn phòng ban --";
+            this.phongBanIDSpinEdit.Properties.ValueMember = "IDPhongBan";
+            this.phongBanIDSpinEdit.Size = new System.Drawing.Size(649, 22);
+            this.phongBanIDSpinEdit.TabIndex = 44;
+            this.phongBanIDSpinEdit.Popup += new System.EventHandler(this.phongBanIDSpinEdit_Popup);
+            // 
+            // dvPhongBanBindingSource
+            // 
+            this.dvPhongBanBindingSource.DataMember = "dvPhongBan";
+            this.dvPhongBanBindingSource.DataSource = this.anGiangDataSet;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.labelControl1.Location = new System.Drawing.Point(3, 323);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(163, 17);
+            this.labelControl1.TabIndex = 45;
+            this.labelControl1.Text = "Phòng ban và Hệ số lương";
             // 
             // nvNhanVienBindingSource
             // 
@@ -907,6 +913,7 @@
             this.tableAdapterManager.dvChuyenMonTableAdapter = null;
             this.tableAdapterManager.dvDonViTableAdapter = null;
             this.tableAdapterManager.dvPhongBanTableAdapter = this.dvPhongBanTableAdapter;
+            this.tableAdapterManager.lgBangLuongTableAdapter = null;
             this.tableAdapterManager.lgLuongTableAdapter = null;
             this.tableAdapterManager.lskLoaiSuKienTableAdapter = null;
             this.tableAdapterManager.lskSuKienTableAdapter = null;
@@ -1047,8 +1054,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ngayNghiViecDateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngayNghiViecDateEdit.Properties)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tGPCKKSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.heSoChucDanhSpinEdit.Properties)).EndInit();
+            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ngaySinhdateEdit.Properties.CalendarTimeProperties)).EndInit();
@@ -1058,14 +1064,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.trinhDoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HinhAnhPictureEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phongBanIDSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvPhongBanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chucDanhIDSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvChucDanhBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlsDanhMuc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvDanhMucCDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tGPCKKSpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heSoChucDanhSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heSoLuongTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phongBanIDSpinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvPhongBanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvNhanVienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvNhanVienGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -1141,5 +1149,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDanhMucCDID;
         private AnGiangDataSetTableAdapters.nvDanhMucCDTableAdapter nvDanhMucCDTableAdapter;
         private DevExpress.XtraEditors.SpinEdit heSoLuongTextEdit;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

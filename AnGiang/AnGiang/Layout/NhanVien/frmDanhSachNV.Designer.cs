@@ -148,6 +148,7 @@
             this.gridViewNhanVien.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colPhongBanID, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridViewNhanVien.ViewCaption = "Danh sách nhân viên";
+            this.gridViewNhanVien.DoubleClick += new System.EventHandler(this.gridViewNhanVien_DoubleClick);
             // 
             // colIDNhanVien
             // 

@@ -62,7 +62,7 @@ namespace AnGiang.Layout.ChamCong
         }
         private void XemLuong_Load(object sender, EventArgs e)
         {
-            XtraReport rp = new r_BaoCaoLuongXyNghiep();
+            XtraReport rp = new r_BaoCaoLuongXiNghiep();
             rp.DataSource = tbDataSource;
             rp.Parameters["Nam"].Value = nam;
             rp.Parameters["Nam"].Visible = false;

@@ -145,6 +145,66 @@ namespace AnGiang
             }
         }
 
+        private void navHopDongLaoDong_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmComingSoon fr = new frmComingSoon();
+            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+            {
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
+        private void navTieuSuNhanVien_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmComingSoon fr = new frmComingSoon();
+            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+            {
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
+        private void navQDChuyenBoPhan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmComingSoon fr = new frmComingSoon();
+            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+            {
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
+        private void navQDTangLuong_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmComingSoon fr = new frmComingSoon();
+            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+            {
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
+        private void navQDKhenThuongKyLuat_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmComingSoon fr = new frmComingSoon();
+            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+            {
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
+        private void navQDNghiViec_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmComingSoon fr = new frmComingSoon();
+            if (!GPMLibrary.Validation.Vals.ActiveChildForm(fr.Name, this))
+            {
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
+
        
     }
 }

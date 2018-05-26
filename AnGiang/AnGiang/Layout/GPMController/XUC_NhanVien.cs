@@ -11,11 +11,14 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Popup;
 using DevExpress.Utils.Win;
 using AnGiang.Model;
+using System.IO;
 
 namespace AnGiang.Layout.GPMController
 {
     public partial class XUC_NhanVien : UserControl
     {
+
+        bool ThemHayCapNhat = true;
         public XUC_NhanVien()
         {
             InitializeComponent();
@@ -92,6 +95,8 @@ namespace AnGiang.Layout.GPMController
             int countnv = DataProvider.Ins.DB.nvNhanViens.Count()+1;
             string MaNV = "NV"+countnv.ToString("0000");
             maNhanVienTextEdit.Text = MaNV;
+
+            ThemHayCapNhat = true;
         }
         //cập nhật nv
         private void bbiEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -99,6 +104,7 @@ namespace AnGiang.Layout.GPMController
             bbiDelete.Enabled = bbiRefresh.Enabled = bbiCancel.Enabled = true;
             bbiNew.Enabled = bbiEdit.Enabled = false;
             EnableGroup(true, false);
+            ThemHayCapNhat = false;
         }
         //xóa nv
         private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -126,8 +132,9 @@ namespace AnGiang.Layout.GPMController
         {
             nvNhanVien nv;
             int count = DataProvider.Ins.DB.nvNhanViens.Where(q => q.MaNhanVien == maNhanVienTextEdit.Text).Count();
-            if (count == 0)
-            {
+
+            if (count == 0 && ThemHayCapNhat)
+            { /// thêm
                 nv = new nvNhanVien();
                 if (String.IsNullOrEmpty(maNhanVienTextEdit.Text))
                 {
@@ -156,19 +163,19 @@ namespace AnGiang.Layout.GPMController
                 nv.TrinhDoID = long.Parse(trinhDoIDSpinEdit.EditValue.ToString());
                 nv.PhongBanID = long.Parse(phongBanIDSpinEdit.EditValue.ToString());
                 nv.HeSoLuong = double.Parse(heSoLuongTextEdit.Text);
-                if(nv.HeSoLuong < 0)
+                if(nv.HeSoLuong <= 0)
                 {
                     XtraMessageBox.Show("Hệ số lương phải lớn hơn 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 nv.HeSoChucDanh = double.Parse(heSoChucDanhSpinEdit.EditValue.ToString());
-                if (nv.HeSoChucDanh < 0)
+                if (nv.HeSoChucDanh <= 0)
                 {
                     XtraMessageBox.Show("Hệ số chức danh phải lớn hơn 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 nv.TGPCKK = int.Parse(tGPCKKSpinEdit.EditValue.ToString());
-                if (nv.HeSoChucDanh < 0)
+                if (nv.TGPCKK < 0)
                 {
                     XtraMessageBox.Show("Thời gian tính PCKK phải lớn hơn hoặc bằng 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -182,11 +189,67 @@ namespace AnGiang.Layout.GPMController
                 DataProvider.Ins.DB.nvNhanViens.Add(nv);
             }
             else 
-            { 
-                    
+            { //cập nhật
+                int id = int.Parse(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, colIDNhanVien).ToString());
+                nv = DataProvider.Ins.DB.nvNhanViens.Find(id);
+                if (String.IsNullOrEmpty(maNhanVienTextEdit.Text))
+                {
+                    XtraMessageBox.Show("Mã nhân viên không được bỏ trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                nv.MaNhanVien = maNhanVienTextEdit.Text;
+                if (String.IsNullOrEmpty(hoTenTextEdit.Text))
+                {
+                    XtraMessageBox.Show("Tên nhân viên không được bỏ trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                nv.HoTen = hoTenTextEdit.Text;
+                nv.GioiTinh = gioiTinhSpinEdit.SelectedIndex;
+                nv.GhiChu = ghiChuTextEdit.Text;
+                nv.DiaChi = diaChiTextEdit.Text;
+                nv.CMND = cMNDTextEdit.Text;
+                nv.DienThoai = dienThoaiTextEdit.Text;
+                if (ngayLamViecDateEdit.Text.Count() != 0)
+                    nv.NgayLamViec = ngayLamViecDateEdit.DateTime;
+                else nv.NgayLamViec = null;
+                if (ngaySinhdateEdit.Text.Count() != 0)
+                    nv.NgaySinh = ngaySinhdateEdit.DateTime;
+                else nv.NgaySinh = null;
+                nv.NgayCapNhat = DateTime.Now;
+                nv.DaXoa = 0;
+                nv.DonViID = 1;
+                nv.TrinhDoID = long.Parse(trinhDoIDSpinEdit.EditValue.ToString());
+                nv.PhongBanID = long.Parse(phongBanIDSpinEdit.EditValue.ToString());
+                nv.HeSoLuong = double.Parse(heSoLuongTextEdit.Text);
+                if (nv.HeSoLuong <= 0)
+                {
+                    XtraMessageBox.Show("Hệ số lương phải lớn hơn 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                nv.HeSoChucDanh = double.Parse(heSoChucDanhSpinEdit.EditValue.ToString());
+                if (nv.HeSoChucDanh <= 0)
+                {
+                    XtraMessageBox.Show("Hệ số chức danh phải lớn hơn 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                nv.TGPCKK = int.Parse(tGPCKKSpinEdit.EditValue.ToString());
+                if (nv.TGPCKK < 0)
+                {
+                    XtraMessageBox.Show("Thời gian tính PCKK phải lớn hơn hoặc bằng 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (string.IsNullOrEmpty(chucDanhIDSpinEdit.EditValue.ToString()))
+                {
+                    XtraMessageBox.Show("Chưa chọn chức danh!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                nv.ChucDanhID = long.Parse(chucDanhIDSpinEdit.EditValue.ToString());
             }
             DataProvider.Ins.DB.SaveChanges();
             tableAdapterManager.nvNhanVienTableAdapter.Fill(anGiangDataSet.nvNhanVien);
+            bbiDelete.Enabled = bbiRefresh.Enabled = bbiCancel.Enabled = false;
+            bbiNew.Enabled = bbiEdit.Enabled = true;
+            EnableGroup(false, false);
         }
         // in 
         private void bbiPrintPreview_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -216,10 +279,9 @@ namespace AnGiang.Layout.GPMController
             tableAdapterManager.nvNhanVienTableAdapter.Fill(anGiangDataSet.nvNhanVien);
             
         }
-
-        private void HinhAnhPictureEdit_Validated(object sender, EventArgs e)
+        private void HinhAnhPictureEdit_EditValueChanged(object sender, EventArgs e)
         {
-            XtraMessageBox.Show("Clicked");
+            
         }
 
     }

@@ -31,6 +31,14 @@ namespace AnGiang.Layout.NhanVien
             this.nvNhanVienTableAdapter.Fill(this.anGiangDataSet.nvNhanVien);
         }
 
+        private void gridViewNhanVien_DoubleClick(object sender, EventArgs e)
+        {
+            if(gridViewNhanVien.FocusedRowHandle >= 0)
+            {
+                
+            }
+        }
+
       
     }
 }

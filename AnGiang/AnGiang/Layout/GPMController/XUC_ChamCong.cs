@@ -417,7 +417,7 @@ namespace AnGiang.Layout.GPMController
             lgBangLuongTableAdapter1.Fill(anGiangDataSet1.lgBangLuong, dt.Month, dt.Year);
             double? tongtien = DataProvider.Ins.DB.lgBangLuongs.Where(q => q.THANG == dt.Month && q.NAM == dt.Year).Sum(q => q.THUCLANH);
             DataTable tb = lgBangLuongTableAdapter1.GetData(dt.Month, dt.Year);
-            XtraForm f = new frmXemBaoCao(dt.Year, dt.Month, tongtien, tb, "Xí Nghiệp Phà An Giang");
+            XtraForm f = new frmXemBaoCao(dt.Year, dt.Month, tongtien, tb, "Xí nghiệp Phà An Giang");
             f.ShowDialog();
         }
 
