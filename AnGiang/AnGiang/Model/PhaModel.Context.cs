@@ -41,10 +41,10 @@ namespace AnGiang.Model
         public DbSet<lskSuKien> lskSuKiens { get; set; }
         public DbSet<nvChucDanh> nvChucDanhs { get; set; }
         public DbSet<nvDanhMucCD> nvDanhMucCDs { get; set; }
-        public DbSet<nvNhanVien> nvNhanViens { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<tlDinhMuc> tlDinhMucs { get; set; }
         public DbSet<TrinhDo> TrinhDoes { get; set; }
+        public DbSet<nvNhanVien> nvNhanViens { get; set; }
     
         public virtual int pr_bangLuongTongHop(Nullable<int> iDDonVi, Nullable<int> iDNhanVien, Nullable<int> thang, Nullable<int> nam)
         {

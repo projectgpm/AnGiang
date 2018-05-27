@@ -12,6 +12,7 @@ using DevExpress.XtraEditors.Popup;
 using DevExpress.Utils.Win;
 using AnGiang.Model;
 using System.IO;
+using AnGiang.Properties;
 
 namespace AnGiang.Layout.GPMController
 {
@@ -69,6 +70,8 @@ namespace AnGiang.Layout.GPMController
             this.heSoChucDanhSpinEdit.DataBindings.Clear();
             this.tGPCKKSpinEdit.DataBindings.Clear();
             this.chucDanhIDSpinEdit.DataBindings.Clear();
+            this.HinhAnhPictureEdit.DataBindings.Clear();
+            HinhAnhPictureEdit.Image = null;
         }
 
         //set witdh popup
@@ -209,6 +212,7 @@ namespace AnGiang.Layout.GPMController
                 nv.DiaChi = diaChiTextEdit.Text;
                 nv.CMND = cMNDTextEdit.Text;
                 nv.DienThoai = dienThoaiTextEdit.Text;
+                nv.HinhAnh = GPMLibrary.Tooler.Tools.ConvertImageToByte(HinhAnhPictureEdit.Image);
                 if (ngayLamViecDateEdit.Text.Count() != 0)
                     nv.NgayLamViec = ngayLamViecDateEdit.DateTime;
                 else nv.NgayLamViec = null;
@@ -266,22 +270,28 @@ namespace AnGiang.Layout.GPMController
         //hủy thao tác
         private void bbiCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            try
-            {
-                addDataBinding();
-            }
-            catch
-            {}
-
+            addDataBinding();
             bbiDelete.Enabled = bbiRefresh.Enabled = bbiCancel.Enabled = false;
             bbiNew.Enabled = bbiEdit.Enabled = true;
             EnableGroup(false, false);
             tableAdapterManager.nvNhanVienTableAdapter.Fill(anGiangDataSet.nvNhanVien);
             
         }
-        private void HinhAnhPictureEdit_EditValueChanged(object sender, EventArgs e)
+
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            
+            if (e.RowHandle >= 0)
+            {
+                long IDNhanVien = long.Parse(gridView1.GetFocusedRowCellValue(colIDNhanVien).ToString());
+                DataProvider.Ins.DB.Entry(DataProvider.Ins.DB.nvNhanViens.Find(IDNhanVien));
+                nvNhanVien nv = DataProvider.Ins.DB.nvNhanViens.Find(IDNhanVien);
+                if (nv.HinhAnh != null)
+                    HinhAnhPictureEdit.Image = GPMLibrary.Tooler.Tools.ConvertByteToImage(nv.HinhAnh);
+                else
+                    HinhAnhPictureEdit.Image = Resources.no_avatar;
+            }
+            else
+                HinhAnhPictureEdit.Image = Resources.no_avatar;
         }
 
     }

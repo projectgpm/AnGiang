@@ -66,6 +66,9 @@
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.flyoutPanel1 = new DevExpress.Utils.FlyoutPanel();
+            this.flyoutPanelControl2 = new DevExpress.Utils.FlyoutPanelControl();
+            this.xuC_NhanVien1 = new AnGiang.Layout.GPMController.XUC_NhanVien();
             ((System.ComponentModel.ISupportInitialize)(this.flyThongTinNhanVien)).BeginInit();
             this.flyThongTinNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl1)).BeginInit();
@@ -88,12 +91,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_DKPCKK.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanel1)).BeginInit();
+            this.flyoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl2)).BeginInit();
+            this.flyoutPanelControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // flyThongTinNhanVien
             // 
             this.flyThongTinNhanVien.Controls.Add(this.flyoutPanelControl1);
-            this.flyThongTinNhanVien.Location = new System.Drawing.Point(65, 55);
+            this.flyThongTinNhanVien.Location = new System.Drawing.Point(722, 456);
             this.flyThongTinNhanVien.Name = "flyThongTinNhanVien";
             this.flyThongTinNhanVien.Size = new System.Drawing.Size(583, 225);
             this.flyThongTinNhanVien.TabIndex = 0;
@@ -627,11 +634,39 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Định mức PCKK:";
             // 
+            // flyoutPanel1
+            // 
+            this.flyoutPanel1.Controls.Add(this.flyoutPanelControl2);
+            this.flyoutPanel1.Location = new System.Drawing.Point(38, 12);
+            this.flyoutPanel1.Name = "flyoutPanel1";
+            this.flyoutPanel1.Size = new System.Drawing.Size(662, 444);
+            this.flyoutPanel1.TabIndex = 1;
+            // 
+            // flyoutPanelControl2
+            // 
+            this.flyoutPanelControl2.Controls.Add(this.xuC_NhanVien1);
+            this.flyoutPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flyoutPanelControl2.FlyoutPanel = this.flyoutPanel1;
+            this.flyoutPanelControl2.Location = new System.Drawing.Point(0, 0);
+            this.flyoutPanelControl2.Name = "flyoutPanelControl2";
+            this.flyoutPanelControl2.Size = new System.Drawing.Size(662, 444);
+            this.flyoutPanelControl2.TabIndex = 0;
+            // 
+            // xuC_NhanVien1
+            // 
+            this.xuC_NhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xuC_NhanVien1.Location = new System.Drawing.Point(2, 2);
+            this.xuC_NhanVien1.Margin = new System.Windows.Forms.Padding(2);
+            this.xuC_NhanVien1.Name = "xuC_NhanVien1";
+            this.xuC_NhanVien1.Size = new System.Drawing.Size(658, 440);
+            this.xuC_NhanVien1.TabIndex = 0;
+            // 
             // XtraForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 468);
+            this.Controls.Add(this.flyoutPanel1);
             this.Controls.Add(this.flyThongTinNhanVien);
             this.Name = "XtraForm1";
             this.Text = "XtraForm1";
@@ -661,6 +696,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txt_DKPCKK.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanel1)).EndInit();
+            this.flyoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl2)).EndInit();
+            this.flyoutPanelControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -704,6 +743,9 @@
         private DevExpress.XtraEditors.SpinEdit txt_hesoluong;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SpinEdit txt_DKPCKK;
+        private DevExpress.Utils.FlyoutPanel flyoutPanel1;
+        private DevExpress.Utils.FlyoutPanelControl flyoutPanelControl2;
+        private Layout.GPMController.XUC_NhanVien xuC_NhanVien1;
 
     }
 }

@@ -18,13 +18,13 @@
         <EntityTypeShape EntityType="AnGiangModel.lskSuKien" Width="1.5" PointX="11.75" PointY="4.75" />
         <EntityTypeShape EntityType="AnGiangModel.nvChucDanh" Width="1.5" PointX="4.75" PointY="11.75" />
         <EntityTypeShape EntityType="AnGiangModel.nvDanhMucCD" Width="1.5" PointX="6.75" PointY="11.75" />
-        <EntityTypeShape EntityType="AnGiangModel.nvNhanVien" Width="1.5" PointX="3" PointY="1.125" />
         <EntityTypeShape EntityType="AnGiangModel.sysdiagram" Width="1.5" PointX="8.75" PointY="11.75" />
         <EntityTypeShape EntityType="AnGiangModel.tlDinhMuc" Width="1.5" PointX="11.75" PointY="9.75" />
         <EntityTypeShape EntityType="AnGiangModel.TrinhDo" Width="1.5" PointX="0.75" PointY="2.875" />
-        <AssociationConnector Association="AnGiangModel.FK_nvNhanVien_TrinhDo" />
+        <EntityTypeShape EntityType="AnGiangModel.nvNhanVien" Width="1.5" PointX="14" PointY="5.875" />
         <AssociationConnector Association="AnGiangModel.FK_nvNhanVien_nvChucDanh" />
-      </Diagram>
+        <AssociationConnector Association="AnGiangModel.FK_nvNhanVien_TrinhDo" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

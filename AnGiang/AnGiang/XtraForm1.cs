@@ -25,7 +25,7 @@ namespace AnGiang
 
         private void XtraForm1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtTGCKK_EditValueChanged(object sender, EventArgs e)

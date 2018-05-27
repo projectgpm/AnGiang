@@ -272,6 +272,7 @@
           <Property Name="DonViID" Type="bigint" />
           <Property Name="TrinhDoID" Type="bigint" />
           <Property Name="ChucDanhID" Type="bigint" />
+          <Property Name="HinhAnh" Type="image" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -426,19 +427,19 @@
           <EntitySet Name="lskSuKiens" EntityType="AnGiangModel.lskSuKien" />
           <EntitySet Name="nvChucDanhs" EntityType="AnGiangModel.nvChucDanh" />
           <EntitySet Name="nvDanhMucCDs" EntityType="AnGiangModel.nvDanhMucCD" />
-          <EntitySet Name="nvNhanViens" EntityType="AnGiangModel.nvNhanVien" />
           <EntitySet Name="sysdiagrams" EntityType="AnGiangModel.sysdiagram" />
           <EntitySet Name="tlDinhMucs" EntityType="AnGiangModel.tlDinhMuc" />
           <EntitySet Name="TrinhDoes" EntityType="AnGiangModel.TrinhDo" />
-          <AssociationSet Name="FK_nvNhanVien_TrinhDo" Association="AnGiangModel.FK_nvNhanVien_TrinhDo">
-            <End Role="TrinhDo" EntitySet="TrinhDoes" />
-            <End Role="nvNhanVien" EntitySet="nvNhanViens" />
-          </AssociationSet>
+          <EntitySet Name="nvNhanViens" EntityType="AnGiangModel.nvNhanVien" />
           <AssociationSet Name="FK_nvNhanVien_nvChucDanh" Association="AnGiangModel.FK_nvNhanVien_nvChucDanh">
             <End Role="nvChucDanh" EntitySet="nvChucDanhs" />
             <End Role="nvNhanVien" EntitySet="nvNhanViens" />
           </AssociationSet>
-        </EntityContainer>
+          <AssociationSet Name="FK_nvNhanVien_TrinhDo" Association="AnGiangModel.FK_nvNhanVien_TrinhDo">
+            <End Role="TrinhDo" EntitySet="TrinhDoes" />
+            <End Role="nvNhanVien" EntitySet="nvNhanViens" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="ccChamCong">
           <Key>
             <PropertyRef Name="IDChamCong" />
@@ -681,35 +682,6 @@
           <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
           <Property Name="DaXoa" Type="Int32" />
         </EntityType>
-        <EntityType Name="nvNhanVien">
-          <Key>
-            <PropertyRef Name="IDNhanVien" />
-          </Key>
-          <Property Name="IDNhanVien" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MaNhanVien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GioiTinh" Type="Int32" />
-          <Property Name="NgaySinh" Type="DateTime" Precision="3" />
-          <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="DiaChi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CMND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="HeSoLuong" Type="Double" />
-          <Property Name="HeSoChucDanh" Type="Double" />
-          <Property Name="TGPCKK" Type="Int32" />
-          <Property Name="DieuKienPCKK" Type="Int32" />
-          <Property Name="GhiChu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="NgayLamViec" Type="DateTime" Precision="3" />
-          <Property Name="NgayNghiViec" Type="DateTime" Precision="3" />
-          <Property Name="NgayTao" Type="DateTime" Precision="3" />
-          <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
-          <Property Name="DaXoa" Type="Int32" />
-          <Property Name="PhongBanID" Type="Int64" />
-          <Property Name="DonViID" Type="Int64" />
-          <Property Name="TrinhDoID" Type="Int64" />
-          <Property Name="ChucDanhID" Type="Int64" />
-          <NavigationProperty Name="TrinhDo" Relationship="AnGiangModel.FK_nvNhanVien_TrinhDo" FromRole="nvNhanVien" ToRole="TrinhDo" />
-          <NavigationProperty Name="nvChucDanh" Relationship="AnGiangModel.FK_nvNhanVien_nvChucDanh" FromRole="nvNhanVien" ToRole="nvChucDanh" />
-        </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -741,18 +713,36 @@
           <Property Name="TenTrinhDo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="nvNhanViens" Relationship="AnGiangModel.FK_nvNhanVien_TrinhDo" FromRole="TrinhDo" ToRole="nvNhanVien" />
         </EntityType>
-        <Association Name="FK_nvNhanVien_TrinhDo">
-          <End Type="AnGiangModel.TrinhDo" Role="TrinhDo" Multiplicity="0..1" />
-          <End Type="AnGiangModel.nvNhanVien" Role="nvNhanVien" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TrinhDo">
-              <PropertyRef Name="IDTrinhDo" />
-            </Principal>
-            <Dependent Role="nvNhanVien">
-              <PropertyRef Name="TrinhDoID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="nvNhanVien">
+          <Key>
+            <PropertyRef Name="IDNhanVien" />
+          </Key>
+          <Property Name="IDNhanVien" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaNhanVien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GioiTinh" Type="Int32" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+          <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CMND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="HeSoLuong" Type="Double" />
+          <Property Name="HeSoChucDanh" Type="Double" />
+          <Property Name="TGPCKK" Type="Int32" />
+          <Property Name="DieuKienPCKK" Type="Int32" />
+          <Property Name="GhiChu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NgayLamViec" Type="DateTime" Precision="3" />
+          <Property Name="NgayNghiViec" Type="DateTime" Precision="3" />
+          <Property Name="NgayTao" Type="DateTime" Precision="3" />
+          <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+          <Property Name="DaXoa" Type="Int32" />
+          <Property Name="PhongBanID" Type="Int64" />
+          <Property Name="DonViID" Type="Int64" />
+          <Property Name="TrinhDoID" Type="Int64" />
+          <Property Name="ChucDanhID" Type="Int64" />
+          <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="nvChucDanh" Relationship="AnGiangModel.FK_nvNhanVien_nvChucDanh" FromRole="nvNhanVien" ToRole="nvChucDanh" />
+          <NavigationProperty Name="TrinhDo" Relationship="AnGiangModel.FK_nvNhanVien_TrinhDo" FromRole="nvNhanVien" ToRole="TrinhDo" />
+        </EntityType>
         <Association Name="FK_nvNhanVien_nvChucDanh">
           <End Type="AnGiangModel.nvChucDanh" Role="nvChucDanh" Multiplicity="0..1" />
           <End Type="AnGiangModel.nvNhanVien" Role="nvNhanVien" Multiplicity="*" />
@@ -762,6 +752,18 @@
             </Principal>
             <Dependent Role="nvNhanVien">
               <PropertyRef Name="ChucDanhID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_nvNhanVien_TrinhDo">
+          <End Type="AnGiangModel.TrinhDo" Role="TrinhDo" Multiplicity="0..1" />
+          <End Type="AnGiangModel.nvNhanVien" Role="nvNhanVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrinhDo">
+              <PropertyRef Name="IDTrinhDo" />
+            </Principal>
+            <Dependent Role="nvNhanVien">
+              <PropertyRef Name="TrinhDoID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1030,34 +1032,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="nvNhanViens">
-            <EntityTypeMapping TypeName="AnGiangModel.nvNhanVien">
-              <MappingFragment StoreEntitySet="nvNhanVien">
-                <ScalarProperty Name="ChucDanhID" ColumnName="ChucDanhID" />
-                <ScalarProperty Name="TrinhDoID" ColumnName="TrinhDoID" />
-                <ScalarProperty Name="DonViID" ColumnName="DonViID" />
-                <ScalarProperty Name="PhongBanID" ColumnName="PhongBanID" />
-                <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
-                <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
-                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
-                <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
-                <ScalarProperty Name="NgayLamViec" ColumnName="NgayLamViec" />
-                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-                <ScalarProperty Name="DieuKienPCKK" ColumnName="DieuKienPCKK" />
-                <ScalarProperty Name="TGPCKK" ColumnName="TGPCKK" />
-                <ScalarProperty Name="HeSoChucDanh" ColumnName="HeSoChucDanh" />
-                <ScalarProperty Name="HeSoLuong" ColumnName="HeSoLuong" />
-                <ScalarProperty Name="CMND" ColumnName="CMND" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
-                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
-                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
-                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
-                <ScalarProperty Name="IDNhanVien" ColumnName="IDNhanVien" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="AnGiangModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -1088,6 +1062,35 @@
                 <ScalarProperty Name="TenTrinhDo" ColumnName="TenTrinhDo" />
                 <ScalarProperty Name="MaTrinhDo" ColumnName="MaTrinhDo" />
                 <ScalarProperty Name="IDTrinhDo" ColumnName="IDTrinhDo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nvNhanViens">
+            <EntityTypeMapping TypeName="AnGiangModel.nvNhanVien">
+              <MappingFragment StoreEntitySet="nvNhanVien">
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="ChucDanhID" ColumnName="ChucDanhID" />
+                <ScalarProperty Name="TrinhDoID" ColumnName="TrinhDoID" />
+                <ScalarProperty Name="DonViID" ColumnName="DonViID" />
+                <ScalarProperty Name="PhongBanID" ColumnName="PhongBanID" />
+                <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
+                <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="NgayNghiViec" ColumnName="NgayNghiViec" />
+                <ScalarProperty Name="NgayLamViec" ColumnName="NgayLamViec" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="DieuKienPCKK" ColumnName="DieuKienPCKK" />
+                <ScalarProperty Name="TGPCKK" ColumnName="TGPCKK" />
+                <ScalarProperty Name="HeSoChucDanh" ColumnName="HeSoChucDanh" />
+                <ScalarProperty Name="HeSoLuong" ColumnName="HeSoLuong" />
+                <ScalarProperty Name="CMND" ColumnName="CMND" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+                <ScalarProperty Name="IDNhanVien" ColumnName="IDNhanVien" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

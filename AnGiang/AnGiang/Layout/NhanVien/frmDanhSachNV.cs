@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
 
 namespace AnGiang.Layout.NhanVien
 {
@@ -27,16 +28,23 @@ namespace AnGiang.Layout.NhanVien
             this.dvPhongBanTableAdapter.Fill(this.anGiangDataSet.dvPhongBan);
             // TODO: This line of code loads data into the 'anGiangDataSet.TrinhDo' table. You can move, or remove it, as needed.
             this.trinhDoTableAdapter.Fill(this.anGiangDataSet.TrinhDo);
-            // TODO: This line of code loads data into the 'anGiangDataSet.nvNhanVien' table. You can move, or remove it, as needed.
-            this.nvNhanVienTableAdapter.Fill(this.anGiangDataSet.nvNhanVien);
+
+            xuC_NhanVien1.nvNhanVienGridControl.Visible = false;
+            gridControlNhanVien.DataSource = xuC_NhanVien1.nvNhanVienBindingSource;
+            xuC_NhanVien1.nvNhanVienGridControl.ForceInitialize();
+            gridControlNhanVien.ForceInitialize();
+            flyoutPanel1.ShowPopup();
+            flyoutPanel1.HidePopup();
         }
 
-        private void gridViewNhanVien_DoubleClick(object sender, EventArgs e)
+        private void gridControlNhanVien_DoubleClick(object sender, EventArgs e)
+        {           
+            flyoutPanel1.ShowPopup();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if(gridViewNhanVien.FocusedRowHandle >= 0)
-            {
-                
-            }
+            flyoutPanel1.HidePopup();
         }
 
       

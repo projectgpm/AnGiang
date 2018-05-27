@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.nvNhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhSachNV));
             this.anGiangDataSet = new AnGiang.AnGiangDataSet();
             this.dvPhongBanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trinhDoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nvNhanVienTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.nvNhanVienTableAdapter();
             this.trinhDoTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.TrinhDoTableAdapter();
             this.dvPhongBanTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.dvPhongBanTableAdapter();
             this.rlsTrinhDo = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -56,7 +55,12 @@
             this.colDonViID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTrinhDoID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlNhanVien = new DevExpress.XtraGrid.GridControl();
-            ((System.ComponentModel.ISupportInitialize)(this.nvNhanVienBindingSource)).BeginInit();
+            this.flyoutPanel1 = new DevExpress.Utils.FlyoutPanel();
+            this.flyoutPanelControl2 = new DevExpress.Utils.FlyoutPanelControl();
+            this.xuC_NhanVien1 = new AnGiang.Layout.GPMController.XUC_NhanVien();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvPhongBanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trinhDoBindingSource)).BeginInit();
@@ -64,12 +68,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.rlsPhongBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlNhanVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanel1)).BeginInit();
+            this.flyoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl2)).BeginInit();
+            this.flyoutPanelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // nvNhanVienBindingSource
-            // 
-            this.nvNhanVienBindingSource.DataMember = "nvNhanVien";
-            this.nvNhanVienBindingSource.DataSource = this.anGiangDataSet;
             // 
             // anGiangDataSet
             // 
@@ -85,10 +90,6 @@
             // 
             this.trinhDoBindingSource.DataMember = "TrinhDo";
             this.trinhDoBindingSource.DataSource = this.anGiangDataSet;
-            // 
-            // nvNhanVienTableAdapter
-            // 
-            this.nvNhanVienTableAdapter.ClearBeforeFill = true;
             // 
             // trinhDoTableAdapter
             // 
@@ -148,7 +149,6 @@
             this.gridViewNhanVien.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colPhongBanID, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridViewNhanVien.ViewCaption = "Danh sách nhân viên";
-            this.gridViewNhanVien.DoubleClick += new System.EventHandler(this.gridViewNhanVien_DoubleClick);
             // 
             // colIDNhanVien
             // 
@@ -282,34 +282,102 @@
             // 
             // gridControlNhanVien
             // 
-            this.gridControlNhanVien.DataSource = this.nvNhanVienBindingSource;
             this.gridControlNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlNhanVien.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControlNhanVien.Location = new System.Drawing.Point(0, 0);
             this.gridControlNhanVien.MainView = this.gridViewNhanVien;
-            this.gridControlNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControlNhanVien.Name = "gridControlNhanVien";
             this.gridControlNhanVien.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.rlsTrinhDo,
             this.rlsPhongBan});
-            this.gridControlNhanVien.Size = new System.Drawing.Size(1148, 628);
+            this.gridControlNhanVien.Size = new System.Drawing.Size(984, 589);
             this.gridControlNhanVien.TabIndex = 0;
             this.gridControlNhanVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewNhanVien});
+            this.gridControlNhanVien.DoubleClick += new System.EventHandler(this.gridControlNhanVien_DoubleClick);
+            // 
+            // flyoutPanel1
+            // 
+            this.flyoutPanel1.Controls.Add(this.flyoutPanelControl2);
+            this.flyoutPanel1.Location = new System.Drawing.Point(48, 0);
+            this.flyoutPanel1.Name = "flyoutPanel1";
+            this.flyoutPanel1.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Left;
+            this.flyoutPanel1.Options.CloseOnOuterClick = true;
+            this.flyoutPanel1.OwnerControl = this.gridControlNhanVien;
+            this.flyoutPanel1.Size = new System.Drawing.Size(728, 577);
+            this.flyoutPanel1.TabIndex = 2;
+            // 
+            // flyoutPanelControl2
+            // 
+            this.flyoutPanelControl2.Controls.Add(this.xuC_NhanVien1);
+            this.flyoutPanelControl2.Controls.Add(this.panelControl1);
+            this.flyoutPanelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flyoutPanelControl2.FlyoutPanel = this.flyoutPanel1;
+            this.flyoutPanelControl2.Location = new System.Drawing.Point(0, 0);
+            this.flyoutPanelControl2.Name = "flyoutPanelControl2";
+            this.flyoutPanelControl2.Size = new System.Drawing.Size(728, 577);
+            this.flyoutPanelControl2.TabIndex = 0;
+            // 
+            // xuC_NhanVien1
+            // 
+            this.xuC_NhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xuC_NhanVien1.Location = new System.Drawing.Point(2, 41);
+            this.xuC_NhanVien1.Margin = new System.Windows.Forms.Padding(2);
+            this.xuC_NhanVien1.Name = "xuC_NhanVien1";
+            this.xuC_NhanVien1.Size = new System.Drawing.Size(724, 534);
+            this.xuC_NhanVien1.TabIndex = 2;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.simpleButton1);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(2, 2);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(3);
+            this.panelControl1.Size = new System.Drawing.Size(724, 39);
+            this.panelControl1.TabIndex = 1;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.labelControl1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("labelControl1.Appearance.Image")));
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl1.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.labelControl1.Location = new System.Drawing.Point(3, 3);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(685, 33);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "Thông tin nhân viên";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.AllowFocus = false;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(688, 3);
+            this.simpleButton1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.simpleButton1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(33, 33);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // frmDanhSachNV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 628);
+            this.ClientSize = new System.Drawing.Size(984, 589);
+            this.Controls.Add(this.flyoutPanel1);
             this.Controls.Add(this.gridControlNhanVien);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmDanhSachNV";
             this.Text = "frmDanhSach";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDanhSachNV_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nvNhanVienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvPhongBanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trinhDoBindingSource)).EndInit();
@@ -317,6 +385,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.rlsPhongBan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewNhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlNhanVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanel1)).EndInit();
+            this.flyoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutPanelControl2)).EndInit();
+            this.flyoutPanelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -324,8 +398,6 @@
         #endregion
 
         private AnGiangDataSet anGiangDataSet;
-        private System.Windows.Forms.BindingSource nvNhanVienBindingSource;
-        private AnGiangDataSetTableAdapters.nvNhanVienTableAdapter nvNhanVienTableAdapter;
         private System.Windows.Forms.BindingSource trinhDoBindingSource;
         private AnGiangDataSetTableAdapters.TrinhDoTableAdapter trinhDoTableAdapter;
         private System.Windows.Forms.BindingSource dvPhongBanBindingSource;
@@ -350,6 +422,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDonViID;
         private DevExpress.XtraGrid.Columns.GridColumn colTrinhDoID;
         private DevExpress.XtraGrid.GridControl gridControlNhanVien;
+        private DevExpress.Utils.FlyoutPanel flyoutPanel1;
+        private DevExpress.Utils.FlyoutPanelControl flyoutPanelControl2;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private GPMController.XUC_NhanVien xuC_NhanVien1;
 
     }
 }
