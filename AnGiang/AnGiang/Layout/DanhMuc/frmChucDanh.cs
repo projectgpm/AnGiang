@@ -25,8 +25,6 @@ namespace AnGiang.Layout.DanhMuc
             this.nvDanhMucCDTableAdapter.Fill(this.anGiangDataSet.nvDanhMucCD);
             // TODO: This line of code loads data into the 'anGiangDataSet.nvChucDanh' table. You can move, or remove it, as needed.
             this.nvChucDanhTableAdapter.Fill(this.anGiangDataSet.nvChucDanh);
-            // TODO: This line of code loads data into the 'anGiangDataSet.nvChucDanh' table. You can move, or remove it, as needed.
-            this.nvChucDanhTableAdapter.Fill(this.anGiangDataSet.nvChucDanh);
             
 
         }
@@ -47,44 +45,44 @@ namespace AnGiang.Layout.DanhMuc
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
 
-            int id = int.Parse(gridView1.GetFocusedRowCellValue(colIDChucDanh).ToString());
+            int id = int.Parse(gridViewChucDanh.GetFocusedRowCellValue(colIDChucDanh).ToString());
             nvChucDanh cd = DataProvider.Ins.DB.nvChucDanhs.Find(id);
             if (cd == null)
             {
                 cd = new nvChucDanh();
-                cd.MaChucDanh = gridView1.GetRowCellValue(e.RowHandle, colMaChucDanh).ToString();
+                cd.MaChucDanh = gridViewChucDanh.GetRowCellValue(e.RowHandle, colMaChucDanh).ToString();
                 if (DataProvider.Ins.DB.nvChucDanhs.Where(q => q.MaChucDanh == cd.MaChucDanh).Count() == 1)
                 {
                     MessageBox.Show("Mã chức danh đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //gridView1.DeleteRow(e.RowHandle);
-                    gridView1.CancelUpdateCurrentRow();
+                    gridViewChucDanh.CancelUpdateCurrentRow();
                     return;
                 }
                 else
                 {
-                    cd.GhiChu = gridView1.GetRowCellValue(e.RowHandle, colGhiChu).ToString();
+                    cd.GhiChu = gridViewChucDanh.GetRowCellValue(e.RowHandle, colGhiChu).ToString();
                     cd.DaXoa = 0;
                     cd.NgayTao = cd.NgayCapNhat = DateTime.Now;
-                    cd.DanhMucCDID = long.Parse(gridView1.GetRowCellValue(e.RowHandle, colDanhMucCDID).ToString());
-                    cd.TenChucDanh = gridView1.GetRowCellValue(e.RowHandle, colTenChucDanh).ToString();
+                    cd.DanhMucCDID = long.Parse(gridViewChucDanh.GetRowCellValue(e.RowHandle, colDanhMucCDID).ToString());
+                    cd.TenChucDanh = gridViewChucDanh.GetRowCellValue(e.RowHandle, colTenChucDanh).ToString();
                     DataProvider.Ins.DB.nvChucDanhs.Add(cd);
                 }
             }
             else
             {
-                cd.MaChucDanh = gridView1.GetRowCellValue(e.RowHandle, colMaChucDanh).ToString();
+                cd.MaChucDanh = gridViewChucDanh.GetRowCellValue(e.RowHandle, colMaChucDanh).ToString();
                 if (DataProvider.Ins.DB.nvChucDanhs.Where(q => q.MaChucDanh == cd.MaChucDanh).Count() == 1)
                 {
                     MessageBox.Show("Mã chức danh đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    gridView1.CancelUpdateCurrentRow();
+                    gridViewChucDanh.CancelUpdateCurrentRow();
                     return;
                 }
                 else
                 {
-                    cd.GhiChu = gridView1.GetRowCellValue(e.RowHandle, colGhiChu).ToString();
+                    cd.GhiChu = gridViewChucDanh.GetRowCellValue(e.RowHandle, colGhiChu).ToString();
                     cd.NgayCapNhat = DateTime.Now;
-                    cd.DanhMucCDID = long.Parse(gridView1.GetRowCellValue(e.RowHandle, colDanhMucCDID).ToString());
-                    cd.TenChucDanh = gridView1.GetRowCellValue(e.RowHandle, colTenChucDanh).ToString();
+                    cd.DanhMucCDID = long.Parse(gridViewChucDanh.GetRowCellValue(e.RowHandle, colDanhMucCDID).ToString());
+                    cd.TenChucDanh = gridViewChucDanh.GetRowCellValue(e.RowHandle, colTenChucDanh).ToString();
                 }
             }
             DataProvider.Ins.DB.SaveChanges();
@@ -92,5 +90,31 @@ namespace AnGiang.Layout.DanhMuc
             //load waiting form cập nhật thành công
         }
         #endregion
+
+        private void gridViewChucDanh_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            try
+            {
+                if (e.Column.FieldName.Equals("") && e.Column.ColumnEdit.Name.CompareTo("beXoa") == 0)
+                {
+                    
+                    int id = int.Parse(gridViewChucDanh.GetRowCellValue(e.RowHandle, colIDChucDanh).ToString());
+                    if (XtraMessageBox.Show("Bạn có muốn xóa chức danh này không?","Thông báo",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        nvChucDanh cd = DataProvider.Ins.DB.nvChucDanhs.Find(id);
+                        cd.DaXoa = 1;
+                        cd.NgayCapNhat = DateTime.Now;
+                        
+                    }else { return; }
+                    DataProvider.Ins.DB.SaveChanges();
+                    this.nvChucDanhTableAdapter.Fill(this.anGiangDataSet.nvChucDanh);
+                }
+                
+            }
+            catch 
+            {
+                XtraMessageBox.Show("Không thể xóa trường này, vui lòng thử lại!", "GPM.VN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

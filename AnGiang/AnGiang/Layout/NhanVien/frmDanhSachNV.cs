@@ -36,6 +36,7 @@ namespace AnGiang.Layout.NhanVien
             gridControlNhanVien.ForceInitialize();
             flyoutPanel1.ShowPopup();
             flyoutPanel1.HidePopup();
+            colPhongBanID.GroupIndex = 0;
         }
 
         private void gridControlNhanVien_DoubleClick(object sender, EventArgs e)

@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChucDanh));
             this.anGiangDataSet = new AnGiang.AnGiangDataSet();
             this.nvChucDanhBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nvChucDanhTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.nvChucDanhTableAdapter();
             this.tableAdapterManager = new AnGiang.AnGiangDataSetTableAdapters.TableAdapterManager();
             this.nvChucDanhGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewChucDanh = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIDChucDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaChucDanh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenChucDanh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,14 +48,17 @@
             this.nvDanhMucCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colTenChucDanh1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colXoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.beXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.nvDanhMucCDTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.nvDanhMucCDTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvChucDanhBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvChucDanhGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewChucDanh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlsDanhMucCD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvDanhMucCDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beXoa)).BeginInit();
             this.SuspendLayout();
             // 
             // anGiangDataSet
@@ -97,18 +101,19 @@
             this.nvChucDanhGridControl.DataSource = this.nvChucDanhBindingSource;
             this.nvChucDanhGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nvChucDanhGridControl.Location = new System.Drawing.Point(0, 0);
-            this.nvChucDanhGridControl.MainView = this.gridView1;
+            this.nvChucDanhGridControl.MainView = this.gridViewChucDanh;
             this.nvChucDanhGridControl.Name = "nvChucDanhGridControl";
             this.nvChucDanhGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.rlsDanhMucCD});
+            this.rlsDanhMucCD,
+            this.beXoa});
             this.nvChucDanhGridControl.Size = new System.Drawing.Size(1080, 663);
             this.nvChucDanhGridControl.TabIndex = 1;
             this.nvChucDanhGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridViewChucDanh});
             // 
-            // gridView1
+            // gridViewChucDanh
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewChucDanh.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colIDChucDanh,
             this.colMaChucDanh,
             this.colTenChucDanh,
@@ -116,24 +121,26 @@
             this.colNgayTao,
             this.colNgayCapNhat,
             this.colDaXoa,
-            this.colDanhMucCDID});
-            this.gridView1.GridControl = this.nvChucDanhGridControl;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.NewItemRowText = "Nhấn vào đây để thêm mới";
-            this.gridView1.OptionsBehavior.AutoSelectAllInEditor = false;
-            this.gridView1.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplace;
-            this.gridView1.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
-            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            this.gridView1.OptionsEditForm.ActionOnModifiedRowChange = DevExpress.XtraGrid.Views.Grid.EditFormModifiedAction.Save;
-            this.gridView1.OptionsEditForm.EditFormColumnCount = 2;
-            this.gridView1.OptionsNavigation.AutoFocusNewRow = true;
-            this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
-            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
-            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            this.colDanhMucCDID,
+            this.colXoa});
+            this.gridViewChucDanh.GridControl = this.nvChucDanhGridControl;
+            this.gridViewChucDanh.Name = "gridViewChucDanh";
+            this.gridViewChucDanh.NewItemRowText = "Nhấn vào đây để thêm mới";
+            this.gridViewChucDanh.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.gridViewChucDanh.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplace;
+            this.gridViewChucDanh.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
+            this.gridViewChucDanh.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridViewChucDanh.OptionsEditForm.ActionOnModifiedRowChange = DevExpress.XtraGrid.Views.Grid.EditFormModifiedAction.Save;
+            this.gridViewChucDanh.OptionsEditForm.EditFormColumnCount = 2;
+            this.gridViewChucDanh.OptionsNavigation.AutoFocusNewRow = true;
+            this.gridViewChucDanh.OptionsNavigation.EnterMoveNextColumn = true;
+            this.gridViewChucDanh.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridViewChucDanh.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDanhMucCDID, DevExpress.Data.ColumnSortOrder.Ascending)});
-            this.gridView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
-            this.gridView1.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridView1_InitNewRow);
-            this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
+            this.gridViewChucDanh.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
+            this.gridViewChucDanh.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridViewChucDanh_RowCellClick);
+            this.gridViewChucDanh.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridView1_InitNewRow);
+            this.gridViewChucDanh.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
             // 
             // colIDChucDanh
             // 
@@ -149,7 +156,7 @@
             this.colMaChucDanh.OptionsColumn.AllowEdit = false;
             this.colMaChucDanh.Visible = true;
             this.colMaChucDanh.VisibleIndex = 0;
-            this.colMaChucDanh.Width = 200;
+            this.colMaChucDanh.Width = 325;
             // 
             // colTenChucDanh
             // 
@@ -159,7 +166,7 @@
             this.colTenChucDanh.OptionsColumn.AllowEdit = false;
             this.colTenChucDanh.Visible = true;
             this.colTenChucDanh.VisibleIndex = 1;
-            this.colTenChucDanh.Width = 210;
+            this.colTenChucDanh.Width = 341;
             // 
             // colGhiChu
             // 
@@ -170,7 +177,7 @@
             this.colGhiChu.OptionsEditForm.VisibleIndex = 9;
             this.colGhiChu.Visible = true;
             this.colGhiChu.VisibleIndex = 3;
-            this.colGhiChu.Width = 282;
+            this.colGhiChu.Width = 540;
             // 
             // colNgayTao
             // 
@@ -199,7 +206,7 @@
             this.colDanhMucCDID.OptionsColumn.AllowEdit = false;
             this.colDanhMucCDID.Visible = true;
             this.colDanhMucCDID.VisibleIndex = 2;
-            this.colDanhMucCDID.Width = 235;
+            this.colDanhMucCDID.Width = 382;
             // 
             // rlsDanhMucCD
             // 
@@ -235,6 +242,21 @@
             this.colTenChucDanh1.Visible = true;
             this.colTenChucDanh1.VisibleIndex = 0;
             // 
+            // colXoa
+            // 
+            this.colXoa.ColumnEdit = this.beXoa;
+            this.colXoa.Name = "colXoa";
+            this.colXoa.Visible = true;
+            this.colXoa.VisibleIndex = 4;
+            this.colXoa.Width = 42;
+            // 
+            // beXoa
+            // 
+            this.beXoa.AutoHeight = false;
+            this.beXoa.ContextImage = ((System.Drawing.Image)(resources.GetObject("beXoa.ContextImage")));
+            this.beXoa.Name = "beXoa";
+            this.beXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
             // nvDanhMucCDTableAdapter
             // 
             this.nvDanhMucCDTableAdapter.ClearBeforeFill = true;
@@ -255,10 +277,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvChucDanhBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvChucDanhGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewChucDanh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlsDanhMucCD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvDanhMucCDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beXoa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,9 +303,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDanhMucCDID;
         private System.Windows.Forms.BindingSource nvDanhMucCDBindingSource;
         private AnGiangDataSetTableAdapters.nvDanhMucCDTableAdapter nvDanhMucCDTableAdapter;
-        public DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        public DevExpress.XtraGrid.Views.Grid.GridView gridViewChucDanh;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit rlsDanhMucCD;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn colTenChucDanh1;
+        private DevExpress.XtraGrid.Columns.GridColumn colXoa;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit beXoa;
     }
 }

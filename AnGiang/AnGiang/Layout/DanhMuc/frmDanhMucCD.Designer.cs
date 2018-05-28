@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhMucCD));
             this.anGiangDataSet = new AnGiang.AnGiangDataSet();
             this.nvDanhMucCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nvDanhMucCDTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.nvDanhMucCDTableAdapter();
@@ -40,10 +41,13 @@
             this.colNgayTao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgayCapNhat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDaXoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colXoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.beXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvDanhMucCDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvDanhMucCDGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDanhMucCD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beXoa)).BeginInit();
             this.SuspendLayout();
             // 
             // anGiangDataSet
@@ -66,9 +70,11 @@
             this.tableAdapterManager.ccChamCongTableAdapter = null;
             this.tableAdapterManager.ccChiTietTableAdapter = null;
             this.tableAdapterManager.ccKyHieuTableAdapter = null;
+            this.tableAdapterManager.ccXemChamCongTableAdapter = null;
             this.tableAdapterManager.dvChuyenMonTableAdapter = null;
             this.tableAdapterManager.dvDonViTableAdapter = null;
             this.tableAdapterManager.dvPhongBanTableAdapter = null;
+            this.tableAdapterManager.lgBangLuongTableAdapter = null;
             this.tableAdapterManager.lgLuongTableAdapter = null;
             this.tableAdapterManager.lskLoaiSuKienTableAdapter = null;
             this.tableAdapterManager.lskSuKienTableAdapter = null;
@@ -86,6 +92,8 @@
             this.nvDanhMucCDGridControl.Location = new System.Drawing.Point(0, 0);
             this.nvDanhMucCDGridControl.MainView = this.gridViewDanhMucCD;
             this.nvDanhMucCDGridControl.Name = "nvDanhMucCDGridControl";
+            this.nvDanhMucCDGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.beXoa});
             this.nvDanhMucCDGridControl.Size = new System.Drawing.Size(1081, 438);
             this.nvDanhMucCDGridControl.TabIndex = 1;
             this.nvDanhMucCDGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -98,7 +106,8 @@
             this.colTenChucDanh,
             this.colNgayTao,
             this.colNgayCapNhat,
-            this.colDaXoa});
+            this.colDaXoa,
+            this.colXoa});
             this.gridViewDanhMucCD.GridControl = this.nvDanhMucCDGridControl;
             this.gridViewDanhMucCD.Name = "gridViewDanhMucCD";
             this.gridViewDanhMucCD.NewItemRowText = "Nhấn đây vào để thêm mới";
@@ -109,6 +118,7 @@
             this.gridViewDanhMucCD.OptionsEditForm.ActionOnModifiedRowChange = DevExpress.XtraGrid.Views.Grid.EditFormModifiedAction.Save;
             this.gridViewDanhMucCD.OptionsEditForm.ShowOnDoubleClick = DevExpress.Utils.DefaultBoolean.True;
             this.gridViewDanhMucCD.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridViewDanhMucCD.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridViewDanhMucCD_RowCellClick);
             this.gridViewDanhMucCD.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridViewDanhMucCD_ValidateRow);
             // 
             // colIDDanhMucCD
@@ -125,7 +135,7 @@
             this.colTenChucDanh.OptionsColumn.AllowEdit = false;
             this.colTenChucDanh.Visible = true;
             this.colTenChucDanh.VisibleIndex = 0;
-            this.colTenChucDanh.Width = 350;
+            this.colTenChucDanh.Width = 502;
             // 
             // colNgayTao
             // 
@@ -136,7 +146,7 @@
             this.colNgayTao.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
             this.colNgayTao.Visible = true;
             this.colNgayTao.VisibleIndex = 1;
-            this.colNgayTao.Width = 290;
+            this.colNgayTao.Width = 416;
             // 
             // colNgayCapNhat
             // 
@@ -147,13 +157,28 @@
             this.colNgayCapNhat.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
             this.colNgayCapNhat.Visible = true;
             this.colNgayCapNhat.VisibleIndex = 2;
-            this.colNgayCapNhat.Width = 421;
+            this.colNgayCapNhat.Width = 662;
             // 
             // colDaXoa
             // 
             this.colDaXoa.FieldName = "DaXoa";
             this.colDaXoa.Name = "colDaXoa";
             this.colDaXoa.OptionsColumn.AllowEdit = false;
+            // 
+            // colXoa
+            // 
+            this.colXoa.ColumnEdit = this.beXoa;
+            this.colXoa.Name = "colXoa";
+            this.colXoa.Visible = true;
+            this.colXoa.VisibleIndex = 3;
+            this.colXoa.Width = 50;
+            // 
+            // beXoa
+            // 
+            this.beXoa.AutoHeight = false;
+            this.beXoa.ContextImage = ((System.Drawing.Image)(resources.GetObject("beXoa.ContextImage")));
+            this.beXoa.Name = "beXoa";
+            this.beXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // frmDanhMucCD
             // 
@@ -170,6 +195,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nvDanhMucCDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nvDanhMucCDGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDanhMucCD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beXoa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,5 +213,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colNgayTao;
         private DevExpress.XtraGrid.Columns.GridColumn colNgayCapNhat;
         private DevExpress.XtraGrid.Columns.GridColumn colDaXoa;
+        private DevExpress.XtraGrid.Columns.GridColumn colXoa;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit beXoa;
     }
 }

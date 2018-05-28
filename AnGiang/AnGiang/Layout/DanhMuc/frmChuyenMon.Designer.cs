@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChuyenMon));
             this.gridControlChuyenMon = new DevExpress.XtraGrid.GridControl();
             this.dvChuyenMonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anGiangDataSet = new AnGiang.AnGiangDataSet();
@@ -36,15 +37,15 @@
             this.colIDChuyenMon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaChuyenMon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenChuyenMon = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNgayTao = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNgayCapNhat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDaXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDonViID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dvChuyenMonTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.dvChuyenMonTableAdapter();
+            this.colXoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.beXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlChuyenMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvChuyenMonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewChuyenMon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beXoa)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlChuyenMon
@@ -56,6 +57,8 @@
             this.gridControlChuyenMon.MainView = this.gridViewChuyenMon;
             this.gridControlChuyenMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControlChuyenMon.Name = "gridControlChuyenMon";
+            this.gridControlChuyenMon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.beXoa});
             this.gridControlChuyenMon.Size = new System.Drawing.Size(1007, 543);
             this.gridControlChuyenMon.TabIndex = 0;
             this.gridControlChuyenMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -77,9 +80,7 @@
             this.colIDChuyenMon,
             this.colMaChuyenMon,
             this.colTenChuyenMon,
-            this.colNgayTao,
-            this.colNgayCapNhat,
-            this.colDaXoa,
+            this.colXoa,
             this.colDonViID});
             this.gridViewChuyenMon.GridControl = this.gridControlChuyenMon;
             this.gridViewChuyenMon.Name = "gridViewChuyenMon";
@@ -106,7 +107,7 @@
             this.colMaChuyenMon.OptionsColumn.AllowEdit = false;
             this.colMaChuyenMon.Visible = true;
             this.colMaChuyenMon.VisibleIndex = 0;
-            this.colMaChuyenMon.Width = 268;
+            this.colMaChuyenMon.Width = 411;
             // 
             // colTenChuyenMon
             // 
@@ -116,25 +117,7 @@
             this.colTenChuyenMon.OptionsColumn.AllowEdit = false;
             this.colTenChuyenMon.Visible = true;
             this.colTenChuyenMon.VisibleIndex = 1;
-            this.colTenChuyenMon.Width = 719;
-            // 
-            // colNgayTao
-            // 
-            this.colNgayTao.FieldName = "NgayTao";
-            this.colNgayTao.Name = "colNgayTao";
-            this.colNgayTao.OptionsColumn.AllowEdit = false;
-            // 
-            // colNgayCapNhat
-            // 
-            this.colNgayCapNhat.FieldName = "NgayCapNhat";
-            this.colNgayCapNhat.Name = "colNgayCapNhat";
-            this.colNgayCapNhat.OptionsColumn.AllowEdit = false;
-            // 
-            // colDaXoa
-            // 
-            this.colDaXoa.FieldName = "DaXoa";
-            this.colDaXoa.Name = "colDaXoa";
-            this.colDaXoa.OptionsColumn.AllowEdit = false;
+            this.colTenChuyenMon.Width = 1178;
             // 
             // colDonViID
             // 
@@ -146,6 +129,21 @@
             // dvChuyenMonTableAdapter
             // 
             this.dvChuyenMonTableAdapter.ClearBeforeFill = true;
+            // 
+            // colXoa
+            // 
+            this.colXoa.Name = "colXoa";
+            this.colXoa.Visible = true;
+            this.colXoa.VisibleIndex = 2;
+            this.colXoa.Width = 41;
+            // 
+            // beXoa
+            // 
+            this.beXoa.AutoHeight = false;
+            this.beXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.beXoa.ContextImage = ((System.Drawing.Image)(resources.GetObject("beXoa.ContextImage")));
+            this.beXoa.Name = "beXoa";
             // 
             // frmChuyenMon
             // 
@@ -164,6 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dvChuyenMonBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewChuyenMon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beXoa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,9 +177,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colIDChuyenMon;
         private DevExpress.XtraGrid.Columns.GridColumn colMaChuyenMon;
         private DevExpress.XtraGrid.Columns.GridColumn colTenChuyenMon;
-        private DevExpress.XtraGrid.Columns.GridColumn colNgayTao;
-        private DevExpress.XtraGrid.Columns.GridColumn colNgayCapNhat;
-        private DevExpress.XtraGrid.Columns.GridColumn colDaXoa;
         private DevExpress.XtraGrid.Columns.GridColumn colDonViID;
+        private DevExpress.XtraGrid.Columns.GridColumn colXoa;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit beXoa;
     }
 }

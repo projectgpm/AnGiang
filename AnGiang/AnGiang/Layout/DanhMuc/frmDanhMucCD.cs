@@ -71,5 +71,32 @@ namespace AnGiang.Layout.DanhMuc
             DataProvider.Ins.DB.SaveChanges();
             this.nvDanhMucCDTableAdapter.Fill(this.anGiangDataSet.nvDanhMucCD);
         }
+
+        private void gridViewDanhMucCD_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            try
+            {
+                if (e.Column.FieldName.Equals("") && e.Column.ColumnEdit.Name.CompareTo("beXoa") == 0)
+                {
+
+                    int id = int.Parse(gridViewDanhMucCD.GetRowCellValue(e.RowHandle, colIDDanhMucCD).ToString());
+                    if (XtraMessageBox.Show("Bạn có muốn xóa danh mục này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        nvDanhMucCD cd = DataProvider.Ins.DB.nvDanhMucCDs.Find(id);
+                        cd.DaXoa = 1;
+                        cd.NgayCapNhat = DateTime.Now;
+
+                    }
+                    else { return; }
+                    DataProvider.Ins.DB.SaveChanges();
+                    this.nvDanhMucCDTableAdapter.Fill(this.anGiangDataSet.nvDanhMucCD);
+                }
+
+            }
+            catch
+            {
+                XtraMessageBox.Show("Không thể xóa trường này, vui lòng thử lại!", "GPM.VN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

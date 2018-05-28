@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhongBan));
             this.gridControlPhongBan = new DevExpress.XtraGrid.GridControl();
             this.dvPhongBanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anGiangDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -43,11 +44,14 @@
             this.colDaXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDonViID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dvPhongBanTableAdapter = new AnGiang.AnGiangDataSetTableAdapters.dvPhongBanTableAdapter();
+            this.colXoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.beXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPhongBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvPhongBanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPhongBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beXoa)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlPhongBan
@@ -59,6 +63,8 @@
             this.gridControlPhongBan.MainView = this.gridViewPhongBan;
             this.gridControlPhongBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControlPhongBan.Name = "gridControlPhongBan";
+            this.gridControlPhongBan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.beXoa});
             this.gridControlPhongBan.Size = new System.Drawing.Size(1063, 709);
             this.gridControlPhongBan.TabIndex = 0;
             this.gridControlPhongBan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -86,6 +92,7 @@
             this.colMaPhongBan,
             this.colTenPhongBan,
             this.colGhiChu,
+            this.colXoa,
             this.colNgayTao,
             this.colNgayCapNhat,
             this.colDaXoa,
@@ -100,6 +107,7 @@
             this.gridViewPhongBan.OptionsEditForm.ActionOnModifiedRowChange = DevExpress.XtraGrid.Views.Grid.EditFormModifiedAction.Save;
             this.gridViewPhongBan.OptionsNavigation.AutoFocusNewRow = true;
             this.gridViewPhongBan.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridViewPhongBan.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridViewPhongBan_RowCellClick);
             this.gridViewPhongBan.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridViewPhongBan_ValidateRow);
             // 
             // colIDPhongBan
@@ -116,7 +124,7 @@
             this.colMaPhongBan.OptionsColumn.AllowEdit = false;
             this.colMaPhongBan.Visible = true;
             this.colMaPhongBan.VisibleIndex = 0;
-            this.colMaPhongBan.Width = 149;
+            this.colMaPhongBan.Width = 217;
             // 
             // colTenPhongBan
             // 
@@ -126,7 +134,7 @@
             this.colTenPhongBan.OptionsColumn.AllowEdit = false;
             this.colTenPhongBan.Visible = true;
             this.colTenPhongBan.VisibleIndex = 1;
-            this.colTenPhongBan.Width = 437;
+            this.colTenPhongBan.Width = 637;
             // 
             // colGhiChu
             // 
@@ -136,7 +144,7 @@
             this.colGhiChu.OptionsColumn.AllowEdit = false;
             this.colGhiChu.Visible = true;
             this.colGhiChu.VisibleIndex = 2;
-            this.colGhiChu.Width = 457;
+            this.colGhiChu.Width = 726;
             // 
             // colNgayTao
             // 
@@ -166,6 +174,20 @@
             // 
             this.dvPhongBanTableAdapter.ClearBeforeFill = true;
             // 
+            // colXoa
+            // 
+            this.colXoa.ColumnEdit = this.beXoa;
+            this.colXoa.Name = "colXoa";
+            this.colXoa.Visible = true;
+            this.colXoa.VisibleIndex = 3;
+            this.colXoa.Width = 50;
+            // 
+            // beXoa
+            // 
+            this.beXoa.AutoHeight = false;
+            this.beXoa.ContextImage = ((System.Drawing.Image)(resources.GetObject("beXoa.ContextImage")));
+            this.beXoa.Name = "beXoa";
+            // 
             // frmPhongBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -183,6 +205,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anGiangDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPhongBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beXoa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -203,5 +226,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colNgayCapNhat;
         private DevExpress.XtraGrid.Columns.GridColumn colDaXoa;
         private DevExpress.XtraGrid.Columns.GridColumn colDonViID;
+        private DevExpress.XtraGrid.Columns.GridColumn colXoa;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit beXoa;
     }
 }
