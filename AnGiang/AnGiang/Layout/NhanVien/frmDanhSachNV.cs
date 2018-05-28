@@ -31,6 +31,7 @@ namespace AnGiang.Layout.NhanVien
 
             xuC_NhanVien1.nvNhanVienGridControl.Visible = false;
             gridControlNhanVien.DataSource = xuC_NhanVien1.nvNhanVienBindingSource;
+            gridViewNhanVien.RowClick += xuC_NhanVien1.gridView1_RowClick;
             xuC_NhanVien1.nvNhanVienGridControl.ForceInitialize();
             gridControlNhanVien.ForceInitialize();
             flyoutPanel1.ShowPopup();

@@ -531,6 +531,7 @@
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // colIDNhanVien
             // 

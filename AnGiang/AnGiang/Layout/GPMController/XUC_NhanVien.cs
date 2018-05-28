@@ -279,7 +279,7 @@ namespace AnGiang.Layout.GPMController
             
         }
 
-        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        public void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             if (e.RowHandle >= 0)
             {
