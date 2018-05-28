@@ -270,6 +270,7 @@ namespace AnGiang.Layout.GPMController
         //hủy thao tác
         private void bbiCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (ThemHayCapNhat)
             addDataBinding();
             bbiDelete.Enabled = bbiRefresh.Enabled = bbiCancel.Enabled = false;
             bbiNew.Enabled = bbiEdit.Enabled = true;
